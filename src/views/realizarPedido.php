@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/bootstrap/bootstrap@5.2.3.css">
-    <link rel="stylesheet" href="../styles/FazerPedido.css">
+    <link rel="stylesheet" href="../styles/RealizarPedido.css">
     <link rel="stylesheet" href="../styles/menu.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
