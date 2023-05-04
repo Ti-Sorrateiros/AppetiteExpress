@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="../styles/Findex.css" class="css">
     <title>Home</title>
 </head>
-<body style="background-color: #2E2B2B;" class="container">
-    <div class="CNT2">
-        <h1 id="titulo">Pedidos.com</h1>
+<body class="container">
+    <div align="center" class="CNT2">
+        <h1 align="center" id="titulo">Pedidos.com</h1>
     <div>
-        <p id="Sub-titulo">Olá, Seja Bem-vindo!</p>
+        <p align="center" id="Sub-titulo">Olá, Seja Bem-vindo!</p>
     </div>
-    <div class="btn-conteiner">
+    <div align="center" class="btn-conteiner">
             <a class="btn-content" type="submit" onclick="">
                 <span class="btn-title">FAZER PEDIDO</span>
                 <span class="icon-arrow">
