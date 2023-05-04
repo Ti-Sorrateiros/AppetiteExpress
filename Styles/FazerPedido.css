@@ -1,0 +1,7 @@
+.border {
+    position: relative;
+    background-color: #271c1c;
+    height: 75px;
+    width: 100%;
+    border: none;
+}
