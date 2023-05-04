@@ -1,11 +1,14 @@
 .container {
-    position: center;
+    position: relative;
     margin-top: 220px;
     align-items: center;
     width: 100%;
     justify-content: center;
     display: flex;
     padding: 0;
+    background-color: #2E2B2B;
+    background-repeat: no-repeat;
+
 }
 #titulo{
     position: absolute;
