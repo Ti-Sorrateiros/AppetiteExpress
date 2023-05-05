@@ -15,43 +15,52 @@
    <nav class="menu-lateral">
 
     <div class="btn-expandir">
-        <i class="bi bi-list"></i>
+        <i class="bi bi-list" id="btn-exp"></i>
     </div>
 
     <ul>
+        <li class="item-menu ativo">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">Home</span>
+            </a>
+        </li>
+          <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">Home</span>
+            </a>
+        </li>
+          <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">Home</span>
+            </a>
+        </li>
+          <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">Home</span>
+            </a>
+        </li>
+          <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">Home</span>
+            </a>
+        </li>
+
         <li class="item-menu">
             <a href="#">
-                <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="txt-link">Home</span>
-            </a>
-        </li>
-          <li class="item-menu">
-            <a href="#">
-                <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="txt-link">Home</span>
-            </a>
-        </li>
-          <li class="item-menu">
-            <a href="#">
-                <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="txt-link">home</span>
-            </a>
-        </li>
-          <li class="item-menu">
-            <a href="#">
-                <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="txt-link">Home</span>
-            </a>
-        </li>
-          <li class="item-menu">
-            <a href="#">
-                <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="txt-link">Home</span>
+            <i class="bi bi-box-arrow-left"></i>
+            <span class="txt-link">Sair</span>
             </a>
         </li>
     </ul>
 
    </nav>
     
+
+        <script src="../js/menu.js"></script>
 </body>
 </html>
