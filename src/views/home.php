@@ -54,7 +54,7 @@
         </ul>
 
     </nav>
-    <script src="../src/js/menu.js" type="text/javascript"></script>
+    <script src="../js/menu.js" type="text/javascript"></script>
 </body>
 
 </html>
