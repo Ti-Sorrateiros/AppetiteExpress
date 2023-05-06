@@ -24,25 +24,26 @@
             <li class="item-menu ativo">
                 <a>
                     <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Inicio</span>
+                    <span class="txt-link">Pedido</span>
+                </a>
+                </div>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Descontos</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Home</span>
+                    <span class="txt-link">Localização</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Home</span>
+                    <span class="txt-link">Carrinho</span>
                 </a>
             </li>
             <li class="item-menu">
