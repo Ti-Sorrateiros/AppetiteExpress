@@ -40,6 +40,11 @@
                     <input type="submit" name="createUser" value="Cadastrar">
                 </div>
             </form>
+       
+            <div>
+                <p>Já tem uma conta? </p>
+                <a href="login">Clique  aqui para fazer seu Login</a>
+            </div>
         </div>
 
     </div>
