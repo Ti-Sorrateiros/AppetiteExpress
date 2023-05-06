@@ -1,14 +1,15 @@
 <?php
 include('../../../database/conn.php');
 
-//variavel global que pega os dados de todos os campos 
+//variavel que pega os dados de todos os campos do formulario
 $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-//se o botao de name create User for acionado
+//se o input com name create User for acionado criar usuario no banco
 if (isset($user['createUser'])) {
     createUser($user);
 } 
 
+//função para criar usuario
 function createUser($user)
 {
     global $conn;
