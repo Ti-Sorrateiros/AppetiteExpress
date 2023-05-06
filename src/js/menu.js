@@ -1,7 +1,7 @@
-var menu = document.querySelectorAll('.item-menu');
+var menu = document.querySelectorAll('.item-menu') ;
 
 function selectLink() {
-    menuItem.array.forEach((item) => 
+    menu.forEach((item) =>
         item.classList.remove('ativo')
     );
     this.classList.add('ativo')
