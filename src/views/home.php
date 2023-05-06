@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-<title>Home</title>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,43 +19,46 @@
         <div class="btn-expandir">
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
-
         <ul>
             <li class="item-menu ativo">
-                <a>
+            <a onclick="openPage('pedido' , 'conteudo')">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Pedido</span>
                 </a>
                 </div>
             </li>
             <li class="item-menu">
-                <a href="#">
+            <a onclick="openPage('descontos' , 'conteudo')">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Descontos</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+            <a onclick="openPage('localizacao' , 'conteudo')">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Localização</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+              <a onclick="openPage('carrinho' , 'conteudo')">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Carrinho</span>
                 </a>
             </li>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
         </ul>
-
     </nav>
+
+    <!-- conteudo das paginas que estão em content -->
+    <section id="conteudo" align="center">
+        <header>
+            <?php include('content/pedido.php'); ?>
+        </header>
+    </section>
+
+   
+
     <script src="../js/menu.js" type="text/javascript"></script>
+    <script src="../js/noRefresh.js" type="text/javascript"></script>
 </body>
 
 </html>
