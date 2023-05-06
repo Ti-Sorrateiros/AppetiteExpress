@@ -9,25 +9,26 @@ body{
 }
 
 nav.menu-lateral{
-    width: 85px;
+    width: 80px;
     height: 100%;
     background-color: #202020;
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 #312929;
+    box-shadow: 3px 0 0 #707070;
 
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
-    transition: .5s;
+    transition: .2s;
 }
-nav.menu-lateral.expandir{
+nav.menu-lateral.expandir:hover{
     width: 300px;
 
 }
 .btn-expandir{
     width: 100%;
     padding-left: 10px;
+    margin-bottom: 25px;
 }
 .btn-expandir > i{
     color: aliceblue;
@@ -42,11 +43,10 @@ ul li.item-menu{
     transition: .2s;
 }
 ul li.ativo{
-    background-color:#312929;
-    margin-left: -20px;
-} 
+    background-color: #312929;
+}
 ul li.item-menu:hover{
-    background: #7c1616;
+    background: #312929;
 }
 ul li.item-menu a{
     color: rgb(255, 255, 255);
@@ -55,19 +55,12 @@ ul li.item-menu a{
     padding: 20px 4%;
     display: flex;
     margin-bottom: 20px;
-    line-height: 10px;
-    margin-top: 3px;
+    line-height: 30px;
 }
 ul li.item-menu a .txt-link{
-    margin-left: 70px;
-    transition: .5s;
-    opacity: 0;
-}
-nav.menu-lateral.expandir .txt-link{
     margin-left: 40px;
-    opacity: 1;
 }
 ul li.item-menu a .icon > i{
-    font-size: 30px;
-    margin-left: -20px;
+    font-size: 25px;
+    margin-left: 10px;
 }
