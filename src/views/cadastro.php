@@ -33,7 +33,7 @@
                 </div>
                 <br>
                 <div>
-                    <input type="text" name="senha" placeholder="Criar sua senha">
+                    <input type="password" name="senha" placeholder="Criar sua senha">
                 </div>
                 <br>
                 <div>
