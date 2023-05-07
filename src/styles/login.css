@@ -1,0 +1,141 @@
+body{
+    background: #2E2B2B;
+}
+.container {
+    position: relative;
+    margin-top: 105px;
+    border-radius: 16px;
+    left: 385px;
+    height: 500px;
+    width: 35em;
+    background: #F0F0F0;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#TLogin {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+}
+
+#SLogin {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: -20px;
+}
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 180px;
+    margin-top: 3em;
+}
+
+.form__field {
+    position: relative;
+    font-family: inherit;
+    width: 25em;
+    border: none;
+    border-bottom: 2px solid #363333;
+    outline: 0;
+    font-size: 17px;
+    color: #023817;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    left: -7em;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #65ad0c;
+    pointer-events: none;
+    left: -6em;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #73BB18, #c4dda5);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #645656;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+.Senha {
+    margin-top: 2em;
+}
+
+#Cadastrar-se {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+#Lbutton {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #F0F0F0;
+    z-index: 1;
+    background: #2E2B2B;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px white;
+    box-shadow: 4px 8px 19px -3px white;
+    transition: all 250ms;
+    overflow: hidden;
+    margin-top: 1em;
+}
+
+#Lbutton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color:rgb(63, 63, 63);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms
+}
+
+#Lbutton:hover {
+    color: #ffffff;
+    border-color: #F0F0F0 ;
+}
+
+#Lbutton:hover::before {
+    width: 100%;
+}
