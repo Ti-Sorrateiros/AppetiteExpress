@@ -13,28 +13,28 @@
 
 <body>
     <div class="container" align="center">
-            <h1 id="TLogin">Faça seu Login</h1>
+        <h1 id="TLogin">Faça seu Login</h1>
         <h3 id="SLogin">Informe um login valido</h3>
         <form method="post" action="">
-                <div class="form__group field">
-                <input type="email" class="form__field" placeholder="Name" required="">
+            <div class="form__group field">
+                <input name="email" type="email" class="form__field" placeholder="Name" required="">
                 <label for="email" class="form__label">E-mail:</label>
             </div>
             <br>
             <div class="Senha">
                 <div class="form__group field">
-                <input type="password" class="form__field" placeholder="Name" required="">
-                <label for="password" class="form__label">Senha:</label>
-            </div>
+                    <input name="senha" type="password" class="form__field" placeholder="Name" required="">
+                    <label for="password" class="form__label">Senha:</label>
+                </div>
             </div>
             <br>
             <div>
                 <button id="Lbutton" type="submit" onclick="" name="loginUser">ENTRAR</button>
             </div>
         </form>
-            <div>
-                <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
-            </div>
+        <div>
+            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
+        </div>
 
     </div>
 </body>
