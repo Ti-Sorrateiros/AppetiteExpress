@@ -21,29 +21,36 @@
         </div>
         <ul>
             <li class="item-menu ativo">
-            <a onclick="openPage('pedido' , 'conteudo')">
-                    <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Pedido</span>
+            <a onclick="openPage('produtos' , 'conteudo')">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link">Produtos</span>
                 </a>
                 </div>
             </li>
             <li class="item-menu">
             <a onclick="openPage('descontos' , 'conteudo')">
-                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="icon"><i class="bi bi-tag-fill"></i></span>
                     <span class="txt-link">Descontos</span>
                 </a>
             </li>
             <li class="item-menu">
             <a onclick="openPage('localizacao' , 'conteudo')">
-                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
                     <span class="txt-link">Localização</span>
                 </a>
             </li>
             <li class="item-menu">
               <a onclick="openPage('carrinho' , 'conteudo')">
-                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="icon"><i class="bi bi-cart4"></i></span>
                     <span class="txt-link">Carrinho</span>
                 </a>
+            </li>
+            <li class="item-menu">
+            <a onclick="openPage('pedido' , 'conteudo')">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Seus Pedidos</span>
+                </a>
+                </div>
             </li>
         </ul>
     </nav>
@@ -51,7 +58,7 @@
     <!-- conteudo das paginas que estão em content -->
     <section id="conteudo" align="center">
         <header>
-            <?php include('content/pedido.php'); ?>
+            <?php include('content/produtos.php'); ?>
         </header>
     </section>
 
