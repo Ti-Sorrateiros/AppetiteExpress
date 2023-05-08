@@ -14,7 +14,7 @@
 <body>
     <div class="container" align="center">
         <h1 id="TLogin">Faça seu Login</h1>
-        <h3 id="SLogin">Informe um login valido</h3>
+        <h3 id="SLogin">Informe um login válido</h3>
         <form method="post" action="">
             <div class="form__group field">
                 <input name="email" type="email" class="form__field" placeholder="Name" required="">
@@ -35,6 +35,11 @@
         <div>
             <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
         </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
     </div>
 </body>
