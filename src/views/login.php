@@ -31,6 +31,7 @@
             </div>
             <br>
             <div>
+               <!--Utilizar onClick para chamar as funções dos controllers # -->
                 <button id="Lbutton" type="submit" onclick="" name="loginUser">ENTRAR</button>
             </div>
             <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
