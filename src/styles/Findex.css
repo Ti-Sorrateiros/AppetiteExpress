@@ -6,7 +6,7 @@
     justify-content: center;
     display: flex;
     padding: 0;
-    background-color: #2E2B2B;
+    background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-attachment: fixed; /*Resolve o Problema do Background*/
     background-repeat: no-repeat;
 
 }
