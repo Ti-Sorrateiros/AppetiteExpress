@@ -5,7 +5,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     position: relative;
     margin-top: 105px;
     border-radius: 10px;
-    left: 385px;
+    left: 625px;
     height: 500px;
     width: 35em;
     background: transparent;
@@ -15,6 +15,9 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    align-items: center;
+    
+
 }
 .container span:first-of-type{
     position: absolute;
@@ -228,3 +231,6 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
 #Lbutton:hover::before {
     width: 100%;
 }
+
+
+
