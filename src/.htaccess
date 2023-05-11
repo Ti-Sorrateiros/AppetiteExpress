@@ -1,5 +1,3 @@
-DirectoryIndex views / home.php
-
 Options -Indexes
 
 RewriteEngine on
