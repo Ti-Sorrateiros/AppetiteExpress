@@ -12,10 +12,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     border: 2px solid rgba(255, 255, 255, .5);
     backdrop-filter: blur(30px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
-    align-items: center;
     
 
 }
@@ -104,6 +101,8 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     color:#F0F0F0;
+    position: relative;
+    left: 3.5em;
 }
 
 #SLogin {
@@ -111,10 +110,13 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     font-size: 15px;
     margin-top: -20px;
     color: rgb(226, 223, 223);
+    position: relative;
+    left: 13em;
+
 }
 .form__group {
     position: relative;
-    padding: 20px 0 0;
+    padding:50 0 0;
     width: 100%;
     max-width: 180px;
     margin-top: 3em;
@@ -191,46 +193,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     
 }
 
-#Lbutton {
-    padding: 15px 25px;
-    border: unset;
-    border-radius: 15px;
-    color: #F0F0F0;
-    z-index: 1;
-    background: #2E2B2B;
-    position: relative;
-    font-weight: 1000;
-    font-size: 17px;
-    -webkit-box-shadow: 4px 8px 19px -3px #181616;
-    box-shadow: 4px 8px 19px -3px #131111;
-    transition: all 250ms;
-    overflow: hidden;
-    margin-top: 1em;
-}
 
-#Lbutton::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: 15px;
-    background-color:rgb(20, 18, 18);
-    z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms
-}
-
-#Lbutton:hover {
-    color: #ffffff;
-    border-color: #F0F0F0 ;
-}
-
-#Lbutton:hover::before {
-    width: 100%;
-}
 
 
 
