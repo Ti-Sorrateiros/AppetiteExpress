@@ -19,7 +19,7 @@
         <p align="center" id="Sub-titulo">Olá, Seja Bem-vindo!</p>
     </div>
     <div align="center" class="btn-conteiner">
-            <a class="btn-content"  href="src/views/home">
+            <a class="btn-content"  href="src/views/">
                 <span class="btn-title">FAZER PEDIDO</span>
                 <span class="icon-arrow">
                 <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
