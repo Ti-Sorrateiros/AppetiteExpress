@@ -36,8 +36,8 @@ function createUser($user)
         $hashedPass = password_hash($user['password'], PASSWORD_DEFAULT, $options);
         $date = date('Y-m-d H:i:s');
         $queryUser =
-            "INSERT INTO usuarios (nome, email, telefone, endereco, senha)
-             VALUES ('{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
+            "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
+             VALUES (2, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
 
         $signedUser = $conn->prepare($queryUser);
         $signed = $signedUser->execute();
