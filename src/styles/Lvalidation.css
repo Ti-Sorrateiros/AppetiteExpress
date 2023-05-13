@@ -35,27 +35,40 @@
     position: relative;
     left: 1em;
 }
-
+/*sucess*/
 .form-control.success input {
     border: 3px solid #4ECA64;
 }
-
+/*Error*/
 .form-control.error input {
     border: 3px solid #DB5A5A;
 }
+/*Alert*/
+.form-control.alert input{
+    border: 3px solid #dbd95a;}
 
 .form-control.error i.img-error {
     visibility: visible;
     right: 1.5em;
 }
-
 .form-control.success i.img-success {
     visibility: visible;
     right: 1.5em;
 }
 
-.form-control.error small{
+.form-control.alert i.img-alert{
+    visibility: visible;
+    right: 1.5em;
+}
+
+.form-control.error #msg-error{
     color: #DB5A5A;
+    visibility: visible;
+    left: 1.5em;
+}
+
+.form-control.alert #msg-alert{
+    color: #dbd95a;
     visibility: visible;
     left: 1.5em;
 }

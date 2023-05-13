@@ -23,8 +23,10 @@
                 <input type="email" id="email">
                 <i class="img-success" ><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error" ><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
+                <small id="msg-alert">Login não Encontrado</small>
 
-                <small>Error Message</small>
 
             </div>
 
@@ -34,9 +36,9 @@
                 <input type="password" id="password">
                 <i class="img-success" ><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error" ><img src="../images/error-icon.svg" alt=""></i>
-
-                <small>Error Message</small>
-
+                <small id="msg-error">Error Message</small>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
+                <small id="msg-alert">Login não Encontrado</small>
             </div>
 
             <button type="submit" >ENTRAR</button>

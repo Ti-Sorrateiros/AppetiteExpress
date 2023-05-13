@@ -21,14 +21,23 @@ function checkInputs() {
     } else {
         setSuccessFor(email)
     }
+    //Alert Pronto Esperando Função
+    //if(){
+    //     setAlertFor(email, 'Login Nao Encontrado')
+    // }
    
     if(passwordValue === '') {
         setErrorFor(password, 'Preencha esse campo')
     } else if(passwordValue.length < 8) { 
-        setErrorFor(password, 'Senhas não conferem')
+        setErrorFor(password, 'Senhas acima de 8 Digitos')
     } else {
         setSuccessFor(password)
     }
+    //Alert Pronto Esperando Função
+    // if (passwordValue === '') {
+    //     setAlertFor(email, 'Senha não compativel')
+    // }
+
 
 
 }
@@ -41,6 +50,16 @@ function setErrorFor(input, message) {
 
     formControl.className = 'form-control error'
 }
+
+function setAlertFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small')
+
+    small.innerText = message
+
+    formControl.className = 'form-control alert'
+}
+
 
 function setSuccessFor(input) {
     const formControl = input.parentElement;
