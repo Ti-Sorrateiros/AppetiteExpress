@@ -23,7 +23,7 @@
 
 .form-control input {
     border: 2px solid #3E445B;
-    border-radius: 5px;
+    border-radius: 7px;
     outline: 0;
 
     display: block;
@@ -34,6 +34,7 @@
     padding: 15px;
     position: relative;
     left: 1em;
+    
 }
 /*sucess*/
 .form-control.success input {

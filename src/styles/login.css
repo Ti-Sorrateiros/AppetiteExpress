@@ -22,7 +22,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, transparent, #c3ff79);
+    background: linear-gradient(to right, transparent, #6C63FF);
     animation: animation1 2s linear infinite;
 }
 
@@ -41,7 +41,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     right: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #c3ff79);
+    background: linear-gradient(to bottom, transparent, #5851e2);
     animation: animation2 2s linear infinite;
     animation-delay: 1s;
 }
@@ -62,7 +62,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     right: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to left, transparent, #c3ff79);
+    background: linear-gradient(to left, transparent, #544ddd);
         animation: animation3 2s linear infinite;
 }
 
@@ -82,7 +82,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to top, transparent, #c3ff79);
+    background: linear-gradient(to top, transparent, #6C63FF);
     animation: animation4 2s linear infinite;
     animation-delay: 1s;
 }
