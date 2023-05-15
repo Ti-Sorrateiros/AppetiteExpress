@@ -1,3 +1,7 @@
+<?php
+include('../../database/conn.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +36,7 @@
 
             <div class="form-control">
                 <label>Senha</label>
-                <input type="password" id="password" name="senha" />
+                <input type="password" id="password" name="password" />
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
