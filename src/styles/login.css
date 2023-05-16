@@ -187,10 +187,12 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
 }
 
 #Cadastrar-se {
+    position: relative;
     margin-top: 30px;
     font-size: 18px;
     color: #F0F0F0;
-    
+    left: 7.5em;
+    margin-top: 5em;
 }
 
 

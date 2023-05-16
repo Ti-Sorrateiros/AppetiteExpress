@@ -18,7 +18,7 @@
     margin-bottom: 5px;
     color: #b9b9b9;
     position: relative;
-    left: 2em;
+    left: 5em;
 }
 
 .form-control input {
@@ -33,7 +33,7 @@
     width: 30em;
     padding: 15px;
     position: relative;
-    left: 1em;
+    left: 5em;
     
 }
 /*sucess*/
@@ -98,7 +98,7 @@
     font-weight: 600;
     width: 10em;
     position: relative;
-    left: 11.5em;
+    left: 115em;
     margin-top: 5px;
 
     cursor: pointer;

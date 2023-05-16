@@ -31,7 +31,6 @@ include('../../database/conn.php')
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
 
-
             </div>
 
             <div class="form-control">
@@ -42,13 +41,22 @@ include('../../database/conn.php')
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
-            </div>
 
-            <button type="submit" name="loginUser">ENTRAR</button>
-     
+            </div>
+                
+            <button type="submit" onclick="" name="loginUser">ENTRAR</button>
+           
+            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
+
         </form>
+        
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
     </div>
     <script src="../js/Lvalidation.js"></script>
+
 </body>
 
 </html>
