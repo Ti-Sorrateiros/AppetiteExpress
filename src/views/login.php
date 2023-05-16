@@ -46,7 +46,7 @@ include('../../database/conn.php')
                 
             <button type="submit" onclick="" name="loginUser">ENTRAR</button>
            
-            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#73BB18;">Cadastre-se</a></p>
+            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#a29df3;">Cadastre-se</a></p>
 
         </form>
         
@@ -55,6 +55,7 @@ include('../../database/conn.php')
             <span></span>
             <span></span>
     </div>
+
     <script src="../js/Lvalidation.js"></script>
 
 </body>

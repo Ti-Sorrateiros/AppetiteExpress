@@ -89,7 +89,7 @@
 
 }
 
-.form button {
+form button {
     background-color: #6C63FF;
     border-radius: 5px;
     color: #fff;
@@ -98,13 +98,13 @@
     font-weight: 600;
     width: 10em;
     position: relative;
-    left: 11.5em;
+    left: 13.5em;
     margin-top: 5px;
 
     cursor: pointer;
 }
 
-.form button:hover {
+form button:hover {
     background-color: #484494;
     transition: 0.3s;
 }
