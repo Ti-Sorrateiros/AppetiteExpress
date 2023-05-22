@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Carrinho </title>
+    <title>Produtos</title>
 </head>
 
 <body>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Descontos</title>
 </head>
 
 <body>
@@ -55,7 +55,29 @@
     </nav>
 
     <div class="content">
-        <h1>Descontos</h1>
+        <h1>Combos e Cupons</h1>
+        <h3>Confirar combos e cupons de descontos</h3>
+        <br>
+        <div>
+            <h2>Combos</h2>
+            <br>
+            <h3>Pizza + Refri de 1,5L = 30% de descontos</h3>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <h2>Cupons:</h2>
+            <br>
+            <h4>Cupom de Fidelidade <a href="">Resgatar Cupom</a></h4>
+            <h4>Cupom de Descontos <a href=""></a></h4>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <h2>Seus Cupons:</h2>
+        </div>
     </div>
     
     <script src="../js/menu.js" type="text/javascript"></script>
