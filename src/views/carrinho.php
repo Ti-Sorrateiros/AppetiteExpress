@@ -58,15 +58,13 @@
     
         <div class="content">
             <h1>Carrinho</h1>
-            <h3>Seus Produtos selecionados estarão aqui</h3>
-            <p>caso não tenha feito o pedido, a duração até duas horas</p>
+            <h3>Seus Produtos  escolhidos estarão aqui</h3>
+            <p>faça seu pedido até duas horas.</p>
             <br>
             <div>
                 <?php
                 $items = array
                 (
-                    ['imagem' => 'Curso 1', 'preco' => '200'],
-                    ['nome' => 'Curso 2', 'preco' => '100'],
                     ['nome' => 'Curso 3', 'preco' => '400']
                 );
 
@@ -75,7 +73,7 @@
                     <!-- produto -->
                     <div class="produto">
                         <img src="<?php echo $value['imagem'] ?>">
-                        <a href="?adicionar=<?php echo $key ?>">Adicionar ao carrinho!</a>
+                        <a href="?adicionar=<?php echo $key ?>">Finalizar Pedido</a>
                     </div>
 
                     <?php
