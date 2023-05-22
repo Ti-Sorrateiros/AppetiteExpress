@@ -46,7 +46,7 @@
             </li>
             <li class="item-menu">
                 <a href="pedido">
-                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="icon"><i class="bi bi-clipboard2-fill"></i></span>
                     <span class="txt-link">Seus Pedidos</span>
                 </a>
                 </div>
