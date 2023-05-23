@@ -36,7 +36,7 @@ function createUser($user)
         $options = [
             'cost' => 10
         ];
-        $hashedPass = password_hash($user['password'], PASSWORD_DEFAULT, $options);
+        $hashedPass = password_hash($user['senha'], PASSWORD_DEFAULT, $options);
         $date = date('Y-m-d H:i:s');
         $queryUser =
             "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
@@ -73,8 +73,9 @@ function loginUser($user)
     $row = $result->rowCount();
     $data = $result->fetch();
     $hash = $data['senha'];
-
-    if ($row > 0 && password_verify($senha, $hash)) {  //comando password com problema!
+    $check = password_verify($senha, $hash);
+    
+    if ($row > 0 && $check) {  
         $token = uniqid() . '_' . $data['id'] . '_' . $data['id_perfil'];
         $_SESSION["token"] = $token;
         $_SESSION["id"] = $data['id'];
