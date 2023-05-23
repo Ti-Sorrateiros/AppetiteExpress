@@ -7,7 +7,10 @@ $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 //se o input com name create User for acionado criar usuario no banco
 if (isset($user['createUser'])) {
     createUser($user);
-} 
+}
+if (isset($user['loginUser'])) {
+    loginUser($user);
+}
 
 //função para criar usuario
 function createUser($user)
@@ -36,8 +39,8 @@ function createUser($user)
         $hashedPass = password_hash($user['password'], PASSWORD_DEFAULT, $options);
         $date = date('Y-m-d H:i:s');
         $queryUser =
-            "INSERT INTO usuarios (nome, email, telefone, endereco, senha)
-             VALUES ('{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
+            "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
+             VALUES (2, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
 
         $signedUser = $conn->prepare($queryUser);
         $signed = $signedUser->execute();
@@ -56,5 +59,46 @@ function createUser($user)
     }
 }
 
+function loginUser($user)
+{
+    global $conn;
+    session_start();
+    
+    $senha = $_POST['password'];
+    $email = $_POST['email'];
+
+    $queryUser = "SELECT * FROM usuarios WHERE (email='" . $email . "');";
+    $result = $conn->prepare($queryUser);
+    $result->execute();
+    $row = $result->rowCount();
+    $data = $result->fetch();
+    $hash = $data['senha'];
+
+    if ($row > 0 && password_verify($senha, $hash)) {  //comando password com problema!
+        $token = uniqid() . '_' . $data['id'] . '_' . $data['id_perfil'];
+        $_SESSION["token"] = $token;
+        $_SESSION["id"] = $data['id'];
+        $_SESSION["id_perfil"] = $data["id_perfil"];
+
+        if ($_SESSION["id_perfil"] == 1) {
+            setcookie('login', $email);
+            echo "<script>
+                alert('Logado com Sucesso!');
+                 window.location.href='../../views/admin.php';
+                 </script>";
+        } else {
+            setcookie('login', $email);
+            echo "<script>
+                alert('Logado com Sucesso!');
+                window.location.href='../../views/produtos.php';
+                </script>";
+        }
+    } else {
+        echo "<script>
+         alert('Login e/ou senha incorretos');
+         window.location.href='../../views/login.php';
+         </script>";
+    }
+}
 
 ?>

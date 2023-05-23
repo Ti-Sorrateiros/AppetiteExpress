@@ -1,0 +1,7 @@
+/* conteudo do menu */
+.content {
+  display: block;
+  margin-left: 75px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}

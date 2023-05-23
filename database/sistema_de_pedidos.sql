@@ -1,6 +1,11 @@
 CREATE DATABASE sistema_de_pedidos;
 USE sistema_de_pedidos;
 
+CREATE TABLE perfil(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo_de_usuario VARCHAR(25) NOT NULL
+) DEFAULT charset utf8;
+
 CREATE TABLE usuarios(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_perfil INT, 
@@ -8,13 +13,8 @@ CREATE TABLE usuarios(
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL,
     telefone VARCHAR(11) NOT NULL UNIQUE,
-    endereço VARCHAR(50) NOT NULL
+    endereco VARCHAR(50) NOT NULL
 ) DEFAULT charset utf8; 
-
-CREATE TABLE perfil(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_de_usuario VARCHAR(25) NOT NULL
-) DEFAULT charset utf8;
 
 CREATE TABLE produtos(
     id INT PRIMARY KEY AUTO_INCREMENT,

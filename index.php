@@ -8,18 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles/GoogleFonts/GoogleFonts.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="src/styles/Findex.css" class="css">
     <title>Home</title>
 </head>
 <body class="container">
-    <div align="center" class="CNT2">
-        <h1 align="center" id="titulo">Pedidos.com</h1>
+    <div class="CNT2">
+        <h1  id="titulo">Pedidos.com</h1>
     <div>
-        <p align="center" id="Sub-titulo">Olá, Seja Bem-vindo!</p>
+        <br>
+    <div>
+        <p id="Sub-titulo">Olá, Seja Bem-vindo!</p>
     </div>
-    <div align="center" class="btn-conteiner">
-            <a class="btn-content"  href="src/views/home.php">
+    <div class="btn-conteiner">
+            <a class="btn-content" href="src/views/produtos">
                 <span class="btn-title">FAZER PEDIDO</span>
                 <span class="icon-arrow">
                 <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+
+.form {
+    padding: 0 40px 30px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #b9b9b9;
+    position: relative;
+    left: 5em;
+}
+
+.form-control input {
+    border: 2px solid #3E445B;
+    border-radius: 7px;
+    outline: 0;
+
+    display: block;
+
+    font-size: 14px;
+
+    width: 30em;
+    padding: 15px;
+    position: relative;
+    left: 5em;
+    
+}
+/*sucess*/
+.form-control.success input {
+    border: 3px solid #4ECA64;
+}
+/*Error*/
+.form-control.error input {
+    border: 3px solid #DB5A5A;
+}
+/*Alert*/
+.form-control.alert input{
+    border: 3px solid #dbd95a;}
+
+.form-control.error i.img-error {
+    visibility: visible;
+    right: 1.5em;
+}
+.form-control.success i.img-success {
+    visibility: visible;
+    right: 1.5em;
+}
+
+.form-control.alert i.img-alert{
+    visibility: visible;
+    right: 1.5em;
+}
+
+.form-control.error #msg-error{
+    color: #DB5A5A;
+    visibility: visible;
+    left: 1.5em;
+}
+
+.form-control.alert #msg-alert{
+    color: #dbd95a;
+    visibility: visible;
+    left: 1.5em;
+}
+
+.form-control i {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 14px;
+
+}
+
+form button {
+    background-color: #6C63FF;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 10em;
+    position: relative;
+    left: 13.5em;
+    margin-top: 5px;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #484494;
+    transition: 0.3s;
+}

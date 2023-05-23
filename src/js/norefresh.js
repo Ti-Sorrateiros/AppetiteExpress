@@ -16,11 +16,3 @@ function openPage(x, y){
 
         xml.send();
 }
-
-// function Mudarestado(sectionhome) {
-//     var display = document.getElementById(sectionhome).style.display;
-//     if(display == "none")
-//         document.getElementById(el).style.display = 'block';
-//     else
-//         document.getElementById(el).style.display = 'none';
-// }
