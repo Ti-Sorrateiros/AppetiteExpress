@@ -83,14 +83,17 @@ function loginUser($user)
 
         if ($_SESSION["id_perfil"] == 1) {
             setcookie('login', $email);
+
+            //Removi os alerts de logado com sucesso pois acho mais fluido
+            //Acredito que Seja melhor um pop up já na pagina que redirecionar caso logue
             echo "<script>
-                alert('Logado com Sucesso!');
-                 window.location.href='../../views/admin.php';
+                
+                 window.location.href='../../views/admin/cadastrarProdutos.php';
                  </script>";
         } else {
             setcookie('login', $email);
             echo "<script>
-                alert('Logado com Sucesso!');
+            
                 window.location.href='../../views/produtos.php';
                 </script>";
         }
