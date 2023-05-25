@@ -15,11 +15,14 @@ nav.menu-lateral{
     padding: 40px 0 40px 5px;
     box-shadow: 3px 0 0 #707070;
 
-    position: fixed;
+    position: fixed , sticky; 
     top: 0;
     left: 0;
     overflow: hidden;
     transition: .2s;
+
+  
+    
 }
 nav.menu-lateral.expandir:hover{
     width: 300px;
@@ -64,3 +67,4 @@ ul li.item-menu a .icon > i{
     font-size: 25px;
     margin-left: 10px;
 }
+
