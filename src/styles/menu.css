@@ -15,7 +15,7 @@ nav.menu-lateral{
     padding: 40px 0 40px 5px;
     box-shadow: 3px 0 0 #707070;
 
-    position: fixed , sticky; 
+    position: fixed; 
     top: 0;
     left: 0;
     overflow: hidden;
