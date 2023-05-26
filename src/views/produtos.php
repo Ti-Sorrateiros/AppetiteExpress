@@ -55,52 +55,67 @@
         </ul>
     </nav>
 
-    
-        <div class="content">
-            <h1>Produtos</h1>
-            <p>Escolha seus produtos</p>
-            <br>
-            <div>
-                <?php
-                $items = array
-                (
-                    ['imagem' => '../images/products/hamburguer.jpg', 'preco' => '200'],
-                    ['imagem' => '../images/products/pizza.jpg', 'preco' => '100'],
-                    ['nome' => 'Curso 3', 'preco' => '400']
-                );
 
-                foreach ($items as $key => $value) {
-                    ?>
-                    <!-- produto -->
-                    <div class="produto">
-                        <img src="<?php echo $value['imagem'] ?>">
-                        <a href="?adicionar=<?php echo $key ?>">Adicionar ao carrinho!</a>
-                    </div>
+    <div class="content">
+        <h1>Produtos</h1>
+        <p>Escolha seus produtos</p>
+        <br>
+        <div>
+            <?php
+            $items = array
+            (
+                ['imagem' => '../images/products/hamburguer.jpg', 'preco' => '200'],
+                ['imagem' => '../images/products/pizza.jpg', 'preco' => '100'],
+                ['nome' => 'Curso 3', 'preco' => '400']
+            );
 
-                    <?php
-                }
+            foreach ($items as $key => $value) {
                 ?>
-                <div></div>
+                <!-- produto -->
+                <div class="produto">
+                    <img src="<?php echo $value['imagem'] ?>">
+                    <a href="?adicionar=<?php echo $key ?>">Adicionar ao carrinho!</a>
+                </div>
+
                 <?php
-                if (isset($_GET['adicionar'])) {
-                    //vamos adicionar ao carrinho.
-                    $idProduto = (int) $_GET['adicionar'];
-                    if (isset($items[$idProduto])) {
-                        if (isset($_SESSION[$idProduto])) {
-                            $_SESSION[$idProduto]['quantidade']++;
-                        } else {
-                            $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
-                        }
-                        echo '<script>alert("o item foi adicionado ao carrinho");</script>';
+            }
+            ?>
+            <div></div>
+            <?php
+            if (isset($_GET['adicionar'])) {
+                //vamos adicionar ao carrinho.
+                $idProduto = (int) $_GET['adicionar'];
+                if (isset($items[$idProduto])) {
+                    if (isset($_SESSION[$idProduto])) {
+                        $_SESSION[$idProduto]['quantidade']++;
                     } else {
-                        die('Você não pode adicionar um item que não existe.');
+                        $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
                     }
+                    echo '<script>alert("o item foi adicionado ao carrinho");</script>';
+                } else {
+                    die('Você não pode adicionar um item que não existe.');
                 }
-                ?>
-            </div>
+            }
+            ?>
         </div>
-    
-        
+        <br>
+        <hr>  
+        <br>
+        <div>
+            <h2>Combos</h2>
+            <br>
+            <h3>Pizza + Refri de 1,5L + batata = R$30,00 </h3>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>Descontos do Dia</h2>
+            <br>
+            <h3>Pizza com 30% de descontos </h3>
+        </div>
+    </div>
+
+
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
 </body>
