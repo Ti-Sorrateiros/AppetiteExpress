@@ -3,7 +3,7 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
 }
 .container {
     position: relative;
-    margin-top: 105px;
+    margin-top: 100px;
     border-radius: 10px;
     left: 625px;
     height: 500px;
@@ -13,7 +13,8 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     backdrop-filter: blur(30px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     overflow: hidden;
-    
+    align-items: center;
+        justify-content: center;
 
 }
 .container span:first-of-type{
