@@ -1,53 +1,94 @@
+<?php
+include('../../database/conn.php')
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <link rel="stylesheet" href="../styles/Lvalidation.css">
+    <link rel="stylesheet" href="../styles/cadastro.css">
+    <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
+    <!-- <link rel="stylesheet" href="../styles/bootstrap/Bootstrap@5.2.3.css"> -->
+    <title>Login</title>
 </head>
 
 <body>
-    <div>
+    <div class="container">
 
-        <div align="center">
-            <h1> Crie sua conta </h1>
-            <h3>Preencha o formulário</h3>
+        <h1 id="TCadastro">Relizar Cadastro</h1>
+        <h3 id="SCadastro">Informe um login válido</h3>
+        <form method="post" action="../controllers/user/userController.php" >
+            
+        <div class="form-control">
+                <label>Nome</label>
+                <input type="text" id="nome" name="Nome">
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
 
-            <form method="post" action="../controllers/user/userController.php" >
-                <div>
-                    <input type="text" name="nome" placeholder="Digite seu nome">
-                </div>
-                <br>
-                <div>
-                    <input type="email" name="email" placeholder="Digite seu melhor email">
-                </div>
-                <br>
-                <div>
-                    <input type="tel" name="telefone" placeholder="Digite seu telefone">
-                </div>
-                <br>
-                <div>
-                    <input type="text" name="endereco" placeholder="Digite seu endereco">
-                </div>
-                <br>
-                <div>
-                    <input type="password" name="senha" placeholder="Criar sua senha">
-                </div>
-                <br>
-                <div>
-                    <input type="submit" name="createUser" value="Cadastrar">
-                </div>
-            </form>
-       
-            <div>
-                <p>Já tem uma conta? </p>
-                <a href="login">Clique  aqui para fazer seu Login</a>
             </div>
-        </div>
 
+        
+        <div class="form-control">
+                <label>Email</label>
+                <input type="email" id="email" name="email">
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
+                <small id="msg-alert">Login não Encontrado</small>
+
+            </div>
+
+             <div class="form-control">
+                <label>Telefone</label>
+                <input type="tel" id="Telefone" name="Telefone">
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+
+
+             <div class="form-control">
+                <label id="TEndereco">Endereço</label>
+                <input type="text" id="Endereco" name="Endereco">
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+
+            </div>
+
+            </div>
+
+            <div class="form-control">
+                <label id="Tsenha">Senha</label>
+                <input type="password" id="password" name="password" />
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
+                <small id="msg-alert">Login não Encontrado</small>
+
+            </div>
+                
+            <button type="submit" onclick="" name="loginUser">ENTRAR</button>
+           
+            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#a29df3;">Cadastre-se</a></p>
+
+        </form>
+        
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
     </div>
+
+    <script src="../js/Lvalidation.js"></script>
+
 </body>
 
 </html>
