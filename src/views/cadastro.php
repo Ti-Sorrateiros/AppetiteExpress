@@ -75,9 +75,9 @@ include('../../database/conn.php')
 
             </div>
                 
-            <button type="submit" onclick="" name="loginUser">ENTRAR</button>
+            <button type="submit" onclick="" name="loginUser">CADASTRAR</button>
            
-            <p id="Cadastrar-se">Ainda não é cadastrado? <a href="cadastro" style="color:#a29df3;">Cadastre-se</a></p>
+            <p id="Cadastrar-se">Já possui Login? <a href="cadastro" style="color:#a29df3;">Entrar</a></p>
 
         </form>
         
