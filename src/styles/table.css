@@ -1,7 +1,11 @@
+h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 table {
     text-align: center; 
     letter-spacing: 1px;
-    font-style: italic;
     border-collapse: collapse;
     border: 2px solid rgb(100, 130, 40);
     width: 75%;
