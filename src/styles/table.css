@@ -1,10 +1,6 @@
-
 table {
-    padding-left: 60px;
-    padding-right: 30px;
-    margin-left: 60px;
-    margin-right: 60px;
-    text-align: center;
+    text-align: center; 
+    letter-spacing: 1px;
     font-style: italic;
     border-collapse: collapse;
     border: 2px solid rgb(100, 130, 40);
@@ -17,7 +13,6 @@ thead{
 
 tbody{
     font-size: 90%;
-    letter-spacing: 1px;
 }
 
 td{
