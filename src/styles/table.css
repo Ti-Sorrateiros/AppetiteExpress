@@ -17,10 +17,12 @@ tbody{
 
 td{
     border: 1px solid rgb(100, 130, 40);
+    padding: 7px;
 }
 
 th{
     border: 1px solid rgb(100, 130, 40);
+    padding: 7px;
 }
 
 button{
