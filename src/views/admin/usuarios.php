@@ -30,7 +30,8 @@ $rowTable = $readUser->fetchAll();
                 <th>Email</th>
                 <th>Endereco</th>
                 <th>Telefone</th>
-               
+                <th>Editar</th>
+                <th>Excluir</th>
             </thead>
             <tbody>
                 <?php
@@ -41,6 +42,8 @@ $rowTable = $readUser->fetchAll();
                     echo '<td>' . $linha['email'] . '</td>';
                     echo '<td>' . $linha['endereco'] . '</td>';
                     echo '<td>' . $linha['telefone'] . '</td>';
+                    echo '<td><a href=""><button class="editar">Editar</button></a></td>';
+                    echo '<td><a href="../../controllers/user/deleteUser.php?id="'.$linha['id'] .'"><button class="excluir">Excluir</button></a></td>';
                     echo '</tr>';
                 }
                 ?>
