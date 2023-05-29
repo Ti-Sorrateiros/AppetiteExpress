@@ -1,14 +1,19 @@
+
 .container {
     position: relative;
     margin-top: 220px;
     align-items: center;
-    width: 100%;
     justify-content: center;
     display: flex;
     padding: 0;
     background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-attachment: fixed; /*Resolve o Problema do Background*/
     background-repeat: no-repeat;
-
+    overflow-x: hidden;
+        overflow-y: hidden;
+    width: 100%;
+}
+.container2{
+    background-color: #ffffff;
 }
 #titulo{
     position: absolute;
@@ -22,8 +27,10 @@ color: #ffffff;
     outline: none;
     width: 938px;
     margin-top: -145px;
-    left: 300px;
-text-shadow: 11px 13px 2px rgba(0, 0, 0, 0.25);}
+    left: 500px;
+text-shadow: 11px 13px 2px rgba(0, 0, 0, 0.25);
+
+}
 .CNT2{
     margin: auto;
     min-width: 320px;
@@ -40,7 +47,7 @@ text-shadow: 11px 13px 2px rgba(0, 0, 0, 0.25);}
         line-height: auto;
         border-style: hidden;
         width: 543px;
-        left: 500px;
+        left: 700px;
         margin-top: -15px;
 }
 .btn-conteiner {
@@ -52,7 +59,7 @@ text-shadow: 11px 13px 2px rgba(0, 0, 0, 0.25);}
     --color-outline: #4b3434;
     --color-shadow: #00000080;
     margin-top: 110px;
-    left: 590px;
+    left: 790px;
     width: 208px;
     height: 55px;
     
