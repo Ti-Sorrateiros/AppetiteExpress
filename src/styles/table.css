@@ -1,0 +1,29 @@
+
+table {
+    padding-left: 60px;
+    padding-right: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    font-style: italic;
+    border-collapse: collapse;
+    border: 2px solid rgb(100, 130, 40);
+    width: 75%;
+}
+
+thead{
+    color: darkblue;
+}
+
+tbody{
+    font-size: 90%;
+    letter-spacing: 1px;
+}
+
+td{
+    border: 1px solid rgb(100, 130, 40);
+}
+
+th{
+    border: 1px solid rgb(100, 130, 40);
+}
