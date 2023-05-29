@@ -21,60 +21,73 @@
         </div>
         <ul>
             <li class="item-menu">
-                <a href="produtos">
+                <a href="cadastrarProdutos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> Cadastrar Produtos</span>
+                    <span class="txt-link"> CadastrarProdutos</span>
                 </a>
                 </div>
             </li>
-          
+            <li class="item-menu">
+                <a href="pedidosFeitos">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link"> PedidosFeitos </span>
+                </a>
+                </div>
+            </li>
+            <li class="item-menu">
+                <a href="usuarios">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link"> Usuarios</span>
+                </a>
+                </div>
+            </li>
+
         </ul>
     </nav>
 
-    
-        <div class="content">
-            <h1>Cadastrar Produtos</h1>
-           
-            <br>
-            <div>
-                <?php
-                // $items = array
-                // (
-                //     ['nome' => 'Curso 3', 'preco' => '400']
-                // );
+    <div class="content">
+        <h1>Cadastrar Produtos</h1>
 
-                // foreach ($items as $key => $value) {
-                    ?>
-                 
-                    <div class="produto">
-                        <img src="<?php echo $value['imagem'] ?>">
-                        <a href="?adicionar=<?php echo $key ?>">Cadastrar Produto</a>
-                    </div>
+        <br>
+        <div>
+            <?php
+            // $items = array
+            // (
+            //     ['nome' => 'Curso 3', 'preco' => '400']
+            // );
+            
+            // foreach ($items as $key => $value) {
+            ?>
 
-                    <?php
-                // }
-                ?>
-                <div></div>
-                <?php
-                // if (isset($_GET['adicionar'])) {
-                //     //vamos adicionar ao carrinho.
-                //     $idProduto = (int) $_GET['adicionar'];
-                //     if (isset($items[$idProduto])) {
-                //         if (isset($_SESSION[$idProduto])) {
-                //             $_SESSION[$idProduto]['quantidade']++;
-                //         } else {
-                //             $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
-                //         }
-                //         echo '<script>alert("o item foi adicionado ao carrinho");</script>';
-                //     } else {
-                //         die('Você não pode adicionar um item que não existe.');
-                //     }
-                // }
-                ?>
+            <div class="produto">
+                <img src="<?php echo $value['imagem'] ?>">
+                <a href="?adicionar=<?php echo $key ?>">Cadastrar Produto</a>
             </div>
+
+            <?php
+            // }
+            ?>
+            <div></div>
+            <?php
+            // if (isset($_GET['adicionar'])) {
+            //     //vamos adicionar ao carrinho.
+            //     $idProduto = (int) $_GET['adicionar'];
+            //     if (isset($items[$idProduto])) {
+            //         if (isset($_SESSION[$idProduto])) {
+            //             $_SESSION[$idProduto]['quantidade']++;
+            //         } else {
+            //             $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
+            //         }
+            //         echo '<script>alert("o item foi adicionado ao carrinho");</script>';
+            //     } else {
+            //         die('Você não pode adicionar um item que não existe.');
+            //     }
+            // }
+            ?>
         </div>
-    
-        
+    </div>
+
+
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
 </body>
