@@ -1,4 +1,5 @@
-/* conteudo do menu */
+/* arquivo para separar o conteudo da pagina da lista lateral */
+
 .content {
   display: block;
   margin-left: 75px;
