@@ -43,7 +43,7 @@ $rowTable = $readUser->fetchAll();
                     echo '<td>' . $linha['endereco'] . '</td>';
                     echo '<td>' . $linha['telefone'] . '</td>';
                     echo '<td><a href=""><button class="editar">Editar</button></a></td>';
-                    echo '<td><a href="../../controllers/user/deleteUser.php?id="'.$linha['id'] .'"><button class="excluir">Excluir</button></a></td>';
+                    echo '<td><a href="../../controllers/user/userController.php?id="'.$linha['id'] .'"><button class="excluir">Excluir</button></a></td>';
                     echo '</tr>';
                 }
                 ?>
