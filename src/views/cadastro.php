@@ -12,8 +12,7 @@ include('../../database/conn.php')
     <link rel="stylesheet" href="../styles/Lvalidation.css">
     <link rel="stylesheet" href="../styles/cadastro.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
-    <!-- <link rel="stylesheet" href="../styles/bootstrap/Bootstrap@5.2.3.css"> -->
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -25,7 +24,7 @@ include('../../database/conn.php')
             
         <div class="form-control">
                 <label>Nome</label>
-                <input type="text" id="nome" name="Nome">
+                <input type="text" id="nome" name="nome">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
@@ -47,7 +46,7 @@ include('../../database/conn.php')
 
              <div class="form-control">
                 <label>Telefone</label>
-                <input type="tel" id="Telefone" name="Telefone">
+                <input type="tel" id="Telefone" name="telefone">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
@@ -55,7 +54,7 @@ include('../../database/conn.php')
 
              <div class="form-control">
                 <label id="TEndereco">Endereço</label>
-                <input type="text" id="Endereco" name="Endereco">
+                <input type="text" id="Endereco" name="endereco">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
@@ -75,7 +74,7 @@ include('../../database/conn.php')
 
             </div>
                 
-            <button type="submit" onclick="" name="loginUser">CADASTRAR</button>
+            <button type="submit" onclick="" name="createUser">CADASTRAR</button>
            
             <p id="Cadastrar-se">Já possui Login? <a href="cadastro" style="color:#a29df3;">Entrar</a></p>
 

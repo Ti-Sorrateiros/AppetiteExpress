@@ -1,6 +1,7 @@
 <?php
 include('../../../database/conn.php');
 
+
 //variavel que pega os dados de todos os campos do formulario
 $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -11,6 +12,12 @@ if (isset($user['createUser'])) {
 if (isset($user['loginUser'])) {
     loginUser($user);
 }
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    delete($id);
+}
+
 
 //função para criar usuario
 function createUser($user)
@@ -105,4 +112,24 @@ function loginUser($user)
     }
 }
 
+function delete($id){
+    global $conn;
+    
+
+    if($id == true){
+    $deleteUser = $conn->prepare('DELETE FROM usuarios WHERE id= :id');
+    $deleteUser->execute(array(':id' => $id));
+ 
+    echo "<script>
+    alert('Usuário Deletado!');
+    window.location.href='../../views/admin/usuarios.php';
+    </script>";
+    }
+    else{
+        echo "<script>
+    alert('Erro ao Deletar');
+    window.location.href='../../views/admin/usuarios.php';
+    </script>";
+    }
+}
 ?>
