@@ -6,7 +6,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../styles/principal.css" />
-		<link rel="shortcut icon" href="../images/Hamburguer.svg" type="image/x-icon">
+		<link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
 		<title>Pedidos</title>
 	</head>
 	<body>
@@ -22,7 +22,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="footer">
 				<img src="../images/Hamburguer.png" alt="" />
 				<span>© Copyright 2023 - Criar nome do TCC <br />Todos os direitos reservados</span>
