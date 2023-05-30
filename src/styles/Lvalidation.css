@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
-
+body {
+    margin: 0px;
+}
 
 .form {
     padding: 0 40px 30px;
@@ -13,56 +15,57 @@
     position: relative;
 }
 
-.form-control label {
+label {
     display: inline-block;
     margin-bottom: 5px;
     color: #b9b9b9;
     position: relative;
-    left: 5em;
+    margin-top: 5px;
 }
 
-.form-control input {
+input {
     border: 2px solid #3E445B;
     border-radius: 7px;
     outline: 0;
 
-    display: block;
+    display: flex;
 
     font-size: 14px;
-
+    margin-top: 5px;
     width: 30em;
     padding: 15px;
     position: relative;
-    left: 5em;
     
 }
+
 /*sucess*/
-.form-control.success input {
+.form-control .success input {
     border: 3px solid #4ECA64;
 }
 /*Error*/
-.form-control.error input {
+.form-control .error input {
     border: 3px solid #DB5A5A;
 }
+
 /*Alert*/
-.form-control.alert input{
+.form-control .alert input{
     border: 3px solid #dbd95a;}
 
 .form-control.error i.img-error {
     visibility: visible;
     right: 1.5em;
 }
-.form-control.success i.img-success {
+.form-control .success i.img-success {
     visibility: visible;
     right: 1.5em;
 }
 
-.form-control.alert i.img-alert{
+.form-control .alert i.img-alert{
     visibility: visible;
     right: 1.5em;
 }
 
-.form-control.error #msg-error{
+.form-control .error #msg-error{
     color: #DB5A5A;
     visibility: visible;
     left: 1.5em;
@@ -98,9 +101,8 @@ form button {
     font-weight: 600;
     width: 10em;
     position: relative;
-    left: 13.5em;
     margin-top: 5px;
-
+    left: 32%;
     cursor: pointer;
 }
 

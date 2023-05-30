@@ -1,22 +1,45 @@
 body{
 background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-attachment: fixed; /*Resolve o Problema do Background*/
 }
-.container {
-    position: relative;
-    margin-top: 100px;
-    border-radius: 10px;
-    left: 625px;
-    height: 500px;
-    width: 35em;
+.container{
+    display: grid;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    backdrop-filter: blur(30px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px; /* espaço entre as bordas */
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 10px; /* arrendodamento da borda */
+    backdrop-filter: blur(30px);
     overflow: hidden;
     align-items: center;
-        justify-content: center;
-
+    justify-content: center;
 }
+
+h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color:#F0F0F0;
+    position: relative;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: -20px;
+    color: rgb(226, 223, 223);
+    position: relative;
+}
+
 .container span:first-of-type{
     position: absolute;
     top: 0;
@@ -98,23 +121,6 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     }
 }
 
-#TLogin {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    color:#F0F0F0;
-    position: relative;
-    left: 3.5em;
-}
-
-#SLogin {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    margin-top: -20px;
-    color: rgb(226, 223, 223);
-    position: relative;
-    left: 13em;
-
-}
 .form__group {
     position: relative;
     padding:50 0 0;
@@ -192,7 +198,6 @@ background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);background-atta
     margin-top: 30px;
     font-size: 18px;
     color: #F0F0F0;
-    left: 7.5em;
     margin-top: 4em;
 }
 
