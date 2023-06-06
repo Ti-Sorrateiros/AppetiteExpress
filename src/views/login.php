@@ -3,7 +3,7 @@ include('../../database/conn.php')
     ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,7 @@ include('../../database/conn.php')
     <link rel="stylesheet" href="../styles/centralize.css">
     <link rel="stylesheet" href="../styles/Lvalidation.css">
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <title>Login</title>
 </head>

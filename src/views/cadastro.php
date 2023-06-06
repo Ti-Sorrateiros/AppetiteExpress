@@ -11,6 +11,7 @@ include('../../database/conn.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/Lvalidation.css">
     <link rel="stylesheet" href="../styles/cadastro.css">
+    <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <title>Cadastro</title>
 </head>
