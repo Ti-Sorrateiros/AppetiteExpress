@@ -1,0 +1,83 @@
+dialog::backdrop {
+    background-color: rgb(0, 0, 0,  .5);
+}
+
+dialog {
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 100%;
+    margin-top: 40em;
+    height: auto;
+    position: fixed;
+    overflow: unset;
+    max-width: 760px;
+    padding: 18px 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: all 0.5s ease 0s;
+    background-color: rgb(255, 255, 255);
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+#sub-dialog {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+    margin-top: -3px;
+}
+
+.ButtonE {
+    position: relative;
+    width: 95%;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #ea1d2c;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    background-color: #ea1d2c;
+    color: rgb(255, 255, 255) !important;
+    margin-top: 10px;
+    left: 1em;
+}
+
+.ButtonS {
+    position: relative;
+    width: 95%;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #ea1d2c;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    background: transparent;
+    color: rgb(0, 0, 0) !important;
+    margin-top: 5px;
+    left: 1em;
+}
+.ButtonE:hover{
+    background: #c32129;
+}
+
+.ButtonS:hover {
+    background: #ffe3e3;
+}
+

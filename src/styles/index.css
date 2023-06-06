@@ -71,7 +71,7 @@ body {
     margin: 0 20px;
 }
 
-.content button {
+.content .btn_cardapio{
     width: 100vh;
     background: #ea1d2c;
     color: #fff;
@@ -81,6 +81,6 @@ body {
     height: 3em;
 }
 
-.content button:hover {
+.content .btn_cardapio:hover {
     background: #c2121f;
 }
