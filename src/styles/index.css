@@ -84,3 +84,48 @@ body {
 .content .btn_cardapio:hover {
     background: #c2121f;
 }
+
+@media screen and (max-width: 1236px) {
+    .container{
+        position: fixed;
+        width: 100%;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 768px){
+    .content {
+            width: 100%;
+            flex-direction: column;
+        }
+    
+        .content h2 {
+            position: fixed;
+            width: 100%;
+            flex-direction: column;
+            font-size: 35px;
+            left: 2em;
+        }
+    
+        .content .btn_cardapio {
+            text-align: center;
+            left: 10em;
+        }
+    
+        .content p {
+            margin-top: 5em;
+        }
+    
+        .hero {
+            position: fixed;
+            width: 100%;
+            flex-direction: column;
+        }
+    
+        .footer {
+            position: fixed;
+            width: 100%;
+            flex-direction: column;
+            margin-top: 50em;
+        }
+}
+
