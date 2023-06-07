@@ -13,9 +13,9 @@ nav.menu-lateral{
     height: 100%;
     background-color: #202020;
     padding: 40px 0 40px 5px;
-    box-shadow: 3px 0 0 #707070;
+    box-shadow: 3px 0 0 #8c060f;
 
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -34,9 +34,11 @@ nav.menu-lateral.expandir:hover{
     margin-bottom: 25px;
 }
 .btn-expandir > i{
+    position: relative;
     color: aliceblue;
     font-size: 24px;
     cursor: pointer;
+    left: 0.3em;
 }
 ul{
     height: 100%;
@@ -46,10 +48,10 @@ ul li.item-menu{
     transition: .2s;
 }
 ul li.ativo{
-    background-color: #312929;
+    background-color: #8c060f;
 }
 ul li.item-menu:hover{
-    background: #312929;
+    background: #8c060f;
 }
 ul li.item-menu a{
     color: rgb(255, 255, 255);
@@ -67,4 +69,7 @@ ul li.item-menu a .icon > i{
     font-size: 25px;
     margin-left: 10px;
 }
-
+ul li.item-menu a .icon{
+    position: relative;
+    left: 0.3em;
+}
