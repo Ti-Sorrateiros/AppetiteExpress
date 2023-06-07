@@ -15,12 +15,12 @@ dialog {
     padding: 18px 0px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    transition: all 0.5s ease 0s;
     background-color: rgb(255, 255, 255);
     bottom: 0px;
     align-items: center;
     justify-content: center;
 }
+
 
 #sub-dialog {
     margin-bottom: 12px;
