@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(180deg, #2E2B2B 0%, #000000 155.64%);
+    background-color: #f5f3f4;
     background-attachment: fixed;
     /*Resolve o Problema do Background*/
 }
@@ -29,7 +29,7 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, transparent, #6C63FF);
+    background: linear-gradient(to right, transparent, #ea1d2c);
     animation: animation1 2s linear infinite;
 }
 
@@ -49,7 +49,7 @@ body {
     right: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #5851e2);
+    background: linear-gradient(to bottom, transparent, #ea1d2c);
     animation: animation2 2s linear infinite;
     animation-delay: 1s;
 }
@@ -70,7 +70,7 @@ body {
     right: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to left, transparent, #544ddd);
+    background: linear-gradient(to left, transparent, #ea1d2c);
     animation: animation3 2s linear infinite;
 }
 
@@ -90,7 +90,7 @@ body {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to top, transparent, #6C63FF);
+    background: linear-gradient(to top, transparent, #ea1d2c);
     animation: animation4 2s linear infinite;
     animation-delay: 1s;
 }
@@ -108,7 +108,7 @@ body {
 #TCadastro {
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
-    color: #F0F0F0;
+    color: #2a2828;
     position: relative;
     left: 3.5em;
 }
@@ -117,7 +117,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     margin-top: -20px;
-    color: rgb(226, 223, 223);
+    color: #2a2828;
     position: relative;
     left: 13em;
 
@@ -130,6 +130,10 @@ body {
     width: 100%;
     max-width: 180px;
     margin-top: 3em;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .form__field {
@@ -200,7 +204,7 @@ body {
     position: relative;
     margin-top: 30px;
     font-size: 18px;
-    color: #F0F0F0;
+    color: #2b2929;
     left: 10.5em;
     margin-top: 1.5em;
 }
@@ -222,3 +226,11 @@ body {
         position: relative;
         margin-top: -0.5em;
     }
+
+input ,label{
+    position: relative;
+    left: 5em;
+    display: grid;
+    line-height: 15px;
+    
+}

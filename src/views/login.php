@@ -32,9 +32,7 @@ include('../../database/conn.php')
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
 
-                <label>Senha
-              
-                </label>
+                <label>Senha</label>
                 <input type="password" id="password" name="password" />
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
@@ -45,7 +43,7 @@ include('../../database/conn.php')
 
             <button type="submit" onclick="" name="loginUser" class="center">ENTRAR</button>
 
-            <p id="Cadastrar-se" class="center">Ainda não é cadastrado? <a href="cadastro" style="color:#a29df3;">Cadastre-se</a></p>
+            <p id="Cadastrar-se" class="center">Ainda não é cadastrado? <a href="cadastro" style="color:#ea1d2c;">Cadastre-se</a></p>
 
         </form>
 

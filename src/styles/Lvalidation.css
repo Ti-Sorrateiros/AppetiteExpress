@@ -34,7 +34,7 @@ input {
     margin-top: 5px;
     width: 30em;
     padding: 15px;
-    position: relative;
+    position: relative;    
     
 }
 
@@ -93,7 +93,7 @@ input {
 }
 
 form button {
-    background-color: #6C63FF;
+    background-color: #ea1d2c;
     border-radius: 5px;
     color: #fff;
     padding: 15px;
@@ -107,6 +107,6 @@ form button {
 }
 
 form button:hover {
-    background-color: #484494;
+    background-color: #ea1d2c;
     transition: 0.3s;
 }

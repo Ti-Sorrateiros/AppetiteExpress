@@ -9,6 +9,7 @@ include('../../database/conn.php')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/centralize.css">
     <link rel="stylesheet" href="../styles/Lvalidation.css">
     <link rel="stylesheet" href="../styles/cadastro.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
@@ -54,7 +55,7 @@ include('../../database/conn.php')
 
 
              <div class="form-control">
-                <label id="TEndereco">Endereço</label>
+                <label>Endereço</label>
                 <input type="text" id="Endereco" name="endereco">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
@@ -65,7 +66,7 @@ include('../../database/conn.php')
             </div>
 
             <div class="form-control">
-                <label id="Tsenha">Senha</label>
+                <label>Senha</label>
                 <input type="password" id="password" name="password" />
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
