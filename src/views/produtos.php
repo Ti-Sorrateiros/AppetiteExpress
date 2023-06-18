@@ -58,11 +58,45 @@
 
 
     <div class="content">
-        <h1>Produtos</h1>
-        <p>Escolha seus produtos</p>
-        <br>
         <div>
-            <?php
+            <h1>Faça aqui o seu Pedido</h1>
+        </div>
+
+        <h3 class="Sub-prod">Escolha seu Alimento</h3>
+        <div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
+            <img src="../images/products/Hamcheddar.jpg" alt="">
+            <h4>Hamburguer de Chedder</h4>
+            <p>Pao,Carne Caseira,Chedder,Bacon</p>
+            <p><strong>R$ 20,00</strong></p>
+        </div>
+
+        <div id="selecionarProd1" class="Prod1" onclick="escolherProduto2()">
+           <img src="../images/products/Hamcheddar.jpg" alt="">
+            <h4>Hamburguer de Chedder</h4>
+            <p>Pao,Carne Caseira,Chedder,Bacon</p>
+            <p><strong>R$ 20,00</strong></p>
+        </div>
+
+        <h3 class="Sub-prod">Escolha sua Bebida</h3>
+        <div id="selecionarBebi" class="Prod1" onclick="escolherBebida1()">
+            <img src="../images/products/cocacola.png" alt="">
+            <h4>Coca-Cola</h4>
+            <p>zero,latinha,2 litros,3 litros</p>
+            <p><strong>R$ 20,00</strong></p>
+        </div>
+
+        <div id="selecionarBebi1" class="Prod1" onclick="escolherBebida2()">
+           <img src="../images/products/cocacola.png" alt="">
+            <h4>Hamburguer de Chedder</h4>
+            <p>Pao,Carne Caseira,Chedder,Bacon</p>
+            <p><strong>R$ 20,00</strong></p>
+        </div>
+        <div class="botaoFinalizar" onclick="finalizarPedido()">
+            Finalizar Pedido
+        </div>
+
+
+         <!--<?php
             $items = array
             (
                 ['imagem' => '../images/products/hamburguer.jpg', 'preco' => '200'],
@@ -72,7 +106,6 @@
 
             foreach ($items as $key => $value) {
                 ?>
-                <!-- produto -->
                 <div class="produto">
                     <img src="<?php echo $value['imagem'] ?>">
                     <a href="?adicionar=<?php echo $key ?>">Adicionar ao carrinho!</a>
@@ -84,7 +117,6 @@
             <div></div>
             <?php
             if (isset($_GET['adicionar'])) {
-                //vamos adicionar ao carrinho.
                 $idProduto = (int) $_GET['adicionar'];
                 if (isset($items[$idProduto])) {
                     if (isset($_SESSION[$idProduto])) {
@@ -97,28 +129,15 @@
                     die('Você não pode adicionar um item que não existe.');
                 }
             }
-            ?>
+            ?>-->
         </div>
-        <br>
-        <hr>  
-        <br>
-        <div>
-            <h2>Combos</h2>
-            <br>
-            <h3>Pizza + Refri de 1,5L + batata = R$30,00 </h3>
-        </div>
-        <br>
-        <hr>
-        <div>
-            <h2>Descontos do Dia</h2>
-            <br>
-            <h3>Pizza com 30% de descontos </h3>
-        </div>
-    </div>
+
 
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../js/pedido.js" type="text/javascript"></script>
+
 </body>
 
 </html>
