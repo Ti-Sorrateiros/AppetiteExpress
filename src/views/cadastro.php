@@ -64,7 +64,7 @@ include('../../database/conn.php')
                 
             <button type="submit" onclick="" name="createUser">CADASTRAR</button>
            
-            <p id="Cadastrar-se">Já possui Login? <a href="login.php" style="color:#a29df3;">Entrar</a></p>
+            <p class="center">Já possui Login? <a href="login.php" style="color:#a29df3;">Entrar</a></p>
 
         </form>
         
