@@ -59,7 +59,7 @@
 
     <div class="content">
         <div>
-            <h1>Faça aqui o seu Pedido</h1>
+            <h1 id="Title">Faça aqui o seu Pedido</h1>
         </div>
 
         <h3 class="Sub-prod">Escolha seu Alimento</h3>
@@ -67,14 +67,14 @@
             <img src="../images/products/Hamcheddar.jpg" alt="">
             <h4>Hamburguer de Chedder</h4>
             <p>Pao,Carne Caseira,Chedder,Bacon</p>
-            <p><strong>R$ 20,00</strong></p>
+            <p id="preco"><strong>R$ 20,00</strong></p>
         </div>
 
         <div id="selecionarProd1" class="Prod1" onclick="escolherProduto2()">
-           <img src="../images/products/Hamcheddar.jpg" alt="">
-            <h4>Hamburguer de Chedder</h4>
-            <p>Pao,Carne Caseira,Chedder,Bacon</p>
-            <p><strong>R$ 20,00</strong></p>
+           <img src="../images/products/pizza.jpg" alt="">
+            <h4>Pizza GG</h4>
+            <p>Frango com catupiry</p>
+            <p id="preco"><strong>R$ 45,00</strong></p>
         </div>
 
         <h3 class="Sub-prod">Escolha sua Bebida</h3>
@@ -82,14 +82,14 @@
             <img src="../images/products/cocacola.png" alt="">
             <h4>Coca-Cola</h4>
             <p>zero,latinha,2 litros,3 litros</p>
-            <p><strong>R$ 20,00</strong></p>
+            <p id="preco"><strong>R$ 10,00</strong></p>
         </div>
 
         <div id="selecionarBebi1" class="Prod1" onclick="escolherBebida2()">
            <img src="../images/products/cocacola.png" alt="">
-            <h4>Hamburguer de Chedder</h4>
-            <p>Pao,Carne Caseira,Chedder,Bacon</p>
-            <p><strong>R$ 20,00</strong></p>
+            <h4>Sprite</h4>
+            <p>zero,latinha,2 litros,3 litros</p>
+            <p id="preco"><strong>R$ 10,00</strong></p>
         </div>
         <div class="botaoFinalizar" onclick="finalizarPedido()">
             Finalizar Pedido

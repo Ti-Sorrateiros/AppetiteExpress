@@ -1,7 +1,16 @@
 /* arquivo para separar o conteudo da pagina da lista lateral */
 body{
   background-color: lightgray;
+  overflow-x: hidden;
 }
+::-webkit-scrollbar{
+  width: 9px;
+
+}
+::-webkit-scrollbar-thumb{
+  background-color: #8c060f;
+}
+
 
 .content {
   display: block;
@@ -22,6 +31,7 @@ body{
   margin: 0;
   font-size: 20px;
   margin-bottom: 5px;
+  font-family: Manrope, sans-serif;
 }
 .Prod1 img{
   width: 75px;
@@ -33,7 +43,8 @@ body{
   margin-bottom: 5px;
 }
 .botaoFinalizar{
-  background-color: #0b940b;
+  position: relative;
+  background-color: #8c060f;
   text-align: center;
   padding: 15px;
   margin-top: 30px;
@@ -42,4 +53,19 @@ body{
   color: white;
   font-size: 18px;
   cursor: pointer;
+  width: 80%;
+  left: 20vh;
+
+}
+#Title{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  display: flex;
+  font-family: Manrope, sans-serif;
+}
+#preco{
+  margin: 2px;
 }
