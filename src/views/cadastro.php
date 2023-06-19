@@ -20,8 +20,8 @@ include('../../database/conn.php')
 <body>
     <div class="container">
 
-        <h1 id="TCadastro">Relizar Cadastro</h1>
-        <h3 id="SCadastro">Informe um login válido</h3>
+        <h1 class="center">Realizar Cadastro</h1>
+        <h3 class="center">Informe um login válido</h3>
         <form method="post" action="../controllers/user/userController.php" >
             
         <div class="form-control">
@@ -31,11 +31,7 @@ include('../../database/conn.php')
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-
-            </div>
-
-        
-        <div class="form-control">
+                
                 <label>Email</label>
                 <input type="email" id="email" name="email">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
@@ -44,28 +40,18 @@ include('../../database/conn.php')
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
 
-            </div>
-
-             <div class="form-control">
                 <label>Telefone</label>
                 <input type="tel" id="Telefone" name="telefone">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
 
-
-             <div class="form-control">
                 <label>Endereço</label>
                 <input type="text" id="Endereco" name="endereco">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
 
-            </div>
-
-            </div>
-
-            <div class="form-control">
                 <label>Senha</label>
                 <input type="password" id="password" name="password" />
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>

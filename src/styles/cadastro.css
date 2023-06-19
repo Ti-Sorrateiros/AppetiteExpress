@@ -4,24 +4,40 @@ body {
     /*Resolve o Problema do Background*/
 }
 
-.container {
-    position: relative;
-    margin-top: 55px;
-    border-radius: 10px;
-    left: 625px;
-    height: 48em;
-    width: 35em;
+.container{
+    display: block;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    backdrop-filter: blur(30px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px; /* espaço entre as bordas */
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 10px; /* arrendodamento da borda */
+    backdrop-filter: blur(30px);
     overflow: hidden;
-
     align-items: center;
     justify-content: center;
-
-
 }
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: #2a2828;
+    position: relative;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: -20px;
+    color: #2a2828;
+    position: relative;
+}
+
+
+
 
 .container span:first-of-type {
     position: absolute;
@@ -105,36 +121,6 @@ body {
     }
 }
 
-#TCadastro {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    color: #2a2828;
-    position: relative;
-    left: 3.5em;
-}
-
-#SCadastro {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    margin-top: -20px;
-    color: #2a2828;
-    position: relative;
-    left: 13em;
-
-}
-
-
-.form__group {
-    position: relative;
-    padding: 50 0 0;
-    width: 100%;
-    max-width: 180px;
-    margin-top: 3em;
-
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
 
 .form__field {
     position: relative;
@@ -148,7 +134,7 @@ body {
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
-    left: -7em;
+    
 }
 
 .form__field::placeholder {
@@ -161,16 +147,7 @@ body {
     top: 20px;
 }
 
-.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 17px;
-    color: #73BB18;
-    pointer-events: none;
-    left: -6em;
-}
+
 
 .form__field:focus {
     padding-bottom: 6px;
@@ -190,47 +167,16 @@ body {
     font-weight: 700;
 }
 
-/* reset input */
-.form__field:required,
-.form__field:invalid {
-    box-shadow: none;
-}
 
-.Senha {
-    margin-top: 2em;
-}
 
-#Cadastrar-se {
-    position: relative;
-    margin-top: 30px;
-    font-size: 18px;
-    color: #2b2929;
-    left: 10.5em;
-    margin-top: 1.5em;
-}
-#Endereco{
-    position: relative;
-    margin-top: 0em;
-}
 
-#TEndereco {
-    position: relative;
-    margin-top: 2em;
-}
 
-#Tsenha{
-    position: relative;
-    margin-top: -2em;
-}
-#password{
-        position: relative;
-        margin-top: -0.5em;
-    }
 
-input ,label{
-    position: relative;
-    left: 5em;
-    display: grid;
-    line-height: 15px;
-    
-}
+
+
+
+
+
+
+
+
