@@ -4,45 +4,180 @@ body {
     /*Resolve o Problema do Background*/
 }
 
-.container{
-    display: block;
-    background: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 50px; /* espaço entre as bordas */
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 10px; /* arrendodamento da borda */
-    backdrop-filter: blur(30px);
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
+input {
+    border: 2px solid #3E445B;
+    border-radius: 7px;
+    outline: 0;
+    display: flex;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 30em;
+    padding: 15px;
+    position: relative;    
+    
 }
 
-h1 {
-    display: fixed;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    color:#000000;
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #b9b9b9;
     position: relative;
-}
+    margin-top: 5px;
+}  
 
-h3{
-    font-family: 'Poppins', sans-serif;
+button {
+    background-color: #ea1d2c;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px;
     font-size: 15px;
-    margin-top: -20px;
-    color: #2a2828;
+    font-weight: 600;
+    width: 10em;
     position: relative;
+    margin-top: 5px;
+    left: 32%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ea1d2c;
+    transition: 0.3s;
+}
+
+/* Desktop */
+@media screen and (min-width: 750px) {
+	.container{
+        display: block;
+        background: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5px 50px; /* espaço entre as bordas */
+        margin-top: 100px ; /* espaço do container*/
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 10px; /* arrendodamento da borda */
+        backdrop-filter: blur(30px);
+        overflow: hidden;
+        justify-content: center;
+    }
+    
+    h1 {
+        display: fixed;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        color:#000000;
+        position: relative;
+    }
+    
+    h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        margin-top: -20px;
+        color: #2a2828;
+        position: relative;
+    }  
+}
+
+/* tablet */
+@media screen and (min-width: 531px) and (max-width: 749px) {
+	.container{
+        display: block;
+        background: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2px 50px; /* espaço entre as bordas */
+        margin-top: 100px ; /* espaço do container*/
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 10px; /* arrendodamento da borda */
+        backdrop-filter: blur(30px);
+        overflow: hidden;
+        justify-content: center;
+    }
+    
+    h1 {
+        display: fixed;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        color:#000000;
+        position: relative;
+    }
+    
+    h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        margin-top: -20px;
+        color: #2a2828;
+        position: relative;
+    }
 }
 
 
+/* mobile */
+@media screen and (min-width: 300px) and (max-width: 530px) {
+	.container{
+        display: block;
+        background: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2px 50px; /* espaço entre as bordas */
+        margin-top: 100px ; /* espaço do container*/
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 10px; /* arrendodamento da borda */
+        backdrop-filter: blur(30px);
+        overflow: hidden;
+        justify-content: center;
+    }
+    
+    h1 {
+        display: fixed;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        color:#000000;
+        position: relative;
+    }
+    
+    h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        margin-top: -20px;
+        color: #2a2828;
+        position: relative;
+    }
+
+    input {
+        border: 2px solid #3E445B;
+        border-radius: 7px;
+        outline: 0;
+        display: flex;
+        font-size: 14px;
+        margin-top: 5px;
+        width: 20em;
+        padding: 15px;
+        position: relative;    
+        
+    }
+    
+}
 
 
+/* Moviment Border */
 .container span:first-of-type {
     position: absolute;
     top: 0;
