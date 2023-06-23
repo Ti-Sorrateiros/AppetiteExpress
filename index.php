@@ -25,7 +25,7 @@
 						<dialog>
 							<h2 id="sub-dialog">Como deseja continuar?</h2>
 							<a href="src/views/cadastro.php"><button class="ButtonE">Entrar ou Cadastrar</button></a>
-							<button class="ButtonS">Continuar sem Login</button>
+							<a href="src/views/semLogin.php"><button class="ButtonS">Continuar sem Login</button></a>
 						</dialog>
 					</div>
 				</div>
