@@ -57,6 +57,12 @@ include('../../database/conn.php')
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
+
+                <label>Confirmar Senha</label>
+                <input type="password" id="password" name="password" />
+                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
+                <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
 
@@ -66,11 +72,6 @@ include('../../database/conn.php')
 
             </form>
         </div>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
     </div>
 
     <script src="../js/Lvalidation.js"></script>

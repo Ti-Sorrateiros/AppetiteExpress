@@ -46,13 +46,7 @@ include('../../database/conn.php')
             <p id="Cadastrar-se" class="center">Ainda não é cadastrado? <a href="cadastro" style="color:#ea1d2c;">Cadastre-se</a></p>
 
         </form>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
     </div>
-
     <script src="../js/Lvalidation.js"></script>
 
 </body>
