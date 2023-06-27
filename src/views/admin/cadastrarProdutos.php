@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../styles/menu.css">
     <link rel="stylesheet" href="../../styles/GoogleFonts/GoogleFonts.css">
     <link rel="stylesheet" href="../../styles/content.css">
+    <link rel="stylesheet" href="../../styles/cadastroProdutos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Cadastrar Produtos</title>
 </head>
@@ -46,15 +47,17 @@
     </nav>
 
     <div class="content">
-        <div>
-            <h1>Cadastro</h1>
+        <h1>Cadastro</h1>
+        <div class="container">
+            <form action="../../controller/controllercadastro.php" method="post">
+                <label>Descrição <input type="text" name="descricao" required></label>
+                <label>Produtos<input type="text" name="descricao" required></label>
+                <label>Preço <input type="text" name="preco" required></label>
+                <label>Adicionais <input type="text" required></label>
+                <label>Imagem <input type="file" required></label>
+                <button type="submit">Cadastrar</button>
+            </form>
         </div>
-        <form action="../../controller/controllercadastro.php" method="post">
-            <label>Descrição</label> <input type="text" name="descricao" required>
-            <label>Preço</label><input type="text" name="preco" required>
-            <button type="submit">Cadastrar</button>
-        </form>
-    </div>
     </div>
 
 
