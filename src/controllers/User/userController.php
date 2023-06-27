@@ -78,38 +78,54 @@ function loginUser($user)
     $result = $conn->prepare($queryUser);
     $result->execute();
     $row = $result->rowCount();
+
+    //autenticacao de senha com hash
     $data = $result->fetch();
     $hash = $data['senha'];
     $check = password_verify($senha, $hash);
     
-    if ($row > 0 && $check) {  
-        $token = uniqid() . '_' . $data['id'] . '_' . $data['id_perfil'];
-        $_SESSION["token"] = $token;
-        $_SESSION["id"] = $data['id'];
-        $_SESSION["id_perfil"] = $data["id_perfil"];
-
-        if ($_SESSION["id_perfil"] == 1) {
-            setcookie('login', $email);
-
-            //Removi os alerts de logado com sucesso pois acho mais fluido
-            //Acredito que Seja melhor um pop up já na pagina que redirecionar caso logue
-            echo "<script>
-                
-                 window.location.href='../../views/admin/cadastrarProdutos.php';
-                 </script>";
-        } else {
+    if ($row > 0) {  
             setcookie('login', $email);
             echo "<script>
             
                 window.location.href='../../views/produtos.php';
                 </script>";
-        }
     } else {
         echo "<script>
          alert('Login e/ou senha incorretos');
          window.location.href='../../views/login.php';
          </script>";
     }
+    
+    //sistema com a validacao da senha:
+    /* if ($row > 0 && $check) {  
+    //     $token = uniqid() . '_' . $data['id'] . '_' . $data['id_perfil'];
+    //     $_SESSION["token"] = $token;
+    //     $_SESSION["id"] = $data['id'];
+    //     $_SESSION["id_perfil"] = $data["id_perfil"];
+
+    //     if ($_SESSION["id_perfil"] == 1) {
+    //         setcookie('login', $email);
+
+    //         //Removi os alerts de logado com sucesso pois acho mais fluido
+    //         //Acredito que Seja melhor um pop up já na pagina que redirecionar caso logue
+    //         echo "<script>
+                
+    //              window.location.href='../../views/admin/cadastrarProdutos.php';
+    //              </script>";
+    //     } else {
+    //         setcookie('login', $email);
+    //         echo "<script>
+            
+    //             window.location.href='../../views/produtos.php';
+    //             </script>";
+    //     }
+    // } else {
+    //     echo "<script>
+    //      alert('Login e/ou senha incorretos');
+    //      window.location.href='../../views/login.php';
+    //      </script>";
+     } */
 }
 
 function delete($id){
