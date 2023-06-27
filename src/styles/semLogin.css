@@ -1,0 +1,38 @@
+body {
+    background-color: lightgray;
+    overflow-x: hidden;
+
+    align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8c060f;
+}
+.botaoFinalizar {
+    position: relative;
+    background-color: #8c060f;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    width: 50%;
+
+}
+.content h1{
+    position: relative;
+    font-size: 50px;
+}

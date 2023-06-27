@@ -1,6 +1,6 @@
 <?php
 include('../../database/conn.php')
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,16 +22,16 @@ include('../../database/conn.php')
 
         <h1 class="center">Realizar Cadastro</h1>
         <h3 class="center">Informe um login válido</h3>
-        <form method="post" action="../controllers/user/userController.php" >
-            
+
         <div class="form-control">
+            <form method="post" action="../controllers/user/userController.php">
                 <label>Nome</label>
                 <input type="text" id="nome" name="nome">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-                
+
                 <label>Email</label>
                 <input type="email" id="email" name="email">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
@@ -60,18 +60,17 @@ include('../../database/conn.php')
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
                 <small id="msg-alert">Login não Encontrado</small>
 
-            </div>
-                
-            <button type="submit" onclick="" name="createUser">CADASTRAR</button>
-           
-            <p class="center">Já possui Login? <a href="login.php" style="color:#a29df3;">Entrar</a></p>
+                <button type="submit" onclick="" name="createUser">CADASTRAR</button>
 
-        </form>
-        
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+                <p class="center">Já possui Login? <a href="login.php" style="color:#a29df3;">Entrar</a></p>
+
+            </form>
+        </div>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
     <script src="../js/Lvalidation.js"></script>
