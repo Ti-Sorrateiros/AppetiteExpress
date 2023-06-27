@@ -26,8 +26,6 @@ label {
 } 
 
 button {
-    display: fixed;
-    margin-top: 10px;
     background-color: #ea1d2c;
     border-radius: 5px;
     color: #fff;
@@ -37,7 +35,9 @@ button {
     width: 10em;
     position: relative;
     margin-top: 5px;
+    left: 32%;
     cursor: pointer;
+    margin-top: 50px;
 }
 
 button:hover {
@@ -63,6 +63,7 @@ button:hover {
         backdrop-filter: blur(30px);
         overflow: hidden;
         justify-content: center;
+        margin-top: -65px;
     }
     
     h1 {
@@ -74,6 +75,7 @@ button:hover {
         font-size: 40px;
         color:#000000;
         position: relative;
+        margin-top: 15px;
     }
     
     h3{

@@ -47,8 +47,9 @@
     </nav>
 
     <div class="content">
-        <h1>Cadastro</h1>
+        
         <div class="container">
+        <h1>Cadastrar Produtos</h1>
             <form action="../../controller/controllercadastro.php" method="post">
                 <label>Descrição <input type="text" name="descricao" required></label>
                 <label>Produtos<input type="text" name="descricao" required></label>
