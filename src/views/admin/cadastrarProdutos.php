@@ -59,7 +59,21 @@
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
+
+
+
+        <div class="desconto">
+        <h1>Inserir Desconto</h1>
+            <form action="../../controller/controllercadastro.php" method="post">
+                <label>ID do Produto <input type="text" name="descricao" required></label>
+                <label>Desconto<input type="text" name="descricao" required></label>
+                <button type="submit">INSERIR DESCONTO</button>
+            </form>
+        </div>
     </div>
+
+
+
 
 
     <script src="../../js/menu.js" type="text/javascript"></script>
