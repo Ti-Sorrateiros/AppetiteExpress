@@ -1,21 +1,18 @@
 <?php
 include('../../../database/conn.php');
 
-
 //variavel que pega os dados de todos os campos do formulario
 $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
 
 //se o input com name create User for acionado criar usuario no banco
 if (isset($user['createUser'])) {
     createUser($user);
-}
-if (isset($user['loginUser'])) {
+} else if (isset($user['loginUser'])) {
     loginUser($user);
-}
-
-if(isset($_GET['id'])){
+} else if(isset($_GET['id'])){
     $id = $_GET['id'];
-    delete($id);
+    deleteUser($id);
 }
 
 
@@ -71,21 +68,18 @@ function loginUser($user)
     global $conn;
     session_start();
     
-    $senha = $_POST['password'];
-    $email = $_POST['email'];
-
-    $queryUser = "SELECT * FROM usuarios WHERE (email='" . $email . "');";
+    $queryUser = "SELECT * FROM usuarios WHERE (email='" . $user['email'] . "');";
     $result = $conn->prepare($queryUser);
     $result->execute();
     $row = $result->rowCount();
 
     //autenticacao de senha com hash
-    $data = $result->fetch();
-    $hash = $data['senha'];
-    $check = password_verify($senha, $hash);
+    // $data = $result->fetch();
+    // $hash = $data['senha'];
+    // $check = password_verify($user['senha'], $hash);
     
     if ($row > 0) {  
-            setcookie('login', $email);
+            setcookie('login', $user['email']);
             echo "<script>
             
                 window.location.href='../../views/produtos.php';
@@ -128,14 +122,13 @@ function loginUser($user)
      } */
 }
 
-function delete($id){
+function deleteUser($id){
     global $conn;
     
-
-    if($id == true){
+    if(isset($id)){
     $deleteUser = $conn->prepare('DELETE FROM usuarios WHERE id= :id');
-    $deleteUser->execute(array(':id' => $id));
- 
+    $deleteUser->execute(array(':id' => $id ));
+
     echo "<script>
     alert('Usuário Deletado!');
     window.location.href='../../views/admin/usuarios.php';
@@ -148,4 +141,26 @@ function delete($id){
     </script>";
     }
 }
+
+// function updateUser($id){
+//     global $conn;
+    
+//     if(isset($id)){
+//     $deleteUser = $conn->prepare('UPDATE usuarios SET  WHERE id= :id');
+//     $deleteUser->execute(array(':id' => $id ));
+ 
+//     echo "<script>
+//     alert('Usuário Deletado!');
+//     window.location.href='../../views/admin/usuarios.php';
+//     </script>";
+//     }
+//     else{
+//         echo "<script>
+//     alert('Erro ao Deletar');
+//     window.location.href='../../views/admin/usuarios.php';
+//     </script>";
+//     }
+// }
+
+
 ?>
