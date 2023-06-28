@@ -1,0 +1,27 @@
+.qt-carrinho{
+    position: relative;
+    background: aliceblue;
+    display: inline-flex;
+    padding: 0 0;
+    justify-content: space-around;
+    min-width: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 30px;
+    border: 1px solid #8c060f;
+
+    #btn-qty {
+        display: flex;
+            background: transparent;
+            border: 0;
+            padding: 2px 10px;
+            font-size: 20px;
+            
+            &:hover{
+                background: #ddd;
+            }
+        }
+        #qty-number{
+            margin: 4px 10px;
+        }
+}

@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/adicionarCarrinho.scss">
     <title>Produtos</title>
 </head>
 
@@ -63,6 +64,11 @@
             <h4>Hamburguer de Chedder</h4>
             <p>Pao,Carne Caseira,Chedder,Bacon</p>
             <p id="preco"><strong>R$ 20,00</strong></p>
+             <div class="qt-carrinho">
+                        <button id="btn-qty">-</i></button>
+                        <span id="qty-number">1</span>
+                        <button id="btn-qty">+</i></button>
+                    </div>
         </div>
 
         <div id="selecionarProd1" class="Prod1" onclick="escolherProduto2()">
@@ -70,6 +76,11 @@
             <h4>Pizza GG</h4>
             <p>Frango com catupiry</p>
             <p id="preco"><strong>R$ 45,00</strong></p>
+             <div class="qt-carrinho">
+                        <button id="btn-qty">-</i></button>
+                        <span id="qty-number">1</span>
+                        <button id="btn-qty">+</i></button>
+                    </div>
         </div>
 
         <h3 class="Sub-prod">Escolha sua Bebida</h3>
@@ -78,6 +89,11 @@
             <h4>Coca-Cola</h4>
             <p>zero,latinha,2 litros,3 litros</p>
             <p id="preco"><strong>R$ 10,00</strong></p>
+             <div class="qt-carrinho">
+                        <button id="btn-qty">-</i></button>
+                        <span id="qty-number">1</span>
+                        <button id="btn-qty">+</i></button>
+                    </div>
         </div>
 
         <div id="selecionarBebi1" class="Prod1" onclick="escolherBebida2()">
@@ -85,10 +101,15 @@
             <h4>Sprite</h4>
             <p>zero,latinha,2 litros,3 litros</p>
             <p id="preco"><strong>R$ 10,00</strong></p>
+             <div class="qt-carrinho">
+                        <button id="btn-qty">-</i></button>
+                        <span id="qty-number">1</span>
+                        <button id="btn-qty">+</i></button>
+                    </div>
         </div>
-        <div class="botaoFinalizar" onclick="finalizarPedido()">
+        <!-- <div class="botaoFinalizar" onclick="finalizarPedido()">
             Finalizar Pedido
-        </div>
+        </div> -->
 
 
          <!--<?php
@@ -131,7 +152,7 @@
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
-    <script src="../js/pedido.js" type="text/javascript"></script>
+    <!-- <script src="../js/pedido.js" type="text/javascript"></script> -->
 
 </body>
 
