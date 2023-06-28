@@ -107,9 +107,14 @@
                         <button id="btn-qty">+</i></button>
                     </div>
         </div>
+        <div class="container2">
+            <h1>Valor Estimado</h1>
+            <span>R$ 0,00</span>
+            <button>Adicionar Carrinho</button>
+        </div>
         <!-- <div class="botaoFinalizar" onclick="finalizarPedido()">
             Finalizar Pedido
-        </div> -->
+        </div> 
 
 
          <!--<?php
