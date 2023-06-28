@@ -15,6 +15,32 @@
 </head>
 
 <body>
+    <div class="content">
+        <div class="container">
+            <h1>Cadastrar Produtos</h1>
+            <form action="../../controllers/products/productController.php" method="post">
+                <label>Nome do Produto<input type="text" name="nome" required></label>
+                <label>Descrição <input type="text" name="descricao" required></label>
+                <label>Preço <input type="text" name="preco" required></label>
+                <label>Adicionais <input type="text" name="adicionais" required></label>
+                <!-- <label>Imagem <input type="file" required></label> -->
+                <button type="submit" name="createProduto">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="desconto">
+            <h1>Inserir Desconto</h1>
+            <form action="../../controller/controllercadastro.php" method="post">
+                <label>ID do Produto <input type="text" name="id_product" required></label>
+                <label>Desconto<input type="text" name="desconto" required></label>
+                <button type="submit">INSERIR DESCONTO</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -26,56 +52,27 @@
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link"> CadastrarProdutos</span>
                 </a>
-                </div>
             </li>
             <li class="item-menu">
                 <a href="pedidosFeitos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> PedidosFeitos </span>
+                    <span class="txt-link"> PedidosFeitos</span>
                 </a>
-                </div>
             </li>
             <li class="item-menu">
                 <a href="usuarios">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link"> Usuarios</span>
                 </a>
-                </div>
             </li>
-
+            <li class="item-menu">
+                <a href="verprodutos">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link">VerProdutos</span>
+                </a>
+            </li>
         </ul>
     </nav>
-
-    <div class="content">
-        
-        <div class="container">
-        <h1>Cadastrar Produtos</h1>
-            <form action="../../controller/controllercadastro.php" method="post">
-                <label>Descrição <input type="text" name="descricao" required></label>
-                <label>Produtos<input type="text" name="descricao" required></label>
-                <label>Preço <input type="text" name="preco" required></label>
-                <label>Adicionais <input type="text" required></label>
-                <label>Imagem <input type="file" required></label>
-                <button type="submit">Cadastrar</button>
-            </form>
-        </div>
-
-
-
-        <div class="desconto">
-        <h1>Inserir Desconto</h1>
-            <form action="../../controller/controllercadastro.php" method="post">
-                <label>ID do Produto <input type="text" name="descricao" required></label>
-                <label>Desconto<input type="text" name="descricao" required></label>
-                <button type="submit">INSERIR DESCONTO</button>
-            </form>
-        </div>
-    </div>
-
-
-
-
-
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
 </body>
