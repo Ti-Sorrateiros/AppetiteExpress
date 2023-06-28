@@ -14,6 +14,13 @@
 </head>
 
 <body>
+
+
+    <div class="content">
+        <h1>Pedidos Feitos</h1>
+    </div>
+
+
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -29,7 +36,7 @@
             <li class="item-menu">
                 <a href="pedidosFeitos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> PedidosFeitos </span>
+                    <span class="txt-link"> PedidosFeitos</span>
                 </a>
             </li>
             <li class="item-menu">
@@ -38,13 +45,14 @@
                     <span class="txt-link"> Usuarios</span>
                 </a>
             </li>
-           
+            <li class="item-menu">
+                <a href="verprodutos">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link">VerProdutos</span>
+                </a>
+            </li>
         </ul>
     </nav>
-
-    <div class="content">
-        <h1>Pedidos Feitos</h1>
-    </div>
 
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
