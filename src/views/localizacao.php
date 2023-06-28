@@ -27,12 +27,7 @@
                 </a>
                 </div>
             </li>
-            <li class="item-menu">
-                <a href="descontos">
-                    <span class="icon"><i class="bi bi-tag-fill"></i></span>
-                    <span class="txt-link">Descontos</span>
-                </a>
-            </li>
+           
             <li class="item-menu ativo">
                 <a href="localizacao">
                     <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
