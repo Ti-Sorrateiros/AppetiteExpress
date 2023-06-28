@@ -14,7 +14,6 @@ input {
     width: 30em;
     padding: 15px;
     position: relative;    
-    
 }
 
 label {
@@ -35,7 +34,6 @@ button {
     width: 10em;
     position: relative;
     margin-top: 5px;
-    left: 32%;
     cursor: pointer;
     margin-top: 50px;
 }
@@ -63,7 +61,7 @@ button:hover {
         backdrop-filter: blur(30px);
         overflow: hidden;
         justify-content: center;
-        margin-top: -65px;
+        margin-top: -2%;
         left: 30vw;
 
     }
