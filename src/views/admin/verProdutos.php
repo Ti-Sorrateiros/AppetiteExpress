@@ -18,38 +18,29 @@ $rowTable = $readUser->fetchAll();
     <link rel="stylesheet" href="../../styles/menu.css">
     <link rel="stylesheet" href="../../styles/centralize.css">
     <link rel="stylesheet" href="../../styles/table.css">
+    <link rel="stylesheet" href="../../styles/content.css">
     <title>Usuarios </title>
 </head>
 
 <body>
     <div class="content">
-        <h1 class="center">Produtos</h1>
-        <div class="center">
-            <table>
-                <thead>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Preco</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </thead>
-                <tbody>
+        <h1 class="center">Lista dos Produtos</h1>
                     <?php
                     foreach ($rowTable as $linha) {
-                        echo '<tr>';
-                        echo '<th scope="row">' . $linha['id'] . '</th>';
-                        echo '<td>' . $linha['nome'] . '</td>';
-                        echo '<td>' . $linha['descricao'] . '</td>';
-                        echo '<td>' . $linha['preco'] . '</td>';
-                        echo '<td><a href="./formEdit/editarProduto.php?id=' . $linha['id'] . '"><button class="editar">Editar</button></a></td>';
-                        echo '<td><a href="../../controllers/products/productController.php?id="' . $linha['id'] . '"><button class="excluir">Excluir</button></a></td>';
-                        echo '</tr>';
+                        echo '<div>';
+                        //imagem tem que retirada de um link do banco de dados
+                        echo '<img src="../../controllers/products/arquives/hamburguer.png" width="50px">';
+                        echo '<p><b> ID: </b>' . $linha['id'] . '</p>' ;
+                        echo '<p><b> Produto: </b>' . $linha['nome'] . '</p>';
+                        echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
+                        echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
+                        echo '<a href="./formEdit/editarProduto.php?id=' . $linha['id'] . '"><button class="editar">Editar</button></a>';
+                        echo '<a href="../../controllers/products/productController.php?id="' . $linha['id'] . '"><button class="excluir">Excluir</button></a>';
+                        echo '</div>';
+                        echo '<br>';
+                        echo '<hr>';
                     }
                     ?>
-                </tbody>
-            </table>
-        </div>
     </div>
 
 
