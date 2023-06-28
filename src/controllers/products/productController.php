@@ -7,7 +7,7 @@ if (isset($product['createProduto'])) {
     createProduct($product);
 } else if (isset($product['updateProduct'])) {
     updateProduct($product);
-} else if (isset($_GET['id'])){
+} else if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteProduct($id);
 }
@@ -46,7 +46,7 @@ function updateProduct($product)
     global $conn;
 
     if (isset($product)) {
-        $updateProduto = $conn->prepare("UPDATE produtos SET :nome , :descricao , :preco, :adicionais WHERE id = :id");
+        $updateProduto = $conn->prepare("UPDATE produtos SET nome = :nome , descricao = :descricao , preco = :preco,  adicionais = :adicionais WHERE id = :id");
         $updateProduto->execute(
             array(
                 ':nome' => $product['nome'],
@@ -59,12 +59,12 @@ function updateProduct($product)
 
         echo ("<script>
         alert('Produto Foi Editado com Sucesso');
-        window.location.href='../../views/admin/cadastrarProdutos.php';
+        window.location.href='../../views/admin/verProdutos.php';
        </script>");
     } else {
         echo ("<script>
          alert('ERRO: NAO FOI ATUALIZADO');
-         window.location.href='../../views/admin/cadastrarProdutos.php';
+         window.location.href='../../views/admin/verProdutos.php';
         </script>");
     }
 }
