@@ -33,7 +33,7 @@
                     <span class="txt-link"> CadastrarProdutos</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li class="item-menu ativo">
                 <a href="pedidosFeitos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link"> PedidosFeitos</span>

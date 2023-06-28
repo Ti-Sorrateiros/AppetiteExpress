@@ -47,7 +47,7 @@ $rowTable = $readUser->fetchAll();
                         echo '<td>' . $linha['endereco'] . '</td>';
                         echo '<td>' . $linha['telefone'] . '</td>';
                         echo '<td><a href=""><button class="editar">Editar</button></a></td>';
-                        echo '<td><a href="../../controllers/user/userController.php?id="' . $linha['id'] . '"><button class="excluir">Excluir</button></a></td>';
+                        echo '<td><a href="../../controllers/user/userController.php?id=' . $linha['id'] . '">Excluir</a></td>';
                         echo '</tr>';
                     }
                     ?>
@@ -76,7 +76,7 @@ $rowTable = $readUser->fetchAll();
                     <span class="txt-link"> PedidosFeitos</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li class="item-menu ativo">
                 <a href="usuarios">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link"> Usuarios</span>
