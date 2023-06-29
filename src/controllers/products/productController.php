@@ -17,9 +17,9 @@ function createProduct($product, $imagem)
 {
     global $conn;
 
-    $pasta = "../../../controllers/products/arquives/";
+    $pasta = "arquives/";
     $nomeDaImagem = $imagem['name'];
-    $novoNomeDoArquivo = uniqid();  //definir codificação aleatório para o nome da imagem
+    $novoNomeDoArquivo = uniqid(); //definir codificação aleatório para o nome da imagem
     $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
 
     if ($extensao != "jpg" && $extensao != 'png') {
@@ -27,28 +27,30 @@ function createProduct($product, $imagem)
     }
 
     $pathImagem = $pasta . $novoNomeDoArquivo . "." . $extensao;
-    $imagemEnviada = move_uploaded_file($imagem, $pathImagem);
 
-   
+    $imagemEnviada = move_uploaded_file($imagem['tmp_name'], $pathImagem);
+
+
+    if ($imagemEnviada) {
 
     $cadastrarProduto = $conn->prepare("INSERT INTO produtos (nome, descricao, preco, nome_imagem, path_imagem, adicionais)
-        VALUES (:nome, :descricao, :preco, :nome_imagem, :path_imagem ,:adicionais)");
+    VALUES (:nome, :descricao, :preco, :nome_imagem, :path_imagem ,:adicionais)");
     $cadastrarProduto->execute(
-        array(
-            ':nome' => $product['nome'],
-            ':descricao' => $product['descricao'],
-            ':preco' => $product['preco'],
-            ':adicionais' => $product['adicionais'],
-            ':nome_imagem' => $nomeDaImagem,
-            ':path_imagem' => $pathImagem
-        )
-    );
+            array(
+                ':nome' => $product['nome'],
+                ':descricao' => $product['descricao'],
+                ':preco' => $product['preco'],
+                ':adicionais' => $product['adicionais'],
+                ':nome_imagem' => $nomeDaImagem,
+                ':path_imagem' => $pathImagem
+            )
+        );
 
-    if($imagemEnviada){
-        echo ("<script>
-      
-        window.location.href='../../views/admin/cadastrarProdutos.php';
-       </script>");
+    echo ("<script>
+     alert('Produto e Imagem Enviada');
+     window.location.href='../../views/admin/cadastrarProdutos.php';
+    </script>");
+
     }
 
 
