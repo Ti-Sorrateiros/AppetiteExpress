@@ -33,8 +33,9 @@ $rowTable = $tabela->fetch();
                     value='<?php echo $rowTable['descricao']; ?>' /></label>
             <label>Preço <input type="text" name="preco" value='<?php echo $rowTable['preco']; ?>' /></label>
             <label>Adicionais <input type="text" name="adicionais"
-                    value='<?php echo $rowTable['adicionais']; ?>' /></label>
-            <input id="image" name="imagem" type="file"  accept="image/png, image/jpeg" required>
+                    value='<?php echo $rowTable['adicionais']; ?>' />
+            </label>
+            <input id="image" name="imagem" type="file"  accept="image/png, image/jpeg">
             <div>
                 <img width="250px" height="150px" src="../../../controllers/products/<?php echo $rowTable['path_imagem']; ?>" id="preview-image">
             </div>
