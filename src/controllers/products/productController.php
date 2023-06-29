@@ -3,8 +3,9 @@ include('../../../database/conn.php');
 
 $product = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-if (isset($product['createProduto'])) {
-    createProduct($product);
+if (isset($product['createProduto']) && $_FILES['imagem']) {
+    $imagem = $_FILES['imagem'];
+    createProduct($product, $imagem);
 } else if (isset($product['updateProduct'])) {
     updateProduct($product);
 } else if (isset($_GET['id'])) {
@@ -12,32 +13,77 @@ if (isset($product['createProduto'])) {
     deleteProduct($id);
 }
 
-function createProduct($product)
+function createProduct($product, $imagem)
 {
     global $conn;
 
-    if ($product) {
-        $cadastroProduto = $conn->prepare("INSERT INTO produtos (nome, descricao, preco, adicionais)
-        VALUES (:nome, :descricao, :preco, :adicionais)");
-        $cadastroProduto->execute(
-            array(
-                ':nome' => $product['nome'],
-                ':descricao' => $product['descricao'],
-                ':preco' => $product['preco'],
-                ':adicionais' => $product['adicionais']
-            )
-        );
+    $pasta = "../../../controllers/products/arquives/";
+    $nomeDaImagem = $imagem['name'];
+    $novoNomeDoArquivo = uniqid();  //definir codificação aleatório para o nome da imagem
+    $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
 
-        echo ("<script>
-       alert('Produto Foi Cadastrado com Sucesso');
-       window.location.href='../../views/admin/cadastrarProdutos.php';
-      </script>");
-    } else {
-        echo ("<script>
-         alert('ERRO: Produto NAO FOI CADASTRO');
-         window.location.href='../../views/admin/cadastrarProdutos.php';
-        </script>");
+    if ($extensao != "jpg" && $extensao != 'png') {
+        die("Tipo de arquivo não aceito");
     }
+
+    $pathImagem = $pasta . $novoNomeDoArquivo . "." . $extensao;
+    $imagemEnviada = move_uploaded_file($imagem, $pathImagem);
+
+   
+
+    $cadastrarProduto = $conn->prepare("INSERT INTO produtos (nome, descricao, preco, nome_imagem, path_imagem, adicionais)
+        VALUES (:nome, :descricao, :preco, :nome_imagem, :path_imagem ,:adicionais)");
+    $cadastrarProduto->execute(
+        array(
+            ':nome' => $product['nome'],
+            ':descricao' => $product['descricao'],
+            ':preco' => $product['preco'],
+            ':adicionais' => $product['adicionais'],
+            ':nome_imagem' => $nomeDaImagem,
+            ':path_imagem' => $pathImagem
+        )
+    );
+
+    if($imagemEnviada){
+        echo ("<script>
+      
+        window.location.href='../../views/admin/cadastrarProdutos.php';
+       </script>");
+    }
+
+
+    // echo ("<script>
+    //  alert('ERRO: Produto NAO FOI CADASTRO');
+    //  window.location.href='../../views/admin/cadastrarProdutos.php';
+    // </script>");
+
+
+
+    // if (isset($_FILES['imagem'])) {
+    //     // variavel que da imagem
+    //     $imagem = $_FILES['imagem'];
+
+    //     // 
+    //     $pasta = "../../../controllers/products/arquives/";
+    //     $nomeDaImagem = $imagem['name'];
+    //     //definir codificação aleatório para o nome da imagem
+    //     $novoNomeDoArquivo = uniqid();
+    //     $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
+
+    //     if ($extensao != "jpg" && $extensao != 'png') {
+    //         die("Tipo de arquivo não aceito");
+    //     }
+
+    //     $pathImagem = $pasta . $novoNomeDoArquivo . "." . $extensao;
+    //     $imagemEnviada = move_uploaded_file($imagem['tpm_name'], $pathImagem);
+
+    //     if ($imagemEnviada) {
+    //         $postImagem = $conn->prepare("INSERT INTO produtos (nome_imagem, path_imagem) values ('$nomeDaImagem', '$pathImagem') ") or die('Erro ao enviar imagem');
+    //         echo "<p>Arquivo enviado com sucesso</p>";
+    //     }
+
+
+    // }
 
 }
 
