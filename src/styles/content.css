@@ -69,3 +69,61 @@ body{
 #preco{
   margin: 2px;
 }
+.container2{
+  border: none;
+  border-radius: .5rem;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  margin-top: 40em;
+  height: auto;
+  position: fixed;
+  overflow: unset;
+  max-width: 760px;
+  padding: 18px 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: aliceblue;
+  bottom: 0px;
+  border: 5px solid white;
+
+  align-items: center;
+  justify-content: center;
+  left: 43vw;
+  height: 180px;
+  width: 400px;
+}
+.container2 h1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  margin-top: -10px;
+}
+.container2 button{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  display: flex;
+ 
+
+  background-color: #8c060f;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  left: 80px;
+}
+.container2 span{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  font-size: 30px;
+}
+
