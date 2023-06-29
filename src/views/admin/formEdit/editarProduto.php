@@ -1,7 +1,7 @@
 <?php
 include("../../../../database/conn.php");
 
-if(isset( $_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
 
@@ -26,18 +26,24 @@ $rowTable = $tabela->fetch();
 
 <body>
     <div class="container">
-        <form method="post" action="../../../controllers/products/productController.php">
+        <form method="post" action="../../../controllers/products/productController.php" enctype="multipart/form-data">
             <input type="text" name="id" value='<?php echo $rowTable['id']; ?>' />
             <label>Nome do Produto <input type="text" name="nome" value='<?php echo $rowTable['nome']; ?>' /></label>
-            <label>Descrição <input type="text" name="descricao" value='<?php echo $rowTable['descricao']; ?>' /></label>
+            <label>Descrição <input type="text" name="descricao"
+                    value='<?php echo $rowTable['descricao']; ?>' /></label>
             <label>Preço <input type="text" name="preco" value='<?php echo $rowTable['preco']; ?>' /></label>
-            <label>Adicionais <input type="text" name="adicionais" value='<?php echo $rowTable['adicionais']; ?>' /></label>
-            <!-- <label>Imagem <input type="file" required></label> -->
-
+            <label>Adicionais <input type="text" name="adicionais"
+                    value='<?php echo $rowTable['adicionais']; ?>' /></label>
+            <input id="image" name="imagem" type="file" required>
+            <div>
+                <img width="250px" height="150px" src="../../../controllers/products/<?php echo $rowTable['path_imagem']; ?>" id="preview-image">
+            </div>
+            
             <button type="submit" name="updateProduct">Editar Produto</button>
         </form>
     </div>
     </div>
+    <script src="../../../js/FileRead.js" type="text/javascript"></script>
 </body>
 
 </html>
