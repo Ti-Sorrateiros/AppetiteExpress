@@ -23,20 +23,12 @@
                 <label>Descrição <input type="text" name="descricao" required></label>
                 <label>Preço <input type="text" name="preco" required></label>
                 <label>Adicionais <input type="text" name="adicionais" required></label>
-                <label>Imagem <input name="imagem" type="file" required></label>
+                <label id="text_img">Imagem <input id="image" name="imagem" type="file" required></label>
                 <button type="submit" name="createProduto">Cadastrar</button>
             </form>
         </div>
 
-        <div class="desconto">
-            <h1>Inserir Desconto</h1>
-            <form action="../../controller/controllercadastro.php" method="post">
-                <label>ID do Produto <input type="text" name="id_product" required></label>
-                <label>Desconto<input type="text" name="desconto" required></label>
-                <button type="submit">INSERIR DESCONTO</button>
-            </form>
-        </div>
-    </div>
+      
 
 
 

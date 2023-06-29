@@ -36,6 +36,8 @@ button {
     margin-top: 5px;
     cursor: pointer;
     margin-top: 50px;
+    left: 15vh;
+
 }
 
 button:hover {
@@ -60,31 +62,9 @@ button:hover {
         border-radius: 10px; /* arrendodamento da borda */
         backdrop-filter: blur(30px);
         overflow: hidden;
-        justify-content: center;
         margin-top: -2%;
-        left: 30vw;
-
+        width: 1000px;
     }
-    .desconto{
-        display: grid;
-        background: transparent;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 5px 50px; /* espaço entre as bordas */
-        margin-top: 100px ; /* espaço do container*/
-        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-        border: 2px solid rgba(255, 255, 255, .5);
-        border-radius: 10px; /* arrendodamento da borda */
-        backdrop-filter: blur(30px);
-        overflow: hidden;
-        justify-content: center;
-        margin-top: -65px;
-        left: 65vw;
-        margin-top: -170px;
-    }
-    
     h1 {
         display: fixed;
         flex-direction: row;
@@ -104,4 +84,19 @@ button:hover {
         color: #2a2828;
         position: relative;
     }  
+    #image {
+        position: relative;
+        float: right;
+        margin-top: 5vh;
+        left: -60px;
+        height: 10vw;
+    }
+    #text_img{
+        position: relative;
+            float: right;
+            margin-top: -47.5vh;
+            left: 50px;
+
+
+    }
 }
