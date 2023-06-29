@@ -23,7 +23,8 @@
                 <label>Descrição <input type="text" name="descricao" required></label>
                 <label>Preço <input type="text" name="preco" required></label>
                 <label>Adicionais <input type="text" name="adicionais" required></label>
-                <label id="text_img">Imagem <input id="image" name="imagem" type="file" required></label>
+                <label id="text_img" > Imagem <input id="image" name="imagem" type="file" required></label>
+                <img src="" alt="" width="100px" id="preview-image"> 
                 <button type="submit" name="createProduto">Cadastrar</button>
             </form>
         </div>
@@ -66,6 +67,7 @@
         </ul>
     </nav>
     <script src="../../js/menu.js" type="text/javascript"></script>
+    <script src="../../js/FileRead.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
 </body>
 
