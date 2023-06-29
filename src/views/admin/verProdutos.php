@@ -37,7 +37,7 @@ $rowTable = $readUser->fetchAll();
                         echo '<p><b> Adicionais: </b>' . $linha['adicionais'] . '</h4>';
                         echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
                         echo '<a href="./formEdit/editarProduto.php?id=' . $linha['id'] . '"><button class="editar">Editar</button></a>';
-                        echo '<a href="../../controllers/products/productController.php?id="' . $linha['id'] . '"><button class="excluir">Excluir</button></a>';
+                        echo '<a href="../../controllers/products/productController.php?id=' . $linha['id'] . '"><button class="excluir">Excluir</button></a>';
                         echo '</div>';
                         echo '<br>';
                         echo '<hr>';
