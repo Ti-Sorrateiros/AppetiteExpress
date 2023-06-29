@@ -54,42 +54,12 @@ function createProduct($product, $imagem)
      window.location.href='../../views/admin/cadastrarProdutos.php';
     </script>");
 
+    } else {
+        echo ("<script>
+        alert('Erro ao enviar o produto');
+        window.location.href='../../views/admin/cadastrarProdutos.php';
+       </script>");
     }
-
-
-    // echo ("<script>
-    //  alert('ERRO: Produto NAO FOI CADASTRO');
-    //  window.location.href='../../views/admin/cadastrarProdutos.php';
-    // </script>");
-
-
-
-    // if (isset($_FILES['imagem'])) {
-    //     // variavel que da imagem
-    //     $imagem = $_FILES['imagem'];
-
-    //     // 
-    //     $pasta = "../../../controllers/products/arquives/";
-    //     $nomeDaImagem = $imagem['name'];
-    //     //definir codificação aleatório para o nome da imagem
-    //     $novoNomeDoArquivo = uniqid();
-    //     $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
-
-    //     if ($extensao != "jpg" && $extensao != 'png') {
-    //         die("Tipo de arquivo não aceito");
-    //     }
-
-    //     $pathImagem = $pasta . $novoNomeDoArquivo . "." . $extensao;
-    //     $imagemEnviada = move_uploaded_file($imagem['tpm_name'], $pathImagem);
-
-    //     if ($imagemEnviada) {
-    //         $postImagem = $conn->prepare("INSERT INTO produtos (nome_imagem, path_imagem) values ('$nomeDaImagem', '$pathImagem') ") or die('Erro ao enviar imagem');
-    //         echo "<p>Arquivo enviado com sucesso</p>";
-    //     }
-
-
-    // }
-
 }
 
 function updateProduct($product)
