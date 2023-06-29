@@ -18,12 +18,12 @@
     <div class="content">
         <div class="container">
             <h1>Cadastrar Produtos</h1>
-            <form action="../../controllers/products/productController.php" method="post">
+            <form enctype="multipart/form-data" action="../../controllers/products/productController.php" method="post">
                 <label>Nome do Produto<input type="text" name="nome" required></label>
                 <label>Descrição <input type="text" name="descricao" required></label>
                 <label>Preço <input type="text" name="preco" required></label>
                 <label>Adicionais <input type="text" name="adicionais" required></label>
-                <!-- <label>Imagem <input type="file" required></label> -->
+                <label>Imagem <input name="imagem" type="file" required></label>
                 <button type="submit" name="createProduto">Cadastrar</button>
             </form>
         </div>
