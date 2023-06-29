@@ -23,7 +23,10 @@ function createProduct($product, $imagem)
     $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
 
     if ($extensao != "jpg" && $extensao != 'png') {
-        die("Tipo de arquivo não aceito");
+        die("<div align='center'>
+        <h1>Tipo de arquivo não aceito!! </h1>
+        <p><a href='../../views/admin/cadastrarProdutos.php'>Voltar para o cadastro de produtos</a></p>
+        </div>");
     }
 
     $pathImagem = $pasta . $novoNomeDoArquivo . "." . $extensao;
