@@ -19,6 +19,7 @@ $rowTable = $readUser->fetchAll();
     <link rel="stylesheet" href="../../styles/centralize.css">
     <link rel="stylesheet" href="../../styles/table.css">
     <link rel="stylesheet" href="../../styles/content.css">
+    <link rel="shortcut icon" href="../../images/Hamburguer.png" type="image/x-icon">
     <title>Usuarios </title>
 </head>
 
@@ -29,12 +30,11 @@ $rowTable = $readUser->fetchAll();
                     foreach ($rowTable as $linha) {
                         echo '<div>';
                         //imagem tem que retirada de um link do banco de dados
-                        echo '<img src="../../controllers/products/arquives/hamburguer.png" width="50px">';
+                        echo '<p><img src="../../controllers/products/'.$linha['path_imagem'].'." width="50px" /><p>';
                         echo '<p><b> ID: </b>' . $linha['id'] . '</p>' ;
                         echo '<p><b> Produto: </b>' . $linha['nome'] . '</p>';
                         echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
                         echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
-                        echo '<p><img src=".." /></p>';
                         echo '<a href="./formEdit/editarProduto.php?id=' . $linha['id'] . '"><button class="editar">Editar</button></a>';
                         echo '<a href="../../controllers/products/productController.php?id="' . $linha['id'] . '"><button class="excluir">Excluir</button></a>';
                         echo '</div>';
