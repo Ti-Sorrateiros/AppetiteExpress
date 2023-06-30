@@ -1,3 +1,12 @@
+<?php
+include('../../database/conn.php');
+
+$readUser = $conn->prepare('SELECT * FROM produtos');
+$readUser->execute();
+$rowTable = $readUser->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,11 +19,12 @@
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
+    <link rel="stylesheet" href="../styles/ListaProduto.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/adicionarCarrinho.scss">
     <title>Produtos</title>
 </head>
-
+ 
 <body>
     <nav class="menu-lateral">
 
@@ -59,7 +69,22 @@
         </div>
 
         <h3 class="Sub-prod">Escolha seu Alimento</h3>
-        <div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
+       
+        <?php
+                    foreach ($rowTable as $linha) {
+                        echo '<div>';
+                        echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
+                        <img class="imgProd" src="../controllers/products/'.$linha['path_imagem'].'."<div>';
+                        echo '<p>'. $linha['nome'] . '</p>';
+                        echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
+                        echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
+                        echo '</div>';
+                        echo '<br>';
+                        echo '<hr>';
+                    }
+                    ?>
+        </div>
+        <!-- <div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
             <img src="../images/products/Hamcheddar.jpg" alt="">
             <h4>Hamburguer de Chedder</h4>
             <p>Pao,Carne Caseira,Chedder,Bacon</p>
@@ -81,9 +106,9 @@
                         <span id="qty-number">1</span>
                         <button id="btn-qty">+</i></button>
                     </div>
-        </div>
+        </div> -->
 
-        <h3 class="Sub-prod">Escolha sua Bebida</h3>
+        <!-- <h3 class="Sub-prod">Escolha sua Bebida</h3>
         <div id="selecionarBebi" class="Prod1" onclick="escolherBebida1()">
             <img src="../images/products/cocacola.png" alt="">
             <h4>Coca-Cola</h4>
@@ -106,7 +131,7 @@
                         <span id="qty-number">1</span>
                         <button id="btn-qty">+</i></button>
                     </div>
-        </div>
+        </div> -->
         <div class="container2">
             <h1>Valor Estimado</h1>
             <span>R$ 0,00</span>

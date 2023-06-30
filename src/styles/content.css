@@ -18,30 +18,7 @@ body{
   padding-left: 8px;
   box-sizing: border-box;
 }
-.Prod1{
-  background: aliceblue;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 10px 0 #bbbbbb;
-  cursor: pointer;
-  border: 5px solid white;
-}
-.Prod1 h4{
-  margin: 0;
-  font-size: 20px;
-  margin-bottom: 5px;
-  font-family: Manrope, sans-serif;
-}
-.Prod1 img{
-  width: 75px;
-  border-radius: 5px;
-  float: right;
-}
-.Sub-prod{
-  margin: 20px;
-  margin-bottom: 5px;
-}
+
 /* .botaoFinalizar{
   position: relative;
   background-color: #8c060f;

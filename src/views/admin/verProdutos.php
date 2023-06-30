@@ -22,7 +22,12 @@ $rowTable = $readUser->fetchAll();
     <link rel="shortcut icon" href="../../images/Hamburguer.png" type="image/x-icon">
     <title>Usuarios </title>
 </head>
-
+<style>
+    .content img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
 <body>
     <div class="content">
         <h1 class="center">Lista dos Produtos</h1>
@@ -30,7 +35,7 @@ $rowTable = $readUser->fetchAll();
                     foreach ($rowTable as $linha) {
                         echo '<div>';
                         //imagem tem que retirada de um link do banco de dados
-                        echo '<p><img src="../../controllers/products/'.$linha['path_imagem'].'." width="50px" /><p>';
+                        echo '<p><img src="../../controllers/products/'.$linha['path_imagem'].'." /><p>';
                         echo '<p><b> ID: </b>' . $linha['id'] . '</p>' ;
                         echo '<p><b> Produto: </b>' . $linha['nome'] . '</p>';
                         echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
