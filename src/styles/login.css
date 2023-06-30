@@ -3,6 +3,10 @@ body {
     position: fixed;
     overflow-y: hidden;
     overflow-x: hidden;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 #backLogin{
     width: 100%;    
@@ -261,6 +265,27 @@ h3 {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
 
+}
+@media screen and (min-width: 1366px) {
+.container {
+        background-color: #fafaff;
+        display: grid;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 50px;
+        /* espaço entre as bordas */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .05), 0 4px 16px rgba(0, 0, 0, .06);
+        border: 2px solid rgba(142, 141, 141, 0.5);
+        border-radius: 8px;
+        /* arrendodamento da borda */
+        backdrop-filter: blur(30px);
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+    }
 }
 
 
