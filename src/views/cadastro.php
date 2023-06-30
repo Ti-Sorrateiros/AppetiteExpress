@@ -18,8 +18,9 @@ include('../../database/conn.php')
 </head>
 
 <body>
+<img id="backCadastro" src="../images/imglogin.png" alt="">
     <div class="container">
-
+    <img class="LogoC" src="../images/LogoTCC.png" alt="">
         <h1 class="center">Realizar Cadastro</h1>
         <h3 class="center">Informe um login válido</h3>
 

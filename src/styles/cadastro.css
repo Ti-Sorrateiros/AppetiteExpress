@@ -1,7 +1,14 @@
 body {
-    background-color: #f5f3f4;
     background-attachment: fixed;
+    position: fixed;
+    overflow-y: hidden;
+    overflow-x: hidden;
     /*Resolve o Problema do Background*/
+}
+#backCadastro{
+    width: 100%;    
+    height: 100%;
+
 }
 
 input {
@@ -48,19 +55,20 @@ button:hover {
 @media screen and (min-width: 750px) {
 	.container{
         display: block;
-        background: transparent;
+        background-color: #fafaff;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 5px 50px; /* espaço entre as bordas */
         margin-top: 100px ; /* espaço do container*/
-        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-        border: 2px solid rgba(255, 255, 255, .5);
-        border-radius: 10px; /* arrendodamento da borda */
+        box-shadow: 0 1px 4px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+        border: 2px solid rgba(142, 141, 141, 0.5);
+        border-radius: 8px; /* arrendodamento da borda */
         backdrop-filter: blur(30px);
         overflow: hidden;
         justify-content: center;
+        margin-top: -2%;
     }
     
     h1 {
@@ -304,6 +312,19 @@ button:hover {
     font-size: 17px;
     color: #645656;
     font-weight: 700;
+}
+.LogoC{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 0;
+    left: 160px;
+    padding: 0 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+
 }
 
 
