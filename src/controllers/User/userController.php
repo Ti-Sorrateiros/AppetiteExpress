@@ -8,9 +8,14 @@ $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 //se o input com name create User for acionado criar usuario no banco
 if (isset($user['createUser'])) {
     createUser($user);
-} else if (isset($user['loginUser'])) {
+}
+else if (isset($user['updateUser'])) {
+    updateUser($user);
+} 
+ else if (isset($user['loginUser'])) {
     loginUser($user);
-} else if(isset($_GET['id'])){
+} 
+else if(isset($_GET['id'])){
     $id = $_GET['id'];
     deleteUser($id);
 }
@@ -90,25 +95,30 @@ function deleteUser($id){
     }
 }
 
-// function updateUser($id){
-//     global $conn;
+function updateUser($user){
+    global $conn;
     
-//     if(isset($id)){
-//     $deleteUser = $conn->prepare('UPDATE usuarios SET  WHERE id= :id');
-//     $deleteUser->execute(array(':id' => $id ));
+    if(isset($user['id'] ) && $user['nome'] && $user['email'] && $user['endereco']){
+    $deleteUser = $conn->prepare('UPDATE usuarios SET nome = :nome , email = :email , endereco = :endereco  WHERE id= :id');
+    $deleteUser->execute(array(
+        ':id' => $user['id'],
+        ':nome' => $user['nome'],
+        ':email' => $user['email'],
+        ':endereco' => $user['endereco']
+    ));
  
-//     echo "<script>
-//     alert('Usuário Deletado!');
-//     window.location.href='../../views/admin/usuarios.php';
-//     </script>";
-//     }
-//     else{
-//         echo "<script>
-//     alert('Erro ao Deletar');
-//     window.location.href='../../views/admin/usuarios.php';
-//     </script>";
-//     }
-// }
+    echo "<script>
+    alert('Usuário Editado!');
+    window.location.href='../../views/admin/usuarios.php';
+    </script>";
+    }
+    else{
+        echo "<script>
+    alert('Erro ao Editar');
+    window.location.href='../../views/admin/usuarios.php';
+    </script>";
+    }
+}
 
 function loginUser($user)
 {
