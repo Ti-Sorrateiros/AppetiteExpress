@@ -54,45 +54,7 @@
     
         <div class="content">
             <h1>Carrinho</h1>
-            <h3>Seus Produtos  escolhidos estarão aqui</h3>
-            <p>faça seu pedido até duas horas.</p>
-            <br>
-            <div>
-                <?php
-                $items = array
-                (
-                    ['nome' => 'Curso 3', 'preco' => '400']
-                );
-
-                foreach ($items as $key => $value) {
-                    ?>
-                    <!-- produto -->
-                    <div class="produto">
-                        <img src="<?php echo $value['imagem'] ?>">
-                        <a href="?adicionar=<?php echo $key ?>">Finalizar Pedido</a>
-                    </div>
-
-                    <?php
-                }
-                ?>
-                <div></div>
-                <?php
-                if (isset($_GET['adicionar'])) {
-                    //vamos adicionar ao carrinho.
-                    $idProduto = (int) $_GET['adicionar'];
-                    if (isset($items[$idProduto])) {
-                        if (isset($_SESSION[$idProduto])) {
-                            $_SESSION[$idProduto]['quantidade']++;
-                        } else {
-                            $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
-                        }
-                        echo '<script>alert("o item foi adicionado ao carrinho");</script>';
-                    } else {
-                        die('Você não pode adicionar um item que não existe.');
-                    }
-                }
-                ?>
-            </div>
+           
         </div>
     
         
