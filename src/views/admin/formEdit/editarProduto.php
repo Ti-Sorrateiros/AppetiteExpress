@@ -27,7 +27,7 @@ $rowTable = $tabela->fetch();
 <body>
     <div class="container">
         <form method="post" action="../../../controllers/products/productController.php" enctype="multipart/form-data">
-            <input type="text" name="id" value='<?php echo $rowTable['id']; ?>' />
+            <input type="hidden" name="id" value='<?php echo $rowTable['id']; ?>' />
             <label>Nome do Produto <input type="text" name="nome" value='<?php echo $rowTable['nome']; ?>' /></label>
             <label>Descrição <input type="text" name="descricao"
                     value='<?php echo $rowTable['descricao']; ?>' /></label>
