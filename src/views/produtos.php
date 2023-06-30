@@ -68,7 +68,7 @@ $rowTable = $readUser->fetchAll();
             <h1 id="Title">Faça aqui o seu Pedido</h1>
         </div>
 
-        <h3 class="Sub-prod">Escolha seu Alimento</h3>
+        <h3 class="Sub-prod">Escolha seu Alimento</h3> 
        
         <?php
                     foreach ($rowTable as $linha) {
