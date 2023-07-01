@@ -8,11 +8,11 @@
     border: 5px solid white;
 }
 
-.Prod1 h4{
+#titleProd{
     margin: 0;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 5px;
-    font-family: Manrope, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .Prod1 img{
@@ -21,10 +21,11 @@
     float: right;
 }
 
-.Sub-prod{
-    margin: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+#descProd{
+   font-size: 15px;
+   color: #3E3E3E;
+   font-family: 'Poppins', sans-serif;
+   margin-top: -12px;
   }
 
 .imgProd{
