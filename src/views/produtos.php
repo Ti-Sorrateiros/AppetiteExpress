@@ -75,9 +75,9 @@ $rowTable = $readUser->fetchAll();
                         echo '<div>';
                         echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
                         <img class="imgProd" src="../controllers/products/'.$linha['path_imagem'].'."<div>';
-                        echo '<p>'. $linha['nome'] . '</p>';
-                        echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
-                        echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
+                        echo '<p id="titleProd">'. $linha['nome'] . '</p>';
+                        echo '<p id="descProd">'. $linha['descricao'] . '</h4>';
+                        echo '<p id="preco">'. $linha['preco'] . '</p>';
                         echo '</div>';
                         echo '<br>';
                         echo '<hr>';
@@ -142,7 +142,7 @@ $rowTable = $readUser->fetchAll();
         </div> 
 
 
-         <!--<?php
+         <<?php
             $items = array
             (
                 ['imagem' => '../images/products/hamburguer.jpg', 'preco' => '200'],
