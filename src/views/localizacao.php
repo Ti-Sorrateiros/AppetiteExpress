@@ -1,3 +1,10 @@
+<?php
+include('../../database/conn.php');
+$tabela = $conn->prepare("SELECT * FROM usuarios");
+$tabela->execute();
+$rowTabela = $tabela->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +59,27 @@
     
     <div class="content">
         <h1>Localização</h1>
+
+        <div class="iten-top">
+            <h1>Endereço para Entrega</h1>
+            <button type="submit">Cadastra novo Endereço</button>
+        </div>
+
+        <table>
+            <tr>
+                <td>Endereco</td>
+            </tr>
+            <tbody>
+                <?php 
+                foreach($rowTabela as $linha){
+                    echo'<tr>';
+                    
+                    echo'</tr>';
+
+                }                
+                ?>
+            </tbody>
+        </table>
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
