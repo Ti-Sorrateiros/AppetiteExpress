@@ -73,117 +73,33 @@ $rowTable = $readUser->fetchAll();
         <?php
                     foreach ($rowTable as $linha) {
                         echo '<div>';
-                        echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
-                        <img class="imgProd" src="../controllers/products/'.$linha['path_imagem'].'."<div>';
+                        echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()"><img class="imgProd" src="../controllers/products/'.$linha['path_imagem'].'."<div>';
                         echo '<p>'. $linha['nome'] . '</p>';
                         echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
                         echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
+                        echo '<button type="button" class="remove-product"> Remover Produto</button>';
+                        echo '<br>';
+                        echo '<input type="number" value="0" min="0" id="qualquer-coisa"> ';
                         echo '</div>';
                         echo '<br>';
                         echo '<hr>';
                     }
                     ?>
         </div>
-        <!-- <div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
-            <img src="../images/products/Hamcheddar.jpg" alt="">
-            <h4>Hamburguer de Chedder</h4>
-            <p>Pao,Carne Caseira,Chedder,Bacon</p>
-            <p id="preco"><strong>R$ 20,00</strong></p>
-             <div class="qt-carrinho">
-                        <button id="btn-qty">-</i></button>
-                        <span id="qty-number">1</span>
-                        <button id="btn-qty">+</i></button>
-                    </div>
-        </div>
 
-        <div id="selecionarProd1" class="Prod1" onclick="escolherProduto2()">
-           <img src="../images/products/pizza.jpg" alt="">
-            <h4>Pizza GG</h4>
-            <p>Frango com catupiry</p>
-            <p id="preco"><strong>R$ 45,00</strong></p>
-             <div class="qt-carrinho">
-                        <button id="btn-qty">-</i></button>
-                        <span id="qty-number">1</span>
-                        <button id="btn-qty">+</i></button>
-                    </div>
-        </div> -->
-
-        <!-- <h3 class="Sub-prod">Escolha sua Bebida</h3>
-        <div id="selecionarBebi" class="Prod1" onclick="escolherBebida1()">
-            <img src="../images/products/cocacola.png" alt="">
-            <h4>Coca-Cola</h4>
-            <p>zero,latinha,2 litros,3 litros</p>
-            <p id="preco"><strong>R$ 10,00</strong></p>
-             <div class="qt-carrinho">
-                        <button id="btn-qty">-</i></button>
-                        <span id="qty-number">1</span>
-                        <button id="btn-qty">+</i></button>
-                    </div>
-        </div>
-
-        <div id="selecionarBebi1" class="Prod1" onclick="escolherBebida2()">
-           <img src="../images/products/cocacola.png" alt="">
-            <h4>Sprite</h4>
-            <p>zero,latinha,2 litros,3 litros</p>
-            <p id="preco"><strong>R$ 10,00</strong></p>
-             <div class="qt-carrinho">
-                        <button id="btn-qty">-</i></button>
-                        <span id="qty-number">1</span>
-                        <button id="btn-qty">+</i></button>
-                    </div>
-        </div> -->
         <div class="container2">
             <h1>Valor Estimado</h1>
             <span>R$ 0,00</span>
             <button>Adicionar Carrinho</button>
         </div>
-        <!-- <div class="botaoFinalizar" onclick="finalizarPedido()">
-            Finalizar Pedido
-        </div> 
 
-
-         <!--<?php
-            $items = array
-            (
-                ['imagem' => '../images/products/hamburguer.jpg', 'preco' => '200'],
-                ['imagem' => '../images/products/pizza.jpg', 'preco' => '100'],
-                ['nome' => 'Curso 3', 'preco' => '400']
-            );
-
-            foreach ($items as $key => $value) {
-                ?>
-                <div class="produto">
-                    <img src="<?php echo $value['imagem'] ?>">
-                    <a href="?adicionar=<?php echo $key ?>">Adicionar ao carrinho!</a>
-                </div>
-
-                <?php
-            }
-            ?>
-            <div></div>
-            <?php
-            if (isset($_GET['adicionar'])) {
-                $idProduto = (int) $_GET['adicionar'];
-                if (isset($items[$idProduto])) {
-                    if (isset($_SESSION[$idProduto])) {
-                        $_SESSION[$idProduto]['quantidade']++;
-                    } else {
-                        $_SESSION[$idProduto] = array('quantidade' => 1, 'nome' => $items[$idProduto]['nome'], 'preco' => $items[$idProduto]['preco']);
-                    }
-                    echo '<script>alert("o item foi adicionado ao carrinho");</script>';
-                } else {
-                    die('Você não pode adicionar um item que não existe.');
-                }
-            }
-            ?>-->
-        </div>
-
-
-
+    
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
     <!-- <script src="../js/pedido.js" type="text/javascript"></script> -->
-    <script src="../js/addCart.js" type="text/javascript"></script>
+    <!-- <script src="../js/addCart.js" type="text/javascript"></script> -->
+    <script src="../js/addCart2.js" type="text/javascript"></script>
+    <script src="../js/validateNumber.js" type="text/javascript"></script>
 
 </body>
 
