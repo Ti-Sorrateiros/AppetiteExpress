@@ -10,7 +10,7 @@
 <body>
     <div>
     <div class="form">
-        <h1>Cadastro de Endereço</h1>
+        <h1>Cadastre seu Endereço</h1>
         <form action="../controllers/localizacaocontroller/localizacaoController.php" method="post">    
             <label>Rua</label>
             <input type="text" name="rua">
