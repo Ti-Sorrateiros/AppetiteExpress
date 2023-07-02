@@ -1,6 +1,6 @@
 <?php
 include('../../database/conn.php');
-$tabela = $conn->prepare("SELECT * FROM usuarios");
+$tabela = $conn->prepare("SELECT * FROM localizacao");
 $tabela->execute();
 $rowTabela = $tabela->fetchAll();
 ?>
@@ -34,7 +34,7 @@ $rowTabela = $tabela->fetchAll();
                 </a>
                 </div>
             </li>
-           
+
             <li class="item-menu ativo">
                 <a href="localizacao">
                     <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
@@ -56,34 +56,45 @@ $rowTabela = $tabela->fetchAll();
             </li>
         </ul>
     </nav>
-    
+
     <div class="content">
-        <h1>Localização</h1>
 
-        <div class="iten-top">
+        <div class="item-titulo">
             <h1>Endereço para Entrega</h1>
-            <button type="submit">Cadastra novo Endereço</button>
+            <br>
+            <br>
         </div>
+        <br>
+            <table>
 
-        <table>
-            <tr>
-                <td>Endereco</td>
-            </tr>
-            <tbody>
-                <?php 
-                foreach($rowTabela as $linha){
-                    echo'<tr>';
-                    
-                    echo'</tr>';
+                <tr>
+                    <td class="item-tl">CASA</td>
+                </tr>
 
-                }                
-                ?>
-            </tbody>
-        </table>
+
+                <tbody>
+                    <?php
+                    foreach ($rowTabela as $linha) {
+                        
+                        
+                        echo '<tr>';
+                        echo "<td>" . $linha['rua']."</td>";
+                        echo "<td>" . $linha['numero']."</td>";
+                        echo '</tr>';
+                        echo'<tr>';
+                        echo "<td>" . $linha['cep']."</td>";
+                        echo'</tr>';
+                        
+                    }
+                    ?>
+                </tbody>
+            </table>
+        <button type="submit"><a href="cadastroLocalizacao.php">Novo Endereço</a></button>
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
 </body>
+
 
 </html>

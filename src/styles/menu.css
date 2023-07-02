@@ -73,3 +73,20 @@ ul li.item-menu a .icon{
     position: relative;
     left: 0.3em;
 }
+.item-titulo{
+    text-align: center;
+    margin-top:20px;
+}
+.item-local{
+    border: 1px solid;
+    width: 200px;
+    height: 100px;
+}
+.tl{
+ border: 1px solid;
+ width: 20%;
+ height: 100px;   
+}
+tr td{
+    font-size: 15px;
+}
