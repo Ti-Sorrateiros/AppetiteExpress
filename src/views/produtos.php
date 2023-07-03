@@ -88,11 +88,11 @@ $rowTable = $readUser->fetchAll();
         ?>
 
 
-    <div class="container2">
+    <!-- <div class="container2"> ( comentado )
         <h1>Valor Estimado</h1>
         <span>R$ 0,00</span>
         <button>Adicionar Carrinho</button>
-    </div>
+    </div> -->
 
 
     <script src="../js/menu.js" type="text/javascript"></script>
