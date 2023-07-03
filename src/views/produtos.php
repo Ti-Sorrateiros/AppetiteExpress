@@ -61,6 +61,7 @@ $rowTable = $readUser->fetchAll();
                 </a>
                 </div>
             </li>
+            
         </ul>
     </nav>
 
@@ -71,15 +72,15 @@ $rowTable = $readUser->fetchAll();
         </div>
 
         <h3 class="Sub-prod">Escolha seu Alimento</h3>
-
+   
         <?php
         foreach ($rowTable as $linha) {
             echo '<div>';
             echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()"><img class="imgProd product-image" src="../controllers/products/' . $linha['path_imagem'] . '"</div>';
-            echo '<p><h2 class="product-title">' . $linha['nome'] . '</h2></p>';
-            echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
-            echo '<p><div class="product-price" >' . $linha['preco'] . '</div></p>';
-            echo '<a href="carrinho.php?adicionar='.$linha['id'].'"><button> Adicionar Produto </button></a>';
+            echo '<p><h2 id="titleProd" class="product-title">' . $linha['nome'] . '</h2></p>';
+            echo '<p><h4 id="descProd">' . $linha['descricao'] . '</h4>';
+            echo '<p><div id="product-price" ><b> R$: </b>' . $linha['preco'] . '</div></p>';
+            echo '<a href="carrinho.php?adicionar='.$linha['id'].'"> <img id="imgAdd" src="../images/adicionar-produto.png" alt=""></a>';
             echo '<br>';
             echo '</div>';
             echo '<br>';
@@ -88,7 +89,7 @@ $rowTable = $readUser->fetchAll();
         ?>
 
 
-    <!-- <div class="container2"> ( comentado )
+    <!-- <div class="container2"> (  comentado )
         <h1>Valor Estimado</h1>
         <span>R$ 0,00</span>
         <button>Adicionar Carrinho</button>
