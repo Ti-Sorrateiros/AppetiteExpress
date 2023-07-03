@@ -74,12 +74,11 @@ $rowTable = $readUser->fetchAll();
                     foreach ($rowTable as $linha) {
                         echo '<div>';
                         echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()"><img class="imgProd" src="../controllers/products/'.$linha['path_imagem'].'."<div>';
-                        echo '<p>'. $linha['nome'] . '</p>';
+                        echo '<p><h2>'. $linha['nome'] . '</h2></p>';
                         echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
                         echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
-                        echo '<button type="button" class="remove-product"> Remover Produto</button>';
+                        echo '<button type="button" class="add-product"> Adicionar Produto</button>';
                         echo '<br>';
-                        echo '<input type="number" value="0" min="0" id="qualquer-coisa"> ';
                         echo '</div>';
                         echo '<br>';
                         echo '<hr>';
