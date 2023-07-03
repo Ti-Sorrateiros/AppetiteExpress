@@ -100,13 +100,15 @@ CREATE TABLE pedidos(
     data_pedido DATETIME NOT NULL
 ) DEFAULT charset utf8; 
 
---guarda o cadastro de uma nova localização feito pelo cliente
+-- guarda o cadastro de uma nova localização feito pelo cliente
 CREATE TABLE localizacao(
 id int auto_increment primary key,
 numero varchar(100),
 rua varchar(100),
+bairro varchar(100),
+cep varchar(100),
 endereco varchar(100)
-); DEFAULT charset utf8;
+) DEFAULT charset utf8;
 
 
 -- chave estrangeira id_perfil para usuario e para definir o tipo de usuario 
