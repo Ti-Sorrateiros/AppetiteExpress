@@ -1,3 +1,9 @@
+<?php
+include('../../database/conn.php');
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,7 +34,7 @@
                 </a>
                 </div>
             </li>
-           
+
             <li class="item-menu">
                 <a href="localizacao">
                     <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
@@ -51,13 +57,43 @@
         </ul>
     </nav>
 
-    
-        <div class="content">
-            <h1>Carrinho</h1>
-           
-        </div>
-    
-        
+
+    <div class="content">
+        <h1>Carrinho</h1>
+        <?php
+
+        if (isset($_GET['adicionar'])) {
+            $idProduto = $_GET['adicionar'];
+            verifyProduct($idProduto);
+        }
+        function verifyProduct($idProduto)
+        {
+            global $conn;
+
+            //verificar se o produto existe no banco
+            $sql = $conn->prepare('SELECT * FROM produtos WHERE id = :id');
+            $sql->execute(array(':id' => $idProduto));
+            $Product = $sql->fetch();
+            
+            if ($Product > 0) {
+                if(isset($Product)){
+                    //se o produto existir adicionamos quantidade ao carrinho
+                    $Product['quantidade']++;
+                }
+                
+                echo '<script> alert(""Foi adicionado ao carrinho")</script>';
+
+
+            } else if ($Product == 0) {
+                die('Você não pode adicionar um item que não existe!');
+            } 
+        }
+        ?>
+
+
+    </div>
+
+
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
 </body>
