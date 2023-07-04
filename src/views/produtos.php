@@ -84,7 +84,6 @@ $rowTable = $readUser->fetchAll();
             echo '<br>';
             echo '</div>';
             echo '<br>';
-            echo '<hr>';
         }
         ?>
 
