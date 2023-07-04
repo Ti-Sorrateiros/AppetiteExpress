@@ -127,66 +127,36 @@ function loginUser($user)
 
 
     if (isset($user['loginUser'])) {
-        $queryUser = "SELECT * FROM usuarios WHERE (email='" . $user['email'] . "');";
+        //select para ver se o email tem no banco
+        $queryUser = "SELECT * FROM usuarios WHERE (email= :email);";
         $result = $conn->prepare($queryUser);
-        $result->execute();
+        $result->execute(array(':email' => $user['email']));
 
+        //contar a quantidade de row (coluna da tabela do banco de dados)
         $row = $result->rowCount();
-        $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
-
 
         //autenticacao de senha com hash
-        // $data = $result->fetch();
-        // print_r($data);
+        $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
         $hash = $usuario[0]['senha'];
         $check = password_verify($usuario[0]['senha'], $hash);
-        
 
+        //verifica se existe usuario no banco , e se senha está correta 
         if ($row > 0) {
             session_start();
             $_SESSION['id'] = $usuario[0]['id'];
+
+
             echo "<script>
         window.location.href='../../views/produtos.php';
         </script>";
         } else {
-            //     echo "<script>
-            //  alert('Login e/ou senha incorretos');
-            //  window.location.href='../../views/login.php';
-            //  </script>";
+            echo "<script>
+             alert('Login e/ou senha incorretos');
+             window.location.href='../../views/login.php';
+             </script>";
         }
 
     }
-
-
-    //sistema com a validacao da senha:
-    /* if ($row > 0 && $check) {  
-    //     $token = uniqid() . '_' . $data['id'] . '_' . $data['id_perfil'];
-    //     $_SESSION["token"] = $token;
-    //     $_SESSION["id"] = $data['id'];
-    //     $_SESSION["id_perfil"] = $data["id_perfil"];
-
-    //     if ($_SESSION["id_perfil"] == 1) {
-    //         setcookie('login', $email);
-
-    //         //Removi os alerts de logado com sucesso pois acho mais fluido
-    //         //Acredito que Seja melhor um pop up já na pagina que redirecionar caso logue
-    //         echo "<script>
-                
-    //              window.location.href='../../views/admin/cadastrarProdutos.php';
-    //              </script>";
-    //     } else {
-    //         setcookie('login', $email);
-    //         echo "<script>
-            
-    //             window.location.href='../../views/produtos.php';
-    //             </script>";
-    //     }
-    // } else {
-    //     echo "<script>
-    //      alert('Login e/ou senha incorretos');
-    //      window.location.href='../../views/login.php';
-    //      </script>";
-     } */
 }
 
 
