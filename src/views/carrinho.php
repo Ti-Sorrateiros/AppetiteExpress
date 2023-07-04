@@ -1,6 +1,12 @@
 <?php
 include('../../database/conn.php');
-session_start();
+// session_start();
+
+
+// if(empty($_SESSION['Status'])){
+//     header('');
+// }
+
 
 ?>
 
@@ -54,6 +60,13 @@ session_start();
                 </a>
                 </div>
             </li>
+            <li class="item-menu">
+                <a href="logout">
+                    <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+                </div>
+            </li>
         </ul>
     </nav>
 
@@ -62,36 +75,50 @@ session_start();
         <h1>Carrinho</h1>
         <?php
 
-        if (isset($_GET['adicionar'])) {
-            $idProduto = $_GET['adicionar'];
-            verifyProduct($idProduto);
+        //verificando se o codigo do produto não está vazio $cd
+        if (isset($_GET['id'])) {
+            $id_prod = $_GET['id'];
         }
-        function verifyProduct($idProduto)
-        {
-            global $conn;
-
-            //verificar se o produto existe no banco
-            $sql = $conn->prepare('SELECT * FROM produtos WHERE id = :id');
-            $sql->execute(array(':id' => $idProduto));
-            $Product = $sql->fetch();
-            
-            if ($Product > 0) {
-                if(isset($Product)){
-                    //se o produto existir adicionamos quantidade ao carrinho
-                    $Product['quantidade']++;
-                }
-                
-                echo '<script> alert(""Foi adicionado ao carrinho")</script>';
-
-
-            } else if ($Product == 0) {
-                die('Você não pode adicionar um item que não existe!');
-            } 
+        //se a sessão de carrinho não estiver preenchida
+        else if (empty($_SESSION['carrinho'])) {
+            //será criado uma sessão chamada carrinho para receber um vetor
+            $_SESSION['carrinho'] = array();
         }
+        //se a variavel $id_produto não estiver preenchida
+        else if (empty($_SESSION['carrinho'][$id_prod])) {
+            $_SESSION['carrinho'][$id_prod] = 1;
+        }
+        //caso contrario, se ela estiver setada, adicione novos produtos
+        else if (isset($_SESSION['carrinho'][$id_prod])) {
+            $_SESSION['carrinho'][$id_prod] += 1;
+            include ('mostrarCarrinho.php');
+        }
+        //mostra carrinho vazio
+        else {
+            include ('mostrarCarrinho.php');
+        }
+
         ?>
 
+        <!-- exibindo o valor da variavel total da compra -->
+        <div class="">
+            <h1>Total: R$
+                <?php include ('mostrarCarrinho.php'); echo number_format($total, 2, ',', '.'); ?>
+            </h1>
+        </div>
 
+        <div class="">
+            <button></button>
+            <a href=""><button>Continuar Compra</button></a>
+            <a href=""><button>Finalizar Compra</button></a>
+        </div>
     </div>
+
+    <!-- <div class="container2">
+        <h1>Valor Estimado</h1>
+        <span>R$ 0,00</span>
+        <button>Adicionar Carrinho</button>
+    </div> -->
 
 
     <script src="../js/menu.js" type="text/javascript"></script>

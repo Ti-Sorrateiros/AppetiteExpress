@@ -16,6 +16,7 @@ $rowTabela = $tabela->fetchAll();
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/localizacao.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Localização</title>
 </head>
@@ -51,6 +52,13 @@ $rowTabela = $tabela->fetchAll();
                 <a href="pedido">
                     <span class="icon"><i class="bi bi-clipboard2-fill"></i></span>
                     <span class="txt-link">Seus Pedidos</span>
+                </a>
+                </div>
+            </li>
+            <li class="item-menu">
+                <a href="logout">
+                    <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
+                    <span class="txt-link">Sair</span>
                 </a>
                 </div>
             </li>
