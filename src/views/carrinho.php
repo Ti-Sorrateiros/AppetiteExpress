@@ -54,6 +54,13 @@ session_start();
                 </a>
                 </div>
             </li>
+            <li class="item-menu">
+                <a href="logout">
+                    <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+                </div>
+            </li>
         </ul>
     </nav>
 
