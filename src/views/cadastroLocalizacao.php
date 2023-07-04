@@ -62,23 +62,36 @@ session_start();
     
     <div class="form">
         <h1>Cadastre seu Endereço</h1>
-        <form action="../controllers/localizacaocontroller/localizacaoController.php" method="post">    
-            <label>Rua</label>
-            <input type="text" name="rua">
-            <br>
-            <br>
-            <label>Número</label>
-            <input type="text" name="numero">
-            <br>
-            <br>
-            <label>Bairro</label>
-            <input type="text" name="bairro">
-            <br>
-            <br>
-            <label>CEP</label>
-            <input type="text" name="cep">
-            <br>
-            <br>
+        <form action="../controllers/localizacaocontroller/localizacaoController.php" method="post"> 
+            
+            <div>
+                <div>
+                    <label>CEP</label>
+                    <input id="txtcep" type="text" name="cep">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>RUA</label>
+                    <input id="txtrua" type="text" name="rua">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>NÚMERO</label>
+                    <input id="txtnumero" type="text" name="numero">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>BAIRRO</label>
+                    <input id="txtbairro" type="text" name="bairro">
+                </div>
+            </div>
+           
             <button type="submit">Cadastrar</button>
         </form>
     </div>
