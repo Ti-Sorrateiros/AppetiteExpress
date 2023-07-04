@@ -58,31 +58,31 @@ $rowTable = $readUser->fetchAll();
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul>
-            <li class="item-menu">
-                <a href="cadastrarProdutos">
-                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> CadastrarProdutos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="pedidosFeitos">
-                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> PedidosFeitos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="usuarios">
-                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link"> Usuarios</span>
-                </a>
-            </li>
-            <li class="item-menu ativo">
-                <a href="verprodutos">
-                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link">VerProdutos</span>
-                </a>
-            </li>
-        </ul>
+                <li class="item-menu">
+                    <a href="cadastrarProdutos">
+                        <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                        <span class="txt-link"> CadastrarProdutos</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="pedidosFeitos">
+                        <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
+                        <span class="txt-link"> PedidosFeitos</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="usuarios">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link"> Usuarios</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="verprodutos ativo">
+                        <span class="icon"><i class="bi bi-eye-fill"></i></span>
+                        <span class="txt-link">VerProdutos</span>
+                    </a>
+                </li>
+            </ul>
     </nav>
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
