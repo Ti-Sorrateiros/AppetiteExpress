@@ -5,17 +5,16 @@ include('../../../database/conn.php');
 $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 
+
 //se o input com name create User for acionado criar usuario no banco
 if (isset($user['createUser'])) {
     createUser($user);
-}
-else if (isset($user['updateUser'])) {
+} else if (isset($user['updateUser'])) {
     updateUser($user);
-} 
- else if (isset($user['loginUser'])) {
+} else if (isset($user['loginUser'])) {
+    session_start();
     loginUser($user);
-} 
-else if(isset($_GET['id'])){
+} else if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteUser($id);
 }
@@ -75,19 +74,19 @@ function createUser($user)
     }
 }
 
-function deleteUser($id){
+function deleteUser($id)
+{
     global $conn;
-    
-    if(isset($id)){
-    $deleteUser = $conn->prepare('DELETE FROM usuarios WHERE id= :id');
-    $deleteUser->execute(array(':id' => $id ));
 
-    echo "<script>
+    if (isset($id)) {
+        $deleteUser = $conn->prepare('DELETE FROM usuarios WHERE id= :id');
+        $deleteUser->execute(array(':id' => $id));
+
+        echo "<script>
     alert('Usuário Deletado!');
     window.location.href='../../views/admin/usuarios.php';
     </script>";
-    }
-    else{
+    } else {
         echo "<script>
     alert('Erro ao Deletar');
     window.location.href='../../views/admin/usuarios.php';
@@ -95,24 +94,26 @@ function deleteUser($id){
     }
 }
 
-function updateUser($user){
+function updateUser($user)
+{
     global $conn;
-    
-    if(isset($user['id'] ) && $user['nome'] && $user['email'] && $user['endereco']){
-    $deleteUser = $conn->prepare('UPDATE usuarios SET nome = :nome , email = :email , endereco = :endereco  WHERE id= :id');
-    $deleteUser->execute(array(
-        ':id' => $user['id'],
-        ':nome' => $user['nome'],
-        ':email' => $user['email'],
-        ':endereco' => $user['endereco']
-    ));
- 
-    echo "<script>
+
+    if (isset($user['id']) && $user['nome'] && $user['email'] && $user['endereco']) {
+        $deleteUser = $conn->prepare('UPDATE usuarios SET nome = :nome , email = :email , endereco = :endereco  WHERE id= :id');
+        $deleteUser->execute(
+            array(
+                ':id' => $user['id'],
+                ':nome' => $user['nome'],
+                ':email' => $user['email'],
+                ':endereco' => $user['endereco']
+            )
+        );
+
+        echo "<script>
     alert('Usuário Editado!');
     window.location.href='../../views/admin/usuarios.php';
     </script>";
-    }
-    else{
+    } else {
         echo "<script>
     alert('Erro ao Editar');
     window.location.href='../../views/admin/usuarios.php';
@@ -123,29 +124,39 @@ function updateUser($user){
 function loginUser($user)
 {
     global $conn;
-    session_start();
 
-    $queryUser = "SELECT * FROM usuarios WHERE (email='" . $user['email'] . "');";
-    $result = $conn->prepare($queryUser);
-    $result->execute();
-    $row = $result->rowCount();
 
-    //autenticacao de senha com hash
-    // $data = $result->fetch();
-    // $hash = $data['senha'];
-    // $check = password_verify($senha, $hash);
+    if (isset($user['loginUser'])) {
+        $queryUser = "SELECT * FROM usuarios WHERE (email='" . $user['email'] . "');";
+        $result = $conn->prepare($queryUser);
+        $result->execute();
 
-    if ($row > 0) {
-        setcookie('login', $user['email']);
-        echo "<script>
+        $row = $result->rowCount();
+        $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
+
+
+        //autenticacao de senha com hash
+        // $data = $result->fetch();
+        // print_r($data);
+        $hash = $usuario[0]['senha'];
+        $check = password_verify($usuario[0]['senha'], $hash);
+        
+
+        if ($row > 0) {
+            session_start();
+            $_SESSION['id'] = $usuario[0]['id'];
+            echo "<script>
         window.location.href='../../views/produtos.php';
         </script>";
-    } else {
-        echo "<script>
-         alert('Login e/ou senha incorretos');
-         window.location.href='../../views/login.php';
-         </script>";
+        } else {
+            //     echo "<script>
+            //  alert('Login e/ou senha incorretos');
+            //  window.location.href='../../views/login.php';
+            //  </script>";
+        }
+
     }
+
 
     //sistema com a validacao da senha:
     /* if ($row > 0 && $check) {  
