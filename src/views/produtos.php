@@ -75,11 +75,11 @@ $rowTable = $readUser->fetchAll();
         <?php
         foreach ($rowTable as $linha) {
             echo '<div>';
-            echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()"><img class="imgProd product-image" src="../controllers/products/' . $linha['path_imagem'] . '"</div>';
+            echo '<div id="selecionarProd" class="Prod1" onclick="escolherProduto1()"><img  class="imgProd product-image" src="../controllers/products/' . $linha['path_imagem'] . '"</div>';
             echo '<p><h2 class="product-title">' . $linha['nome'] . '</h2></p>';
             echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
             echo '<p><div class="product-price" >' . $linha['preco'] . '</div></p>';
-            echo '<a href="carrinho.php?adicionar='.$linha['id'].'"><button> Adicionar Produto </button></a>';
+            echo '<a href="carrinho.php?adicionar=' . $linha['id'] . '"><button> Adicionar Produto </button></a>';
             echo '<br>';
             echo '</div>';
             echo '<br>';
@@ -87,20 +87,12 @@ $rowTable = $readUser->fetchAll();
         }
         ?>
 
-
-    <div class="container2">
-        <h1>Valor Estimado</h1>
-        <span>R$ 0,00</span>
-        <button>Adicionar Carrinho</button>
-    </div>
-
-
-    <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../js/noRefresh.js" type="text/javascript"></script>
-    <!-- <script src="../js/pedido.js" type="text/javascript"></script> -->
-    <!-- <script src="../js/addCart.js" type="text/javascript"></script> -->
-    <!-- <script src="../js/addCart2.js" type="text/javascript"></script> -->
-    <script src="../js/validateNumber.js" type="text/javascript"></script>
+        <script src="../js/menu.js" type="text/javascript"></script>
+        <script src="../js/noRefresh.js" type="text/javascript"></script>
+        <!-- <script src="../js/pedido.js" type="text/javascript"></script> -->
+        <!-- <script src="../js/addCart.js" type="text/javascript"></script> -->
+        <!-- <script src="../js/addCart2.js" type="text/javascript"></script> -->
+        <script src="../js/validateNumber.js" type="text/javascript"></script>
 
 </body>
 
