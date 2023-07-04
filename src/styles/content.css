@@ -103,3 +103,21 @@ body{
   font-size: 30px;
 }
 
+.form{
+
+  display: block;
+  background-color: #fafaff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 50px; /* espaço entre as bordas */
+  margin-top: 100px ; /* espaço do container*/
+  box-shadow: 0 1px 4px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+  border: 2px solid rgba(142, 141, 141, 0.5);
+  border-radius: 8px; /* arrendodamento da borda */
+  backdrop-filter: blur(30px);
+  overflow: hidden;
+  justify-content: center;
+  margin-top: -2%;
+}

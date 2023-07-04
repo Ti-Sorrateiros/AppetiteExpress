@@ -1,10 +1,8 @@
-body{
-    
-}
-
 .form{
     border: 1px solid;
-    width: 35%;
+    background-color: lightgray;
+    border: 1px solid;
+    width: 50%;
     height: 550px;
     text-align: center;
     display:block;
