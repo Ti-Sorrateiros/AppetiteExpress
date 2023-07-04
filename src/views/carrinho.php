@@ -76,21 +76,21 @@ include('../../database/conn.php');
         <?php
 
         //verificando se o codigo do produto não está vazio $cd
-        if (isset($_GET['id'])) {
-            $id_prod = $_GET['id'];
+        if (isset($_GET['adicionar'])) {
+            $id_prod = $_GET['adicionar'];
         }
         //se a sessão de carrinho não estiver preenchida
-        else if (empty($_SESSION['carrinho'])) {
+        else if (empty($_SESSION['adicionar'])) {
             //será criado uma sessão chamada carrinho para receber um vetor
-            $_SESSION['carrinho'] = array();
+            $_SESSION['adicionar'] = array();
         }
         //se a variavel $id_produto não estiver preenchida
-        else if (empty($_SESSION['carrinho'][$id_prod])) {
-            $_SESSION['carrinho'][$id_prod] = 1;
+        else if (empty($_SESSION['adicionar'][$id_prod])) {
+            $_SESSION['adicionar'][$id_prod] = 1;
         }
         //caso contrario, se ela estiver setada, adicione novos produtos
-        else if (isset($_SESSION['carrinho'][$id_prod])) {
-            $_SESSION['carrinho'][$id_prod] += 1;
+        else if (isset($_SESSION['adicionar'][$id_prod])) {
+            $_SESSION['adicionar'][$id_prod] += 1;
             include ('mostrarCarrinho.php');
         }
         //mostra carrinho vazio
