@@ -12,7 +12,6 @@ if (isset($user['createUser'])) {
 } else if (isset($user['updateUser'])) {
     updateUser($user);
 } else if (isset($user['loginUser'])) {
-    session_start();
     loginUser($user);
 } else if (isset($_GET['id'])) {
     $id = $_GET['id'];
