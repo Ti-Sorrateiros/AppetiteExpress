@@ -68,19 +68,13 @@ session_start();
             
             <div>
                 <div>
-<<<<<<< HEAD
                     <input id="txtCep" type="text" name="cep" >
                     <label for="textCep">CEP</label>
-=======
-                    <label>Cep</label>
-                    <input id="txtcep" type="text" name="cep">
->>>>>>> e87ee5fe138e759facdc5364c3884f399dbc58da
                 </div>
             </div>
 
             <div>
                 <div>
-<<<<<<< HEAD
                     <input id="textRua" type="text" name="rua" >
                     <label for="textRua">RUA</label>
             </div>
@@ -90,44 +84,25 @@ session_start();
                     
                     <input id="txtNumero" type="text" name="numero" >
                     <label for="textNumero">NÚMERO</label>
-=======
-                    <label>Rua</label>
-                    <input id="txtrua" type="text" name="rua">
->>>>>>> e87ee5fe138e759facdc5364c3884f399dbc58da
                 </div>
             </div>
 
             <div>
                 <div>
-<<<<<<< HEAD
                     
                     <input id="textBairro" type="text" name="bairro" >
                     <label for="txtBairro">BAIRRO</label>
-=======
-                    <label>Número</label>
-                    <input id="txtnumero" type="text" name="numero">
->>>>>>> e87ee5fe138e759facdc5364c3884f399dbc58da
                 </div>
             </div>
 
             <div>
                 <div>
-<<<<<<< HEAD
                     
                     <input id="textEstado" type="text" name="estado" >
                     <label for="txtEstado">Estado</label>
                 </div>
             </div>       
             <button type="">Cadastrar</button> 
-=======
-                    <label>Bairro</label>
-                    <input id="txtbairro" type="text" name="bairro">
-                </div>
-            </div>
-           
-            <button type="submit">Cadastrar</button>
-
->>>>>>> e87ee5fe138e759facdc5364c3884f399dbc58da
         </form>
     </div>
 
