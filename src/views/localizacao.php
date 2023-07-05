@@ -66,38 +66,34 @@ $rowTabela = $tabela->fetchAll();
     </nav>
 
     <div class="content">
-
         <div class="item-titulo">
             <h1>Endereço para Entrega</h1>
             <br>
             <br>
         </div>
+        
         <br>
-            <table>
-
-                <tr>
-                    <td class="item-tl">CASA</td>
-                </tr>
-
-
+            <table> 
                 <tbody>
                     <?php
                     foreach ($rowTabela as $linha) {
                         
                         
                         echo '<tr>';
-                        echo "<td>" . $linha['rua']."</td>";
-                        echo "<td>" . $linha['numero']."</td>";
-                        echo '</tr>';
-                        echo'<tr>';
-                        echo "<td>" . $linha['cep']."</td>";
+                        echo '<td>  <div class="card">
+                        <img class="card-image" src="../images/mapa.png" alt="">
+                            <p class="card-title">Casa</p>
+                            <p class="card-body">'
+                            . $linha['rua'].', '. $linha['numero'].', '.$linha['cep'].'</p>
+                            <a href="cadastroLocalizacao.php"><button> Editar Endereço<span 
+                             class="endereco">&nbsp;<i class="bi bi-geo-alt-fill"></i></span></button></a>
+                            </div></td>';
                         echo'</tr>';
                         
                     }
                     ?>
                 </tbody>
             </table>
-        <button type="submit"><a href="cadastroLocalizacao.php">Novo Endereço</a></button>
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
