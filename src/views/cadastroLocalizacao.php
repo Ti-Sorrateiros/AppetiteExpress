@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
+    <link rel="stylesheet" href="../styles/cadastroLocation.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Localização </title>
 </head>
@@ -66,33 +67,34 @@ session_start();
             
             <div>
                 <div>
-                    <label>CEP</label>
+                    <label>Cep</label>
                     <input id="txtcep" type="text" name="cep">
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>RUA</label>
+                    <label>Rua</label>
                     <input id="txtrua" type="text" name="rua">
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>NÚMERO</label>
+                    <label>Número</label>
                     <input id="txtnumero" type="text" name="numero">
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>BAIRRO</label>
+                    <label>Bairro</label>
                     <input id="txtbairro" type="text" name="bairro">
                 </div>
             </div>
            
             <button type="submit">Cadastrar</button>
+
         </form>
     </div>
 
