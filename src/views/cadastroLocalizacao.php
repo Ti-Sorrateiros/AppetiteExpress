@@ -17,6 +17,7 @@ session_start();
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
     <title>Localização </title>
 </head>
 
@@ -66,40 +67,48 @@ session_start();
             
             <div>
                 <div>
-                    <label>CEP</label>
-                    <input id="txtcep" type="text" name="cep">
+                    <input id="txtCep" type="text" name="cep" >
+                    <label for="textCep">CEP</label>
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>RUA</label>
-                    <input id="txtrua" type="text" name="rua">
+                    <input id="textRua" type="text" name="rua" >
+                    <label for="textRua">RUA</label>
+            </div>
+
+            <div>
+                <div>
+                    
+                    <input id="txtNumero" type="text" name="numero" >
+                    <label for="textNumero">NÚMERO</label>
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>NÚMERO</label>
-                    <input id="txtnumero" type="text" name="numero">
+                    
+                    <input id="textBairro" type="text" name="bairro" >
+                    <label for="txtBairro">BAIRRO</label>
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>BAIRRO</label>
-                    <input id="txtbairro" type="text" name="bairro">
+                    
+                    <input id="textEstado" type="text" name="estado" >
+                    <label for="txtEstado">Estado</label>
                 </div>
-            </div>
-           
-            <button type="submit">Cadastrar</button>
+            </div>       
+            <button type="">Cadastrar</button> 
         </form>
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../js/endereco.js" type="text/javascript"></script>
 </body>
-
 </html>
 
 
