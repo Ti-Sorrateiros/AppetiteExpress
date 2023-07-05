@@ -1,0 +1,50 @@
+input {
+    border: 2px solid #3E445B;
+    border-radius: 7px;
+    outline: 0;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+    padding: 15px;
+    position: relative;    
+    left: 5px;
+
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    position: relative;
+    margin-top: 7px;
+    left: 20px;
+
+} 
+button {
+    background-color: #ea1d2c;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 10em;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+    left: 15vh;
+
+}
+h1 {
+    display: fixed;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color:#000000;
+    position: relative;
+    margin-top: 15px;
+}
