@@ -26,3 +26,73 @@ input{
     padding: 15px;
     
 }
+
+.content button{
+    float: right;
+    margin: 28px 0 0 18px;
+    font-size: 13px;
+    color: #b3b3b3;
+
+}
+.card {
+    padding: 20px;
+    width: 330px;
+    min-height: 370px;
+    border-radius: 20px;
+    background: #212121;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    transition: 0.4s;
+  }
+  
+  .card:hover {
+    translate: 0 -10px;
+  }
+  
+  .card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ea1d2c;
+    margin: 15px 0 0 10px;
+  }
+  
+  .card-image {
+    max-height: 193px;
+
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 3px #2f2f2f,
+              inset -5px -5px 3px #333333;
+  }
+  
+  .card-body {
+    margin: 13px 0 0 10px;
+    color: rgb(184, 184, 184);
+    font-size: 15px;
+  }
+ 
+  
+  .by-name {
+    font-weight: 700;
+  }
+  button {
+    font-family: PlusJakartaSans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Helvetica Neue,Ubuntu,sans-serif;
+    font-size: 1rem;
+    align-items: center;
+    height: 48px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 1.2rem;
+    color: #ddd;
+    border: none;
+    box-shadow: 0 .5rem 1rem rgba(143, 142, 142, 0.15)!important;
+    background: #000000;
+   }
+   
+   .endereco {
+    font-size: 0.8rem;
+    color: #7f7f7f;
+   }
+   
+   button:hover {
+    background: #2b2a2a;
+   }
+   
+   
