@@ -68,38 +68,35 @@ session_start();
             
             <div>
                 <div>
+                <label for="textCep">Cep</label>
                     <input id="txtCep" type="text" name="cep" >
-                    <label for="textCep">CEP</label>
                 </div>
             </div>
 
             <div>
                 <div>
+                <label for="textRua">Rua</label>
                     <input id="textRua" type="text" name="rua" >
-                    <label for="textRua">RUA</label>
             </div>
 
             <div>
                 <div>
-                    
+                <label for="textNumero">Numero</label>                    
                     <input id="txtNumero" type="text" name="numero" >
-                    <label for="textNumero">NÚMERO</label>
                 </div>
             </div>
 
             <div>
                 <div>
-                    
+                <label for="txtBairro">Bairro</label>
                     <input id="textBairro" type="text" name="bairro" >
-                    <label for="txtBairro">BAIRRO</label>
                 </div>
             </div>
 
             <div>
                 <div>
-                    
+                <label for="txtEstado">Estado</label>                    
                     <input id="textEstado" type="text" name="estado" >
-                    <label for="txtEstado">Estado</label>
                 </div>
             </div>       
             <button type="">Cadastrar</button> 
