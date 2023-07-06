@@ -2,9 +2,8 @@
 include('../../database/conn.php');
 include('../controllers/user/protected.php');
 
-
-
-
+$readUser = $conn->prepare('SELECT * FROM produtos');
+$readUser->execute();
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +21,11 @@ include('../controllers/user/protected.php');
     <link rel="stylesheet" href="../styles/ListaProduto.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/adicionarCarrinho.scss">
+    <script src="../js/JQuery.js"></script>
     <title>Produtos</title>
 </head>
 
 <body>
-    <script async src="../js/addCart2.js" type="text/javascript"></script>
 
     <nav class="menu-lateral">
 
@@ -72,28 +71,18 @@ include('../controllers/user/protected.php');
         </ul>
     </nav>
 
-
     <div class="content">
         <div>
             <h1 id="Title">Faça aqui o seu Pedido</h1>
         </div>
 
         <h3 class="Sub-prod">Escolha seu Alimento</h3>
-        <?php
-
-        $readUser = $conn->prepare('SELECT * FROM produtos');
-        $readUser->execute();
-
-        //carrinho
-        // $cart = $conn->prepare("SELECT cart_session, cart_status FROM cart_temporary ");
-        // $cart->execute();
-        ?>
 
         <div>
             <?php
             foreach ($readUser as $linha):
                 ?>
-                <div id="selecionarProd" class="Prod1" onclick="escolherProduto1()">
+                <div id="selecionarProd" class="Prod1">
                     <img class="imgProd product-image"
                         src="../controllers/products/<?= strip_tags($linha['path_imagem']) ?>" />
                     <p>
@@ -111,28 +100,20 @@ include('../controllers/user/protected.php');
                         <?= strip_tags($linha['preco']) ?>
                     </div>
                     </p>
-                    <a href="carrinho.php?adicionar=<?= strip_tags($linha['id']) ?>"> <img id="imgAdd"
-                            src="../images/adicionar-produto.png" alt=""></a>
+                    <button class="buy" data-id="<?= strip_tags($linha['id']) ?>">
+                        <img id="imgAdd" src="../images/adicionar-produto.png" alt="">
+                    </button>
                 </div>
-            </div>
-            <?php
+                <?php
             endforeach
             ?>
+        </div>
     </div>
-
-    <!-- <div class="container2"> (  comentado )
-        <h1>Valor Estimado</h1>
-        <span>R$ 0,00</span>
-        <button>Adicionar Carrinho</button>
-    </div> -->
-
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
-    <!-- <script src="../js/pedido.js" type="text/javascript"></script> -->
-    <!-- <script src="../js/addCart.js" type="text/javascript"></script> -->
-    <!-- <script src="../js/addCart2.js" type="text/javascript"></script> -->
     <script src="../js/validateNumber.js" type="text/javascript"></script>
+    <script src="../js/cartAjax.js"></script>
 
 </body>
 
