@@ -13,8 +13,7 @@ else if (isset($product['updateProduct'])) {
 else if (isset($product['updateProduct']) && $_FILES['imagem'] ) {
     $imagem = $_FILES['imagem'];
     updateProductAndImagem($product, $imagem);
-} 
-else if (isset($_GET['id'])) {
+} else if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteProduct($id);
 }

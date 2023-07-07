@@ -49,7 +49,7 @@ $rowTable = $readUser->fetchAll();
                         echo '<td>' . $linha['endereco'] . '</td>';
                         echo '<td>' . $linha['telefone'] . '</td>';
                         echo '<td><a href="formEdit/editarUsuario.php?id='.$linha['id'].'"><button class="editar">Editar</button></a></td>';
-                        echo '<td><a href="../../controllers/user/userController.php?id=' . $linha['id'] . '"><button class="excluir">Excluir</button></a></td>';
+                        echo '<td><a onclick="deleteUser('.$linha['id'] .')"><button class="excluir">Excluir</button></a></td>';
                         echo '</tr>';
                     }
                     ?>
@@ -94,6 +94,7 @@ $rowTable = $readUser->fetchAll();
     </nav>
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../../js/confirmDelete.js" type="text/javascript"></script>
 </body>
 
 </html>
