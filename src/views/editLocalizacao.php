@@ -21,8 +21,8 @@ $rowTable = $select->fetchAll();
     <title>Edição de Localização</title>
 </head>
 <body>
-    <h1>oi</h1>
     <form action="../controllers/localizacaocontroller/updateController.php"  method="post">
+        <input type="hidden" name="id" value="<?php echo $rowTable[0]['id'];?>">
         <input type="text" name="cep" value="<?php echo $rowTable[0]['cep']; ?>">
         <input type="text" name="rua" value="<?php echo $rowTable[0]['rua'];  ?>" />
         <input type="text" name="numero" value="<?php echo $rowTable[0]['numero'];?>">

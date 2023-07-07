@@ -5,13 +5,15 @@ $rua = $_POST['rua'];
 $numero = $_POST['numero'];
 $bairro = $_POST['bairro'];
 $cep = $_POST['cep'];
+$estado=$_POST['estado'];
 
-$local = $conn->prepare('INSERT INTO localizacao(rua,numero,bairro,cep) VALUES (:rua,:numero,:bairro,:cep)');
+$local = $conn->prepare('INSERT INTO localizacao(cep,rua,numero,bairro,estado) VALUES (:rua,:numero,:bairro,:cep,:estado)');
 $local->execute(array(
     ':rua' => $rua,
     ':numero' => $numero,
     ':bairro' => $bairro,
-    ':cep' => $cep
+    ':cep' => $cep,
+    ':estado'=>$estado
     )
 );
 

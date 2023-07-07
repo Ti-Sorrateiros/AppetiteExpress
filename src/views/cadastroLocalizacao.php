@@ -64,44 +64,44 @@ session_start();
     
     <div class="form">
         <h1>Cadastre seu Endereço</h1>
-        <form action="../controllers/localizacaocontroller/localizacaoController.php" method="post"> 
+        <form action="../controllers/localizacaocontroller/cadastroController.php" method="post"> 
             
             <div>
                 <div>
                 <label for="textCep">Cep</label>
-                    <input id="txtCep" type="text" name="cep" >
+                    <input id="txtCep" type="text" name="cep">
                 </div>
             </div>
 
             <div>
                 <div>
                 <label for="textRua">Rua</label>
-                    <input id="textRua" type="text" name="rua" >
+                    <input id="textRua" type="text" name="rua" required>
             </div>
 
             <div>
                 <div>
                 <label for="textNumero">Numero</label>                    
-                    <input id="txtNumero" type="text" name="numero" >
+                    <input id="txtNumero" type="text" name="numero" required>
                 </div>
             </div>
 
             <div>
                 <div>
                 <label for="txtBairro">Bairro</label>
-                    <input id="textBairro" type="text" name="bairro" >
+                    <input id="textBairro" type="text" name="bairro" required >
                 </div>
             </div>
 
             <div>
                 <div>
                 <label for="txtEstado">Estado</label>                    
-                    <input id="textEstado" type="text" name="estado" >
+                    <input id="textEstado" type="text" name="estado" required>
                 </div>
             </div>       
             
         </form>
-        <button type="submit">Cadastrar</button> 
+        <button type="submit" >Cadastrar</button> 
     </div>
     <button type="submit"><a href="localizacao.php">Voltar</a></button>
     <script src="../js/menu.js" type="text/javascript"></script>

@@ -1,6 +1,6 @@
 <?php
 include('../../database/conn.php');
-$tabela = $conn->prepare("SELECT * FROM localizacao");
+$tabela = $conn->prepare("SELECT * FROM localizacao;");
 $tabela->execute();
 $rowTabela = $tabela->fetchAll();
 ?>
@@ -80,7 +80,6 @@ $rowTabela = $tabela->fetchAll();
                     foreach($rowTabela as $linha){
                         //a tag TR é utilizada para definir uma linha dentro de uma tabela.
                         echo '<tr>';
-                        echo "<th scope='row'>".$linha['id']."</th>";
                         echo "<td>" . $linha['cep'] . "</td>";
                         echo "<td>" . $linha['rua'] . "</td>";
                         echo "<td>" . $linha['numero'] . "</td>";
