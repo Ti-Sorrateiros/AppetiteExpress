@@ -23,34 +23,51 @@ $rowTable = $readUser->fetchAll();
     <title>Usuarios </title>
 </head>
 <style>
-    .content img{
+    .content img {
         width: 100px;
         height: 100px;
     }
 </style>
+
 <body>
     <div class="content">
         <h1 class="center">Lista dos Produtos</h1>
-                    <?php
-                    foreach ($rowTable as $linha) {
-                        echo '<div>';
-                        //imagem tem que retirada de um link do banco de dados
-                        echo '<p><img src="../../controllers/products/'.$linha['path_imagem'].'." /><p>';
-                        echo '<p><b> ID: </b>' . $linha['id'] . '</p>' ;
-                        echo '<p><b> Produto: </b>' . $linha['nome'] . '</p>';
-                        echo '<p><b> Descrição: </b>' . $linha['descricao'] . '</h4>';
-                        echo '<p><b> Adicionais: </b>' . $linha['adicionais'] . '</h4>';
-                        echo '<p><b> Preço: </b>' . $linha['preco'] . '</p>';
-                        echo '<a href="./formEdit/editarProduto.php?id=' . $linha['id'] . '"><button class="editar">Editar</button></a>';
-                        echo '<a href="../../controllers/products/productController.php?id=' . $linha['id'] . '"><button class="excluir">Excluir</button></a>';
-                        echo '</div>';
-                        echo '<br>';
-                        echo '<hr>';
-                    }
-                    ?>
+
+        <div>
+
+        </div>
+        <?php
+        foreach ($rowTable as $linha) {
+            ?>
+            <div>
+                <p><img src="../../controllers/products/<?= strip_tags($linha['path_imagem']) ?>" />
+                <p>
+                <p><b> ID: </b>
+                    <?= strip_tags($linha['id']) ?>
+                </p>
+                <p><b> Produto: </b>
+                    <?= strip_tags($linha['nome']) ?>
+                </p>
+                <p><b> Descrição: </b>
+                    <?= strip_tags($linha['descricao']) ?>
+                    </h4>
+                <p><b> Adicionais: </b>
+                    <?= strip_tags($linha['adicionais']) ?>
+                    </h4>
+                <p><b> Preço: </b>
+                    <?= strip_tags($linha['preco']) ?>
+                </p>
+                <a href="./formEdit/editarProduto.php?id=<?= strip_tags($linha['id']) ?>"><button
+                        class="editar">Editar</button></a>
+                <button onclick="deleteProd(<?= strip_tags($linha['id']) ?>)" class="excluir">Excluir</button>
+            </div>
+            <br>
+            <hr>
+            <?php
+        }
+        ?>
     </div>
-
-
+ 
 
     <nav class="menu-lateral">
 
@@ -58,34 +75,36 @@ $rowTable = $readUser->fetchAll();
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul>
-                <li class="item-menu">
-                    <a href="cadastrarProdutos">
-                        <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                        <span class="txt-link"> CadastrarProdutos</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="pedidosFeitos">
-                        <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
-                        <span class="txt-link"> PedidosFeitos</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="usuarios">
-                        <span class="icon"><i class="bi bi-person-circle"></i></span>
-                        <span class="txt-link"> Usuarios</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="verprodutos ativo">
-                        <span class="icon"><i class="bi bi-eye-fill"></i></span>
-                        <span class="txt-link">VerProdutos</span>
-                    </a>
-                </li>
-            </ul>
+            <li class="item-menu">
+                <a href="cadastrarProdutos">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link"> CadastrarProdutos</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="pedidosFeitos">
+                    <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
+                    <span class="txt-link"> PedidosFeitos</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="usuarios">
+                    <span class="icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link"> Usuarios</span>
+                </a>
+            </li>
+            <li class="item-menu ativo">
+                <a>
+                    <span class="icon"><i class="bi bi-eye-fill"></i></span>
+                    <span class="txt-link">VerProdutos</span>
+                </a>
+            </li>
+        </ul>
     </nav>
+
     <script src="../../js/menu.js" type="text/javascript"></script>
-    <script src="../../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../../js/confirmDelete.js" type="text/javascript"></script>
+ 
 </body>
 
 </html>

@@ -90,13 +90,13 @@ include('../controllers/user/protected.php');
             $price = $_POST['price'];
             $qtd = 1;
 
-            
-                $produto = array();
 
-                array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
+            $produto = array();
 
-                array_push($_SESSION['produtos'], $produto);
-            }
+            array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
+
+            array_push($_SESSION['produtos'], $produto);
+        }
 
         // echo '<pre>';
         // print_r($_SESSION['produtos']);
@@ -104,30 +104,44 @@ include('../controllers/user/protected.php');
         
 
         foreach ($_SESSION['produtos'] as $prod) {
-
-            echo '<pre>';
-            print_r($prod);
-            echo '</pre>';
-
             ?>
 
             <div class="Prod1">
-                <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[2]) ?>" width="50px" />
+                <!-- Imagem -->
+                <div>
+                    <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[4]) ?>"
+                        width="50px" />
+                </div>
+                <!-- title -->
                 <p>
-                </p>
-                <p>
-                <h4 id="descProd">
+                <h4 id="titleProd">
                     <?= strip_tags($prod[1]) ?>
                 </h4>
-                </p>
+                <!-- Descricao -->
                 <p>
-                <div id="product-price"><b> R$: </b>
+                <h4 id="titleProd">
+                    <?= strip_tags($prod[2]) ?>
+                </h4>
+
+                <!-- Preco -->
+                </p>
+                <p id="product-price"><b> R$: </b>
                     <?= strip_tags($prod[3]) ?>
-                </div>
+                </p>
+
+                <!-- Quantidade  -->
+                </p>
+                <p id="product-price"><b> Quantidade: </b>
+                    <?= strip_tags($prod[5]) ?>
                 </p>
             </div>
+            <hr>
             <?php
         }
+
+        // echo '<pre>';
+        // print_r($prod);
+        // echo '</pre>';
 
         ?>
 

@@ -1,6 +1,11 @@
 <?php
 include('../../database/conn.php');
 $tabela = $conn->prepare("SELECT * FROM localizacao;");
+
+include('../controllers/user/protected.php');
+
+$tabela = $conn->prepare("SELECT * FROM localizacao");
+
 $tabela->execute();
 $rowTabela = $tabela->fetchAll();
 ?>
