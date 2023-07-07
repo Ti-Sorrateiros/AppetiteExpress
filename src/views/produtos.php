@@ -61,7 +61,7 @@ $readUser->execute();
                 </div>
             </li>
             <li class="item-menu">
-                <a id="logout" >
+                <a id="logout">
                     <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
                     <span class="txt-link">Sair</span>
                 </a>
@@ -116,21 +116,13 @@ $readUser->execute();
         </div>
     </div>
 
-    <script>
-        function clicar(prodId, prodDesc, imgProd, priceProd) {
-            $.post('carrinho.php', { id: prodId, desc: prodDesc, img: imgProd, price: priceProd }).done(function (response) {
-                alert('Produto Inserido!!!!');
-                $("#mypar").html(response.amount);
-            });
-        }
-    </script>
 
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../js/noRefresh.js" type="text/javascript"></script>
     <script src="../js/validateNumber.js" type="text/javascript"></script>
     <script src="../js/cartAjax.js"></script>
     <script src="../js/JQuery.js"></script>
     <script src="../js/confirmlogout.js"></script>
+    <script src="../js/confirmCart.js"></script>
 
 
 
