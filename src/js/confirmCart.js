@@ -1,8 +1,14 @@
 //Add cart
-function clicar(prodId, prodDesc, imgProd, priceProd) {
+function clicar(prodId, nomeProd, prodDesc, imgProd, priceProd) {
     if (confirm("Deseja adicionar o Produto ao carrinho?") == true) {
-        $.post('carrinho.php', { id: prodId, desc: prodDesc, img: imgProd, price: priceProd }).
-            done(function (response) {
+        $.post('carrinho.php', {
+            id: prodId,
+            nome: nomeProd,
+            desc: prodDesc,
+            img: imgProd,
+            price: priceProd
+        }).
+        done(function (response) {
                 alert('Produto Inserido!!!!');
                 $("#mypar").html(response.amount);
             });

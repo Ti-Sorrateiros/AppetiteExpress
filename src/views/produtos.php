@@ -103,9 +103,9 @@ $readUser->execute();
                     <button onclick="clicar(
                         '<?= strip_tags($linha['id']) ?>' , 
                         '<?= strip_tags($linha['nome']) ?>' , 
-                        '<?= strip_tags($linha['descricao']) ?>' ,
-                        '<?= strip_tags($linha['path_imagem']) ?>' , 
-                        '<?= strip_tags($linha['preco']) ?>' 
+                        '<?= strip_tags($linha['descricao']) ?>' , 
+                        '<?= strip_tags($linha['preco']) ?>' , 
+                        '<?= strip_tags($linha['path_imagem']) ?>' 
                        )">
                         <img id="imgAdd" src="../images/adicionar-produto.png" alt="">
                     </button>
