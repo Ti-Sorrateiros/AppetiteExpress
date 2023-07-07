@@ -1,8 +1,8 @@
 <?php
-    include('conn.php');
+include ('../../../database/conn.php');
 
-    if( isset($_GET['mensagem'])){
-        $id = $_GET['mensagem'];
+    if( isset($_GET['id'])){
+        $id = $_GET['id'];
    }else{
         header("Location: ../views/listalogin.php");
    }
@@ -12,6 +12,6 @@
 
     echo"<script>
     alert('Deletado!');
-    window.location.href='../views/listalogin.php';
+    window.location.href='../../views/localizacao.php';
     </script>";
 ?>

@@ -28,7 +28,6 @@ input{
 }
 
 .content button{
-    float: right;
     margin: 28px 0 0 18px;
     font-size: 13px;
     color: #b3b3b3;

@@ -76,47 +76,37 @@ $rowTabela = $tabela->fetchAll();
             <br>
             <br>
         </div>
-        
+
         <br>
-            <table> 
-                <tbody>
-                    <?php
-                    
-                    foreach($rowTabela as $linha){
-                        //a tag TR é utilizada para definir uma linha dentro de uma tabela.
-                        echo '<tr>';
-                        echo "<td>" . $linha['cep'] . "</td>";
-                        echo "<td>" . $linha['rua'] . "</td>";
-                        echo "<td>" . $linha['numero'] . "</td>";
-                        echo "<td>" . $linha['bairro'] . "</td>";
-                        echo "<td>" . $linha['estado'] . "</td>";
-                        echo '<td><a href=editLocalizacao.php?mensagem=' . $linha['id'] . ' class="btn btn-warning">Editar</a></td>';
-                        echo '<td><a href=../controller/controllerdelit.php?mensagem=' . $linha['id'] . ' class="btn btn-danger">Excluir</a></td>';
-                        echo '</tr>';
-                    
-                    }
-                    
-                    /// foreach ($rowTabela as $linha) {
-                        
-                    //    echo '<tr>';
-                     //   echo '<td>  <div class="card">
-                     //   <img class="card-image" src="../images/mapa.png" alt="">
-                     //       <p class="card-title">Casa</p>
-                     //       <p class="card-body">'
-                     //       . $linha['rua'].', '. $linha['numero'].', '.$linha['cep'].'</p>
-                      //      <a href="editLocalizacao.php"><button> Editar Endereço<span 
-                      //       class="endereco">&nbsp;<i class="bi bi-geo-alt-fill"></i></span></button></a>
-                       //   </div></td>';
-                      //  echo'</tr>';
-                        
-                    //
-                    ?>
-                </tbody>
-            </table>
-            <button> <a href="cadastroLocalizacao.php">Realizar Cadastro</a></button>
+        <table>
+            <tbody>
+                <?php
+
+                foreach ($rowTabela as $linha) {
+                    echo '<div class="card">';
+                    echo '<img class="card-image" src="../images/mapa.png" />';
+                    //titulo
+                    echo "<p class='card-title'>Casa</p>";
+                    //informações
+                    echo '<div class="card-body">';
+                    echo "<p> " . $linha['rua'] . " , " . $linha['cep'] . "," . $linha['numero'] . " ," . $linha['bairro'] . " ," . $linha['estado'] . "</p>";
+                    echo '<br>';
+                    echo '<hr>';
+                    echo '<br>';
+                    //botões
+                    echo '<a href=editLocalizacao.php?id=' . $linha['id'] . ' class="btn btn-warning"><button> Editar </button></a>';
+                    echo '<a href=../controllers/localizacaocontroller/delitcontroller.php?id=' . $linha['id'] . ' class="btn btn-danger"> <button> Excluir </button></a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
+            </tbody>
+        </table>
+        <a href="cadastroLocalizacao.php"> <button> Cadastrar novo Endereço </button></a>
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
+    <script src="../js/endereco.js" type="text/javascript"></script>
     <script src="../js/confirmlogout.js"></script>
 </body>
 
