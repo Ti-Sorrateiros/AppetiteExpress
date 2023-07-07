@@ -1,11 +1,7 @@
 <?php
 include('../../database/conn.php');
-// session_start();
+include('../controllers/user/protected.php');
 
-
-// if(empty($_SESSION['Status'])){
-//     header('');
-// }
 
 
 ?>
@@ -22,6 +18,7 @@ include('../../database/conn.php');
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
+    <script src="..js/JQuery.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Carrinho </title>
 </head>
@@ -72,57 +69,91 @@ include('../../database/conn.php');
 
 
     <div class="content">
-        <h1>Carrinho</h1>
-        <?php
+        
+            <h1>Carrinho</h1>
+            <?php
 
-        //verificando se o codigo do produto não está vazio $cd
-        if (isset($_GET['adicionar'])) {
-            $id_prod = $_GET['adicionar'];
-        }
-        //se a sessão de carrinho não estiver preenchida
-        else if (empty($_SESSION['adicionar'])) {
-            //será criado uma sessão chamada carrinho para receber um vetor
-            $_SESSION['adicionar'] = array();
-        }
-        //se a variavel $id_produto não estiver preenchida
-        else if (empty($_SESSION['adicionar'][$id_prod])) {
-            $_SESSION['adicionar'][$id_prod] = 1;
-        }
-        //caso contrario, se ela estiver setada, adicione novos produtos
-        else if (isset($_SESSION['adicionar'][$id_prod])) {
-            $_SESSION['adicionar'][$id_prod] += 1;
-            include ('mostrarCarrinho.php');
-        }
-        //mostra carrinho vazio
-        else {
-            include ('mostrarCarrinho.php');
-        }
 
-        ?>
+            if (empty($_SESSION)) {
+                session_start();
+            }
 
-        <!-- exibindo o valor da variavel total da compra -->
-        <div class="">
-            <h1>Total: R$
-                <?php include ('mostrarCarrinho.php'); echo number_format($total, 2, ',', '.'); ?>
-            </h1>
-        </div>
+            if (!$_SESSION['produtos']) {
+                $_SESSION['produtos'] = array();
+            }
 
-        <div class="">
-            <button></button>
-            <a href=""><button>Continuar Compra</button></a>
-            <a href=""><button>Finalizar Compra</button></a>
-        </div>
+            if (isset($_POST['id'])) {
+                $id = $_POST['id'];
+                $descricao = $_POST['desc'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+
+                $produto = array();
+
+                array_push($produto, $id, $descricao, $img, $price);
+
+                array_push($_SESSION['produtos'], $produto);
+
+            }
+
+
+            // echo '<pre>';
+            // print_r($_SESSION['produtos']);
+            // echo '</pre>';
+
+
+            foreach ($_SESSION['produtos'] as $prod) {
+
+            //     echo '<pre>';
+            // print_r($prod   );
+            // echo '</pre>';
+
+                ?>
+         
+            <div class="Prod1">
+                <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[2]) ?>"
+                    width="50px" />
+                <p>
+                </p>
+                <p>
+                <h4 id="descProd">
+                    <?= strip_tags($prod[1]) ?>
+                </h4>
+                </p>
+                <p>
+                <div id="product-price"><b> R$: </b>
+                    <?= strip_tags($prod[3]) ?>
+                </div>
+                </p>
+            </div>
+            <?php
+            }
+
+            ?>
+        
     </div>
 
-    <!-- <div class="container2">
-        <h1>Valor Estimado</h1>
-        <span>R$ 0,00</span>
-        <button>Adicionar Carrinho</button>
-    </div> -->
 
 
+
+
+
+    <!-- exibindo o valor da variavel total da compra -->
+    <div class="">
+        <h1>Total: R$
+
+        </h1>
+    </div>
+
+    <div class="">
+        <button></button>
+        <a href=""><button>Continuar Compra</button></a>
+        <a href=""><button>Finalizar Compra</button></a>
+    </div>
+    </div>
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
+
 </body>
 
 </html>

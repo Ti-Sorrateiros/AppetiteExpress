@@ -80,9 +80,9 @@ $readUser->execute();
 
         <div>
             <?php
-            foreach ($readUser as $linha):
+            foreach ($readUser as $linha) {
                 ?>
-                <div id="selecionarProd" class="Prod1">
+                <div class="Prod1">
                     <img class="imgProd product-image"
                         src="../controllers/products/<?= strip_tags($linha['path_imagem']) ?>" />
                     <p>
@@ -100,20 +100,36 @@ $readUser->execute();
                         <?= strip_tags($linha['preco']) ?>
                     </div>
                     </p>
-                    <button class="buy" data-id="<?= strip_tags($linha['id']) ?>">
+                    <button onclick="clicar(
+                        '<?= strip_tags($linha['id']) ?>' , 
+                        '<?= strip_tags($linha['descricao']) ?>' ,
+                        '<?= strip_tags($linha['path_imagem']) ?>' , 
+                        '<?= strip_tags($linha['preco']) ?>' 
+                       )">
                         <img id="imgAdd" src="../images/adicionar-produto.png" alt="">
                     </button>
                 </div>
                 <?php
-            endforeach
+            }
             ?>
         </div>
     </div>
+
+    <script>
+        function clicar(prodId, prodDesc, imgProd , priceProd) {
+            $.post('carrinho.php', { id: prodId, desc: prodDesc, img: imgProd , price : priceProd }).done(function (response) {
+                alert('Produto Inserido!!!!');
+                $("#mypar").html(response.amount);
+            });
+        }
+    </script>
+
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
     <script src="../js/validateNumber.js" type="text/javascript"></script>
     <script src="../js/cartAjax.js"></script>
+    <script src="../js/JQuery.js"></script>
 
 </body>
 
