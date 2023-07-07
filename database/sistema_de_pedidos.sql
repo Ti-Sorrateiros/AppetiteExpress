@@ -53,10 +53,11 @@ CREATE TABLE pedidos(
 -- guarda o cadastro de uma nova localização feito pelo cliente
 CREATE TABLE localizacao(
     id int auto_increment primary key,
-    numero varchar(100),
+    cep varchar(100),
     rua varchar(100),
+    numero varchar(100),
     bairro varchar(100),
-    cep varchar(100)
+    estado varchar(100),
 ) DEFAULT charset utf8;
 
 
