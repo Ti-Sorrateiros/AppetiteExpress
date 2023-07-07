@@ -56,7 +56,7 @@ $rowTabela = $tabela->fetchAll();
                 </div>
             </li>
             <li class="item-menu">
-                <a href="logout">
+                <a id="logout">
                     <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
                     <span class="txt-link">Sair</span>
                 </a>

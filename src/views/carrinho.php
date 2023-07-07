@@ -58,7 +58,7 @@ include('../controllers/user/protected.php');
                 </div>
             </li>
             <li class="item-menu">
-                <a href="logout">
+                <a id="logout">
                     <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
                     <span class="txt-link">Sair</span>
                 </a>
@@ -69,50 +69,50 @@ include('../controllers/user/protected.php');
 
 
     <div class="content">
-        
-            <h1>Carrinho</h1>
-            <?php
+
+        <h1>Carrinho</h1>
+        <?php
 
 
-            if (empty($_SESSION)) {
-                session_start();
-            }
+        if (empty($_SESSION)) {
+            session_start();
+        }
 
-            if (!$_SESSION['produtos']) {
-                $_SESSION['produtos'] = array();
-            }
+        if (!$_SESSION['produtos']) {
+            $_SESSION['produtos'] = array();
+        }
 
-            if (isset($_POST['id'])) {
-                $id = $_POST['id'];
-                $descricao = $_POST['desc'];
-                $img = $_POST['img'];
-                $price = $_POST['price'];
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $nomeProduto = $_POST['nome'];
+            $descricao = $_POST['desc'];
+            $img = $_POST['img'];
+            $price = $_POST['price'];
+            $qtd = 1;
 
+            
                 $produto = array();
 
-                array_push($produto, $id, $descricao, $img, $price);
+                array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
 
                 array_push($_SESSION['produtos'], $produto);
-
             }
 
+        // echo '<pre>';
+        // print_r($_SESSION['produtos']);
+        // echo '</pre>';
+        
 
-            // echo '<pre>';
-            // print_r($_SESSION['produtos']);
-            // echo '</pre>';
+        foreach ($_SESSION['produtos'] as $prod) {
 
+            echo '<pre>';
+            print_r($prod);
+            echo '</pre>';
 
-            foreach ($_SESSION['produtos'] as $prod) {
+            ?>
 
-            //     echo '<pre>';
-            // print_r($prod   );
-            // echo '</pre>';
-
-                ?>
-         
             <div class="Prod1">
-                <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[2]) ?>"
-                    width="50px" />
+                <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[2]) ?>" width="50px" />
                 <p>
                 </p>
                 <p>
@@ -127,32 +127,29 @@ include('../controllers/user/protected.php');
                 </p>
             </div>
             <?php
-            }
+        }
 
-            ?>
-        
+        ?>
+
+
+        <div class="">
+            <a href="produtos"><button>Continuar Compra</button></a>
+            <a href=""><button>Finalizar Compra</button></a>
+        </div>
+
     </div>
 
-
-
-
-
-
     <!-- exibindo o valor da variavel total da compra -->
-    <div class="">
+    <!-- <div class="">
         <h1>Total: R$
 
         </h1>
-    </div>
+    </div> -->
 
-    <div class="">
-        <button></button>
-        <a href=""><button>Continuar Compra</button></a>
-        <a href=""><button>Finalizar Compra</button></a>
-    </div>
+
     </div>
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../js/confirmlogout.js"></script>
 
 </body>
 

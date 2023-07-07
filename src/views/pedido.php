@@ -47,7 +47,7 @@
                 </div>
             </li>
             <li class="item-menu">
-                <a href="logout">
+                <a id="logout">
                     <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
                     <span class="txt-link">Sair</span>
                 </a>
@@ -61,7 +61,7 @@
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../js/noRefresh.js" type="text/javascript"></script>
+    <script src="../js/confirmlogout.js"></script>
 </body>
 
 </html>
