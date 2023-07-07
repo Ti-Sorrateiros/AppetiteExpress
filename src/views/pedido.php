@@ -1,3 +1,7 @@
+<?php
+include('../controllers/user/protected.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

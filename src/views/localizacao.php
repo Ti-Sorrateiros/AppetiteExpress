@@ -1,5 +1,7 @@
 <?php
 include('../../database/conn.php');
+include('../controllers/user/protected.php');
+
 $tabela = $conn->prepare("SELECT * FROM localizacao");
 $tabela->execute();
 $rowTabela = $tabela->fetchAll();
