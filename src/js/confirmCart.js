@@ -12,7 +12,5 @@ function clicar(prodId, nomeProd, prodDesc, imgProd, priceProd) {
                 alert('Produto Inserido!!!!');
                 $("#mypar").html(response.amount);
             });
-    } else {
-        window.location.href = "../views/produtos.php";
     }
 }
