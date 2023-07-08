@@ -10,4 +10,9 @@ $id = $_POST['id'];
 
 $upd = $conn->prepare("UPDATE localizacao set cep=:cep, rua=:rua, numero=:numero, bairro=:bairro, estado=:estado WHERE id =:id");
 $upd->execute(array(':cep'=>$cep,':rua'=>$rua,':numero'=>$numero,':bairro'=>$bairro,':estado'=>$estado,':id'=>$id ));
+
+echo '<script>
+alert("Localização Alterada com sucesso");
+window.location.href="../../views/localizacao.php"
+</script>';
 ?>
