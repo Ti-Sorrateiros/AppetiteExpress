@@ -122,7 +122,7 @@ include('../controllers/user/protected.php');
             //guardar os dados do carrinho
             array_push($_SESSION['dados'], array(
                 'id_produto' => $id,
-                'nome' => $nomeProduto,
+                'nome_produto' => $nomeProduto,
                 'img' => $price,
                 'preco' => $img,
                 'quantidade' => $qtd
@@ -154,7 +154,7 @@ include('../controllers/user/protected.php');
             echo '<br><h3 title="carrinho vazio" >Carrinho Vazio <a title="clique para adicionar os produtos ao carrinho" href="produtos">Clique aqui para adicionar produtos ao carrinho </a></h3>';
         } else {
             echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button>Escolher mais produtos</button></a><br>';
-            echo '<br><a href="../controllers/products/pedido.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
+            echo '<br><a href="../controllers/products/pedidoController.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
             foreach ($_SESSION['carrinho'] as $prod) {
                 ?>
                 <br>

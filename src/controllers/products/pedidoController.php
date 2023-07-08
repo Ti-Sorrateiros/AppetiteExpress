@@ -2,16 +2,27 @@
 include('../../../database/conn.php');
 include('../user/protected.php');
 
+
+
 foreach($_SESSION['dados'] as $produtos){
-    $pedido = $conn->prepare("INSERT INTO pedidos () VALUES (NULL,?,?,?)");
-    $pedido->bindParam(1, $produtos['id_produto']);
-    $pedido->bindParam(2, $produtos['preco']);
-    $pedido->bindParam(3, $produtos['quantidade']);
-    $pedido->execute();
+    $date = date("Y-m-d");
+    date_default_timezone_set('America/Sao_Paulo');
+    $time = date("H:i:s");
+    $pedido = $conn->prepare("INSERT INTO pedidos (id_produto, preco, quantidade, dia, hora) 
+    VALUES (:id_produto, :preco , :quantidade , :dia , :hora)");
+    $pedido->execute(array(
+        ':id_produto' => $produtos['id_produtos'],
+        ':preco' => $produtos['preco'],
+        ':quantidade' => $produtos['quantidade'],
+        ':dia' => $date,
+        ':hora' => $time
+    ));
 }
 
-//retirar a sessão de carrinho
+
+//retirar a sessão de carrinho e de dados
 unset($_SESSION['carrinho']);
+unset($_SESSION['dados']);
 
 header("location: ../../views/pedido.php")
 
