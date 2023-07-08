@@ -71,14 +71,15 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
         <h1>Seus Pedidos</h1>
 
         <?php
-
         foreach ($rowTable as $pedidos) {
             echo '<div class="card" >';
             //titulo
-            echo "<p class='card-title'> Pedido N° ".$pedidos['id']."</p>";
+            echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
             //informações
             echo '<div class="card-body">';
-            echo "<p Produto:> " . $pedidos['id_produto'] . " , " . $pedidos['preco'] . "," . $pedidos['quantidade'] .  "</p>";
+            echo "<p>Produto: " . $pedidos['id_produto'] . "<p>
+            <p> Preço: R$" . $pedidos['preco'] . "</p>
+            <p>Quantidade: " . $pedidos['quantidade'] . "</p>";
             echo '<br>';
             echo '<hr>';
             echo '<br>';
@@ -89,7 +90,6 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
     </div>
-
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/confirmlogout.js"></script>
 </body>
