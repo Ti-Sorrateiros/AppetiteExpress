@@ -33,21 +33,12 @@ CREATE TABLE produtos(
     path_imagem VARCHAR(100) -- caminho da imagem 
 ) DEFAULT charset utf8; 
 
--- guardar os produtos (definir limite de expiração)
-CREATE TABLE carrinho(
-    id INT PRIMARY KEY,
-    id_produto INT,
-    quantidade_produto INT(10)
-) DEFAULT charset utf8; 
-
 -- guardar os pedidos feito pelo cliente
 CREATE TABLE pedidos(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    id_usuario INT,
-    id_carrinho INT,
-    valor_pedido FLOAT(15) NOT NULL,
-    tipo_pedido VARCHAR(55) NOT NULL,
-    data_pedido DATETIME NOT NULL
+    id_produto INT,
+    preco FLOAT(15) NOT NULL,
+    quantidade VARCHAR(55) NOT NULL
 ) DEFAULT charset utf8; 
 
 -- guarda o cadastro de uma nova localização feito pelo cliente
@@ -57,31 +48,13 @@ CREATE TABLE localizacao(
     rua varchar(100),
     numero varchar(100),
     bairro varchar(100),
-    estado varchar(100),
+    estado varchar(100)
 ) DEFAULT charset utf8;
 
-
 -- chave estrangeira id_perfil para usuario e para definir o tipo de usuario 
 ALTER TABLE usuarios ADD FOREIGN KEY(id_perfil) REFERENCES perfil (id);
 
 -- chave estrangeira para obter dados do usuario que pediu
 ALTER TABLE pedidos ADD FOREIGN KEY(id_usuario) REFERENCES usuarios (id);
 
--- chave estrangeira para obter dados do produto que foi adicionado
-ALTER TABLE carrinho ADD FOREIGN KEY(id_produto) REFERENCES produtos (id);
 
--- chave estrangeira para obter dados do carrinho para fazer o pedido
-ALTER TABLE pedidos ADD FOREIGN KEY(id_carrinho) REFERENCES carrinho (id);
-
-
--- chave estrangeira id_perfil para usuario e para definir o tipo de usuario 
-ALTER TABLE usuarios ADD FOREIGN KEY(id_perfil) REFERENCES perfil (id);
-
--- chave estrangeira para obter dados do usuario que pediu
-ALTER TABLE pedidos ADD FOREIGN KEY(id_usuario) REFERENCES usuarios (id);
-
--- chave estrangeira para obter dados do produto que foi adicionado
-ALTER TABLE carrinho ADD FOREIGN KEY(id_produto) REFERENCES produtos (id);
-
--- chave estrangeira para obter dados do carrinho para fazer o pedido
-ALTER TABLE pedidos ADD FOREIGN KEY(id_carrinho) REFERENCES carrinho (id);
