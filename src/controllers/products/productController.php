@@ -22,12 +22,12 @@ function createProduct($product, $imagem)
 {
     global $conn;
 
-    $pasta = "arquives/";
+    $pasta = "../../images/products/";
     $nomeDaImagem = $imagem['name'];
     $novoNomeDoArquivo = uniqid(); //definir codificação aleatório para o nome da imagem
     $extensao = strtolower(pathinfo($nomeDaImagem, PATHINFO_EXTENSION));
 
-    if ($extensao != "jpg" && $extensao != 'png') {
+    if ($extensao != "jpg" && $extensao != 'png' ) {
         die("<div align='center'>
         <h1>Tipo de arquivo não aceito!! </h1>
         <p><a href='../../views/admin/cadastrarProdutos.php'>Voltar para o cadastro de produtos</a></p>

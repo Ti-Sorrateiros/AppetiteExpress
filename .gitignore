@@ -2,4 +2,4 @@
 database/conn.php
 
 #arquivos das imagens cadastradas terão commits ignorados
-src/controllers/products/arquives/*
+src/images/*
