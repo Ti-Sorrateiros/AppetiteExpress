@@ -1,0 +1,1 @@
+# imagens dos produtos cadastrados
