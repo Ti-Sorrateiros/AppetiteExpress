@@ -8,9 +8,8 @@ function clicar(prodId, nomeProd, prodDesc, imgProd, priceProd) {
             img: imgProd,
             price: priceProd
         }).
-        done(function (response) {
-                alert('Produto Inserido!!!!');
-                $("#mypar").html(response.amount);
+            done(function (response) {
+                alert('Produto Adicionado com sucesso');
             });
     }
 }
