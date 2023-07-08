@@ -100,7 +100,7 @@ $readUser->execute();
                         <?= strip_tags($linha['preco']) ?>
                     </div>
                     </p>
-                    <button onclick="clicar(
+                    <button title="adicionar produto ao carrinho" onclick="clicar(
                         '<?= strip_tags($linha['id']) ?>' , 
                         '<?= strip_tags($linha['nome']) ?>' , 
                         '<?= strip_tags($linha['descricao']) ?>' , 
@@ -119,8 +119,6 @@ $readUser->execute();
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/validateNumber.js" type="text/javascript"></script>
-    <script src="../js/cartAjax.js"></script>
-    <script src="../js/JQuery.js"></script>
     <script src="../js/confirmlogout.js"></script>
     <script src="../js/confirmCart.js"></script>
 
