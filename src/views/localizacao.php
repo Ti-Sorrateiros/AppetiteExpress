@@ -91,7 +91,6 @@ $rowTabela = $tabela->fetchAll();
                     echo '<div class="card-body">';
                     echo "<p> " . $linha['rua'] . " , " . $linha['cep'] . "," . $linha['numero'] . " ," . $linha['bairro'] . " ," . $linha['estado'] . "</p>";
                     echo '<br>';
-                    echo '<hr>';
                     echo '<br>';
                     //botões
                     echo '<a href=editLocalizacao.php?id=' . $linha['id'] . ' class="btn btn-warning"><button> Editar </button></a>';
