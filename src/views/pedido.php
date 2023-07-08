@@ -1,5 +1,12 @@
 <?php
 include('../controllers/user/protected.php');
+include('../../database/conn.php');
+
+$sql = $conn->prepare("SELECT * FROM pedidos");
+
+$sql->execute();
+$rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +68,26 @@ include('../controllers/user/protected.php');
     </nav>
 
     <div class="content">
-        <p>Seus Pedidos</p>
+        <h1>Seus Pedidos</h1>
+
+        <?php
+
+        foreach ($rowTable as $pedidos) {
+            echo '<div class="card" >';
+            //titulo
+            echo "<p class='card-title'> Pedido N° ".$pedidos['id']."</p>";
+            //informações
+            echo '<div class="card-body">';
+            echo "<p Produto:> " . $pedidos['id_produto'] . " , " . $pedidos['preco'] . "," . $pedidos['quantidade'] .  "</p>";
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            //botões
+            echo '</div>';
+            echo '</div>';
+        }
+        ?>
+
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>

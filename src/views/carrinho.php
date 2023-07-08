@@ -70,9 +70,6 @@ include('../controllers/user/protected.php');
     <div class="content">
 
         <h1>Carrinho</h1>
-
-
-
         <?php
 
         //se caso não tenha uma sessão (como login por exemplo)
@@ -81,20 +78,13 @@ include('../controllers/user/protected.php');
         }
 
         //sem sessão de array de produtos, criar um array a esta sessão
-        if (empty($_SESSION['carrinho'])) {
-            $_SESSION['carrinho'] = array();
-        }
-
-        //se o carrinho tiver vazio mostre uma mensagem que está vazio
-        if (count($_SESSION['carrinho']) == 0) {
-            echo '<br><h3 title="carrinho vazio" >Carrinho Vazio <a title="clique para adicionar os produtos ao carrinho" href="produtos">Clique aqui para adicionar produtos ao carrinho </a></h3>';
-        } else {
-            echo '<br><a href="produtos"><button>Escolher mais produtos</button></a><br>';
-        }
+       if(empty($_SESSION['carrinho'])){
+        $_SESSION['carrinho'] = array();
+       }
 
         //recebimento dos dados
         if (isset($_POST['id'])) {
-            $id = $_POST['id'];
+            $id = $_POST['id'] - 1;
             $nomeProduto = $_POST['nome'];
             $descricao = $_POST['desc'];
             $img = $_POST['img'];
@@ -109,74 +99,110 @@ include('../controllers/user/protected.php');
         //adicionar dados recebidos ao carrinho
         function addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd)
         {
-            //criar um array para cada produto
-            $produto = array();
 
-            //recebendo os dados e colocando em um array de produto
-            array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
+            if (empty($_SESSION['carrinho'][$id])) {
+                //criar um array para cada produto
+                $produto = array();
 
-            //enviar para o array de sessão produtos os valores contido no array de carrinho
-            array_push($_SESSION['carrinho'], $produto);
+                //recebendo os dados e colocando em um array de produto
+                array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
 
+                //enviar para o array de sessão produtos os valores contido no array de carrinho
+                array_push($_SESSION['carrinho'], $produto);
+
+            } else {
+               array_push($_SESSION['carrinho'][$id] ,[5] + 1);
+            }
+
+            //array para sessão de dados
+            if (empty($_SESSION['dados'])) {
+                $_SESSION['dados'] = array();
+            }
+
+            //guardar os dados do carrinho
+            array_push($_SESSION['dados'], array(
+                'id_produto' => $id,
+                'nome' => $nomeProduto,
+                'img' => $price,
+                'preco' => $img,
+                'quantidade' => $qtd
+            )
+            );
         }
- 
-        foreach ($_SESSION['carrinho'] as $prod) {
-            ?>
-            <br>
-            <div class="Prod1">
-                <!-- Imagem -->
-                <div>
-                    <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[4]) ?>"
-                        width="50px" />
-                </div>
-                <!-- title -->
-                <p>
-                <h4 id="titleProd">
-                    <?= strip_tags($prod[1]) ?>
-                </h4>
-                <!-- Descricao -->
-                <p>
-                <h4 id="titleProd">
-                    <?= strip_tags($prod[2]) ?>
-                </h4>
 
-                <!-- Preco -->
-                </p>
-                <p id="product-price"><b> R$: </b>
-                    <?= strip_tags($prod[3]) ?>
-                </p>
+        
+        
+        // echo '<pre>';
+        // print_r($_SESSION['carrinho'][3]);
+        // echo '</pre>';
+        
+        // //soma de quantidade
+        // echo '<pre>';
+        // print_r($_SESSION['carrinho'][1]);
+        // echo '</pre>';
 
-                <!-- Quantidade  -->
-                </p>
-                <p id="product-price"><b> Quantidade: </b>
-                    <?= strip_tags($prod[5]) ?>
-                </p>
-                <hr>
-                <div>
-                    <h2>Total: </h2>
-                    <p>R$
+        // //preco * qtd
+        // echo '<pre>';
+        // print_r($_SESSION['carrinho'][0][3] * 2);
+        // echo '</pre>';
 
-                    </p>
-                </div>
+
+
+
+        //se o carrinho tiver vazio mostre uma mensagem que está vazio
+        if (count($_SESSION['carrinho']) == 0) {
+            echo '<br><h3 title="carrinho vazio" >Carrinho Vazio <a title="clique para adicionar os produtos ao carrinho" href="produtos">Clique aqui para adicionar produtos ao carrinho </a></h3>';
+        } else {
+            echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button>Escolher mais produtos</button></a><br>';
+            echo '<br><a href="../controllers/products/pedido.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
+            foreach ($_SESSION['carrinho'] as $prod) {
+                ?>
                 <br>
-            </div>
+                <div class="Prod1">
+                    <!-- Imagem -->
+                    <div>
+                        <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[4]) ?>"
+                            width="50px" />
+                    </div>
+                    <!-- title -->
+                    <p>
+                    <h4 id="titleProd">
+                        <?= strip_tags($prod[1]) ?>
+                    </h4>
+                    <!-- Descricao -->
+                    <p>
+                    <h4 id="titleProd">
+                        <?= strip_tags($prod[2]) ?>
+                    </h4>
 
-            <hr>
-            <?php
+                    <!-- Preco -->
+                    </p>
+                    <p id="product-price"><b> R$: </b>
+                        <?= number_format(strip_tags($prod[3]), 2, ",", '.') ?>
+                    </p>
+
+                    <!-- Quantidade  -->
+                    </p>
+                    <p id="product-price"><b> Quantidade: </b>
+                        <?= strip_tags($prod[5]) ?>
+                    </p>
+                    <hr>
+                    <div>
+                        <h2>Total: </h2>
+                        <p>R$
+
+                        </p>
+                    </div>
+                </div>
+
+                <hr>
+                <?php
+            }
+
         }
-
-
 
         ?>
         <br>
-        <!-- soma de todos os itens do carrinho -->
-        <!-- <div>
-            <h2>Total: </h2>
-            <p>R$
-                <?= strip_tags($prod[3]) * strip_tags($prod[5]) ?>
-            </p>
-            <hr>
-        </div> -->
 
     </div>
     </div>
