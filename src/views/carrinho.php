@@ -18,6 +18,7 @@ include('../controllers/user/protected.php');
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/content.css">
+    <link rel="stylesheet" href="../styles/Listaproduto.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Carrinho </title>
 </head>
@@ -166,13 +167,13 @@ include('../controllers/user/protected.php');
                     </div>
                     <!-- title -->
                     <p>
-                    <h4 id="titleProd">
+                    <h4  id="titleProd">
                         <?= strip_tags($prod[1]) ?>
                     </h4>
                     <!-- Descricao -->
                     <p>
-                    <h4 id="titleProd">
-                        <?= strip_tags($prod[2]) ?>
+                    <h4 id="descProd">
+                    <?= strip_tags($prod[2]) ?>
                     </h4>
 
                     <!-- Preco -->
