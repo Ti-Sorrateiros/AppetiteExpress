@@ -105,14 +105,4 @@ function deleteProductCart($removerCartId)
     }
 }
 
-
-
-
-
-
-
-
-echo '<pre>';
-print_r($_SESSION['dados']);
-echo '</pre>';
 ?>
