@@ -7,12 +7,14 @@ $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 
 //se o input com name create User for acionado criar usuario no banco
-if (isset($user['createUser'])) {
-    createUser($user);
+if (isset($user['createUser'])  && $_POST['password']) {
+    $senha = $_POST['password'];
+    createUser($user, $senha);
 } else if (isset($user['updateUser'])) {
     updateUser($user);
-} else if (isset($user['loginUser'])) {
-    loginUser($user);
+} else if (isset($user['loginUser']) && $_POST['password'] ) {
+    $senha = $_POST['password'];
+    loginUser($user, $senha);
 } else if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteUser($id);
@@ -20,7 +22,7 @@ if (isset($user['createUser'])) {
 
 
 //função para criar usuario
-function createUser($user)
+function createUser($user, $senha)
 {
     global $conn;
 
@@ -50,8 +52,7 @@ function createUser($user)
         $options = [
             'cost' => 10
         ];
-        $hashedPass = password_hash($user['senha'], PASSWORD_DEFAULT, $options);
-        $date = date('Y-m-d H:i:s');
+        $hashedPass = password_hash($senha, PASSWORD_DEFAULT, $options);
         $queryUser =
             "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
              VALUES (2, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
@@ -70,6 +71,42 @@ function createUser($user)
             window.location.href='../../views/cadastro.php';
           </script>";
         }
+    }
+}
+
+function loginUser($user, $senha)
+{
+    global $conn;
+    if (isset($user['loginUser'])) {
+        //select para ver se o email tem no banco
+        $queryUser = "SELECT * FROM usuarios WHERE (email= :email);";
+        $result = $conn->prepare($queryUser);
+        $result->execute(array(':email' => $user['email']));
+
+        //contar a quantidade de row (coluna da tabela do banco de dados)
+        $row = $result->rowCount();
+
+        //autenticacao de senha com hash
+        $dataUser = $result->fetch(PDO::FETCH_ASSOC);
+        $hash = $dataUser['senha'];
+        $check = password_verify($senha, $hash);
+
+        //verifica se existe usuario no banco , e se senha está correta 
+        if ($row > 0 && $check) {
+            session_start();
+            $_SESSION['id'] = $dataUser['id'];
+
+
+            echo "<script>
+        window.location.href='../../views/produtos.php';
+        </script>";
+        } else {
+            echo "<script>
+             alert('Login e/ou senha incorretos');
+             window.location.href='../../views/login.php';
+             </script>";
+        }
+
     }
 }
 
@@ -120,43 +157,6 @@ function updateUser($user)
     }
 }
 
-function loginUser($user)
-{
-    global $conn;
-
-
-    if (isset($user['loginUser'])) {
-        //select para ver se o email tem no banco
-        $queryUser = "SELECT * FROM usuarios WHERE (email= :email);";
-        $result = $conn->prepare($queryUser);
-        $result->execute(array(':email' => $user['email']));
-
-        //contar a quantidade de row (coluna da tabela do banco de dados)
-        $row = $result->rowCount();
-
-        //autenticacao de senha com hash
-        $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
-        $hash = $usuario[0]['senha'];
-        $check = password_verify($usuario[0]['senha'], $hash);
-
-        //verifica se existe usuario no banco , e se senha está correta 
-        if ($row > 0) {
-            session_start();
-            $_SESSION['id'] = $usuario[0]['id'];
-
-
-            echo "<script>
-        window.location.href='../../views/produtos.php';
-        </script>";
-        } else {
-            echo "<script>
-             alert('Login e/ou senha incorretos');
-             window.location.href='../../views/login.php';
-             </script>";
-        }
-
-    }
-}
 
 
 ?>
