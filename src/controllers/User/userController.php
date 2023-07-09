@@ -4,17 +4,16 @@ include('../../../database/conn.php');
 //variavel que pega os dados de todos os campos do formulario
 $user = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-
-
 //se o input com name create User for acionado criar usuario no banco
-if (isset($user['createUser'])  && $_POST['password']) {
+if (isset($user['createUser']) && $_POST['password']) {
     $senha = $_POST['password'];
     createUser($user, $senha);
 } else if (isset($user['updateUser'])) {
     updateUser($user);
-} else if (isset($user['loginUser']) && $_POST['password'] ) {
+} else if (isset($user['loginUser']) && $_POST['password'] && $_POST['email']) {
     $senha = $_POST['password'];
-    loginUser($user, $senha);
+    $email = $_POST['email'];
+    loginUser($user, $senha, $email);
 } else if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteUser($id);
@@ -74,41 +73,40 @@ function createUser($user, $senha)
     }
 }
 
-function loginUser($user, $senha)
+function loginUser($user, $senha, $email)
 {
     global $conn;
     if (isset($user['loginUser'])) {
         //select para ver se o email tem no banco
-        $queryUser = "SELECT * FROM usuarios WHERE (email= :email);";
-        $result = $conn->prepare($queryUser);
-        $result->execute(array(':email' => $user['email']));
-
-        //contar a quantidade de row (coluna da tabela do banco de dados)
-        $row = $result->rowCount();
-
+        $sql = "SELECT * FROM usuarios WHERE (email= :email);";
+        $result = $conn->prepare($sql);
+        $result->execute(array(':email' => $sql));
         //autenticacao de senha com hash
         $dataUser = $result->fetch(PDO::FETCH_ASSOC);
+
+        //senha digitada e a senha criptografada do banco
         $hash = $dataUser['senha'];
-        $check = password_verify($senha, $hash);
+        $checkPass = password_verify($senha, $hash);
+
+        $checkEmail = $email == $dataUser['email'];
 
         //verifica se existe usuario no banco , e se senha está correta 
-        if ($row > 0 && $check) {
+        if ($checkEmail && $checkPass) {
             session_start();
             $_SESSION['id'] = $dataUser['id'];
 
-
             echo "<script>
-        window.location.href='../../views/produtos.php';
-        </script>";
-        } else {
-            echo "<script>
-             alert('Login e/ou senha incorretos');
-             window.location.href='../../views/login.php';
+             window.location.href='../../views/produtos.php';
              </script>";
+        }  else  {
+            echo "<script>
+            alert('Email ou/e senha incorretos');
+           window.location.href='../../views/login.php';
+            </script>";
         }
-
     }
 }
+
 
 function deleteUser($id)
 {
