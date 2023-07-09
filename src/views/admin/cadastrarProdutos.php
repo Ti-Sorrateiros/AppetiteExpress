@@ -1,3 +1,7 @@
+<?php
+include('../../controllers/user/protectedAdmin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -1,3 +1,9 @@
+<?php
+include('../../../database/conn.php');
+include('../../controllers/user/protectedAdmin.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -55,7 +61,6 @@
     </nav>
 
     <script src="../../js/menu.js" type="text/javascript"></script>
-    <script src="../../js/noRefresh.js" type="text/javascript"></script>
 </body>
 
 </html>

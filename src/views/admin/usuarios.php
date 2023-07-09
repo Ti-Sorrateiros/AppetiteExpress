@@ -1,5 +1,6 @@
 <?php
 include('../../../database/conn.php');
+include('../../controllers/user/protectedAdmin.php');
 
 $readUser = $conn->prepare('SELECT * FROM usuarios');
 $readUser->execute();

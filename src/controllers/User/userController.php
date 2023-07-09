@@ -75,34 +75,53 @@ function createUser($user, $senha)
 
 function loginUser($user, $senha, $email)
 {
+
+    if(strlen($email) == 0){
+        echo "<script>
+        alert('Digite seu email');
+        window.location.href='../../views/login.php';
+        </script>";
+    } else if (strlen($senha) == 0 ){
+        echo "<script>
+        alert('Digite sua senha');
+        window.location.href='../../views/login.php';
+        </script>";
+    } 
+
     global $conn;
-         //select para ver se o email tem no banco
-         $result = $conn->prepare("SELECT * FROM usuarios WHERE (email= :email);");
-         $result->execute(array(':email' => $user['email']));
-         $row = $result->rowCount();
- 
-         //autenticacao de senha com hash
-         $usuario = $result->fetch(PDO::FETCH_ASSOC);
-         $hash = $usuario['senha'];
-         $check = password_verify($senha, $hash);
- 
-         //verifica se existe usuario no banco , e se senha está correta 
-         if ($row > 0 && $check) {
-             session_start();
-             $_SESSION['id'] = $usuario['id'];
- 
-             echo "<script>
-         window.location.href='../../views/produtos.php';
-         </script>";
-         } else {
-             echo "<script>
+    //select para ver se o email tem no banco
+    $result = $conn->prepare("SELECT * FROM usuarios WHERE (email= :email);");
+    $result->execute(array(':email' => $user['email']));
+    $row = $result->rowCount();
+
+    //autenticacao de senha com hash
+    $usuario = $result->fetch(PDO::FETCH_ASSOC);
+    $hash = $usuario['senha'];
+    $check = password_verify($senha, $hash);
+
+    //verifica se existe usuario no banco , e se senha está correta 
+    if ($row > 0 && $check) {
+        $token = uniqid() . '_' . $usuario['id'] . '_' . $usuario['id_perfil'];
+        session_start();
+        $_SESSION['token'] = $token;
+        $_SESSION['id'] = $usuario['id'];
+        $_SESSION["id_perfil"] = $usuario["id_perfil"];
+
+        if($_SESSION['id_perfil'] == 2){
+            header("Location: ../../views/admin/");
+        } else {
+            header("Location: ../../views/");
+        }
+    } else {
+        echo 'Login e/ou senha incorretos <a href="../../views/login.php"> </a>';
+        echo "<script>
               alert('Login e/ou senha incorretos');
               window.location.href='../../views/login.php';
               </script>";
-         }
- 
-     }
- 
+    }
+
+}
+
 
 
 

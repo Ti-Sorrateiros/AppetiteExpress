@@ -23,7 +23,7 @@ include('../../database/conn.php')
         <img class="LogoL" src="../images/LogoTCC.png" alt="">
         <h1>Faça seu Login</h1>
         <h3>Informe um login válido</h3>
-        <form method="post" action="../controllers/user/userController.php">
+        <form method="post" action="../controllers/user/userController.php" onsubmit="validaForm(); return false;" id="formLogin">
             <div class="form-control">
                 <label for="email" title="Coloque seu email">Email</label>
                 <input type="email" id="email" name="email">
@@ -42,14 +42,34 @@ include('../../database/conn.php')
                 <small id="msg-alert">Login não Encontrado</small> -->
             </div>
 
-            <button type="submit" onclick="" name="loginUser" class="center">ENTRAR</button>
+            <button type="submit" name="loginUser" class="center">ENTRAR</button>
 
-            <p id="Cadastrar-se" class="center">Ainda não é cadastrado? <a href="cadastro" style="color:#ea1d2c;">Cadastre-se</a></p>
+            <p id="Cadastrar-se" class="center">Ainda não é cadastrado? <a href="cadastro"
+                    style="color:#ea1d2c;">Cadastre-se</a></p>
 
         </form>
     </div>
-    <script src="../js/Lvalidation.js"></script>
 
+    <script>
+        function validaForm() {
+            erro = false;
+            if ($('#email').val() == '') {
+                alert('Você precisa preencher o campo de email'); erro = true;
+            }
+            if ($('#password').val() == '' && !erro) {
+                alert('Você precisa preencher o campo de senha'); erro = true;
+            } 
+         
+            //se nao tiver erros
+            if (!erro) {
+                $('#formLogin').submit();
+
+            }
+
+        }
+    </script>
+    <script src="../js/Lvalidation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>
