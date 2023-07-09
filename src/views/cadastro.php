@@ -26,47 +26,40 @@ include('../../database/conn.php')
 
         <div class="form-control">
             <form method="post" action="../controllers/user/userController.php">
-                <label>Nome</label>
-                <input type="text" id="nome" name="nome">
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <label for="nome" title="Adicione seu nome">Nome </label>
+                <input  type="text" id="nome" name="nome">
+                
+                <!-- <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
-                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
+                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i> -->
 
-                <label>Email</label>
+                <label  for="email" title="Adicione seu email">Email </label>
                 <input type="email" id="email" name="email">
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <!-- <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-                <small id="msg-alert">Login não Encontrado</small>
+                <small id="msg-alert">Login não Encontrado</small> -->
 
-                <label>Telefone</label>
+                <label for="Telefone" title="Adicione seu telefone">Telefone </label>
                 <input type="tel" id="Telefone" name="telefone">
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <!-- <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
-                <small id="msg-error">Error Message</small>
+                <small id="msg-error">Error Message</small> -->
 
-                <label>Endereço</label>
+                <label  for="Endereco" title="Adicione seu endereco">Endereço </label>
                 <input type="text" id="Endereco" name="endereco">
                 <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
 
-                <label>Senha</label>
+                <label for="password" title="Crie sua senha">Senha </label>
                 <input type="password" id="password" name="password" />
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
-                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
-                <small id="msg-error">Error Message</small>
-
-                <label>Confirmar Senha</label>
-                <input type="password" id="password" name="password" />
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
-                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
-                <small id="msg-error">Error Message</small>
-                <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-                <small id="msg-alert">Login não Encontrado</small>
-
+            
+                <label for="confirmPassword" title="Confirme a sua senha">Confirmar Senha </label>
+                <input type="password" id="confirmPassword" name="password" />
+   
                 <button type="submit" onclick="" name="createUser">CADASTRAR</button>
 
                 <p class="center">Já possui Login? <a href="login.php" style="color:#a29df3;">Entrar</a></p>
@@ -76,6 +69,7 @@ include('../../database/conn.php')
     </div>
 
     <script src="../js/Lvalidation.js"></script>
+    <script src="../js/confirmUser.js"></script>
 
 </body>
 

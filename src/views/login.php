@@ -25,21 +25,21 @@ include('../../database/conn.php')
         <h3>Informe um login válido</h3>
         <form method="post" action="../controllers/user/userController.php">
             <div class="form-control">
-                <label>Email</label>
+                <label for="email" title="Coloque seu email">Email</label>
                 <input type="email" id="email" name="email">
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <!-- <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-                <small id="msg-alert">Login não Encontrado</small>
+                <small id="msg-alert">Login não Encontrado</small> -->
 
-                <label>Senha</label>
+                <label for="password" title="Coloque seu senha">Senha</label>
                 <input type="password" id="password" name="password" />
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
+                <!-- <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small>
                 <i class="img-alert"><img src="../images/alert-icon.svg" alt=""></i>
-                <small id="msg-alert">Login não Encontrado</small>
+                <small id="msg-alert">Login não Encontrado</small> -->
             </div>
 
             <button type="submit" onclick="" name="loginUser" class="center">ENTRAR</button>
