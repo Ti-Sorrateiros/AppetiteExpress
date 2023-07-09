@@ -7,9 +7,10 @@ CREATE TABLE perfil(
     tipo_de_usuario VARCHAR(25)
 ) DEFAULT charset utf8;
 
--- terá dois tipos de perfil com id: 1 para admin , 2 para cliente 
-INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');
+-- terá dois tipos de perfil com id: 2 para admin , 1 para o cliente 
 INSERT INTO perfil (tipo_de_usuario) VALUES ('cliente');
+INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');
+
 
 -- tabela para guardar os cadastros dos usuarios
 CREATE TABLE usuarios(
