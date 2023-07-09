@@ -5,14 +5,15 @@ include('../user/protected.php');
 
 
 foreach($_SESSION['dados'] as $produtos){
-    $date = date("Y-m-d");
     date_default_timezone_set('America/Sao_Paulo');
+    $date = date("Y-m-d");
     $time = date("H:i:s");
+
     $pedido = $conn->prepare("INSERT INTO pedidos (id_produto, preco, quantidade, dia, hora) 
     VALUES (:id_produto, :preco , :quantidade , :dia , :hora)");
     $pedido->execute(array(
-        ':id_produto' => $produtos['id_produtos'],
-        ':preco' => $produtos['preco'],
+        ':id_produto' => $produtos['id_produto'],
+        ':preco' => $produtos['valor_total'],
         ':quantidade' => $produtos['quantidade'],
         ':dia' => $date,
         ':hora' => $time

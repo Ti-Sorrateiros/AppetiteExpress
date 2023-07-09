@@ -1,4 +1,10 @@
 <?php
+
+if (isset($_POST['removerProduto'])) {
+    $removerCartId = $_POST['removerProduto'];
+    deleteProductCart($removerCartId);
+}
+
 //se caso não tenha uma sessão (como login por exemplo)
 if (empty($_SESSION)) {
     session_start();
@@ -7,6 +13,11 @@ if (empty($_SESSION)) {
 //sem sessão de array de produtos, criar um array a esta sessão
 if (empty($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = array();
+}
+
+//array para sessão de dados
+if (empty($_SESSION['dados'])) {
+    $_SESSION['dados'] = array();
 }
 
 //recebimento dos dados
@@ -19,20 +30,20 @@ if (isset($_POST['id'])) {
     $qtd = 1;
     $totalPrice = $_POST['price'];
 
-    //enviar os dados para a função 
-    addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd, $totalPrice );
+    addCart($id, $nomeProduto, $descricao, $img, $price, $qtd, $totalPrice);
 }
 
+// Criar um array para cada produto
+$produto = array();
 
-//adicionar dados recebidos ao carrinho
-function addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd, $totalPrice)
+function addCart($id, $nomeProduto, $descricao, $img, $price, $qtd, $totalPrice)
 {
-
-    // Criar um array para cada produto
-    $produto = array();
-
     // Buscar se o produto existe no carrinho
     $buscarSeProdutoExisteNoCarrinho = array_search($id, array_column($_SESSION['carrinho'], 0));
+    $buscarSeProdutoExisteNosDados = array_search($id, array_column($_SESSION['dados'], 'id_produto'));
+
+
+    /* parte do carrinho */
 
     if ($buscarSeProdutoExisteNoCarrinho !== false) {
         // O produto já existe no carrinho
@@ -43,35 +54,65 @@ function addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd, $tota
         // Calcular o valor total do produto
         $valorTotal = $_SESSION['carrinho'][$produtoIndex][4] * $addQtd;
         $_SESSION['carrinho'][$produtoIndex][6] = $valorTotal;
-    } else {
+
+    } 
+    else {
         // O produto não existe no carrinho
 
-        // Recebendo os dados e colocando em um array de produto
         $produto = array($id, $nomeProduto, $descricao, $img, $price, $qtd, $totalPrice);
 
-        // Adicionar o produto ao carrinho
         $_SESSION['carrinho'][] = $produto;
     }
 
+    /* Parte dos dados que serão enviados para o banco */
 
-    //array para sessão de dados
-    if (empty($_SESSION['dados'])) {
-        $_SESSION['dados'] = array();
+    if ($buscarSeProdutoExisteNosDados !== false) {
+
+        $dadosIndex = $buscarSeProdutoExisteNosDados;
+
+        $_SESSION['dados'][$dadosIndex]['valor_total'] = $valorTotal;
+        $_SESSION['dados'][$dadosIndex]['quantidade'] = $addQtd;
+    } 
+    else {
+        //Adicionar Produtos aos dados
+        array_push(
+            $_SESSION['dados'],
+            array(
+                'id_produto' => $id,
+                'nome_produto' => $nomeProduto,
+                'quantidade' => $qtd,
+                'valor_total' => $totalPrice
+            )
+        );
     }
 
-    //guardar os dados do carrinho para depois envia para o banco
-    array_push(
-        $_SESSION['dados'],
-        array(
-            'id_produto' => $id,
-            'nome_produto' => $nomeProduto,
-            'img' => $price,
-            'preco' => $img,
-            'quantidade' => $qtd
-        )
-    );
+
+}
+
+
+function deleteProductCart($removerCartId)
+{
+    // Verificar se o produto existe no carrinho
+    $buscarSeProdutoExisteNoCarrinho = array_search($removerCartId, array_column($_SESSION['carrinho'], 0));
+
+    if ($buscarSeProdutoExisteNoCarrinho !== false) {
+        // O produto existe no carrinho
+        $produtoIndex = $buscarSeProdutoExisteNoCarrinho;
+        unset($_SESSION['carrinho'][$produtoIndex]);
+        unset($_SESSION['dados'][$produtoIndex]);
+        // Reorganizar as chaves do array
+        $_SESSION['carrinho'] = array_values($_SESSION['carrinho']);
+    }
 }
 
 
 
+
+
+
+
+
+echo '<pre>';
+print_r($_SESSION['dados']);
+echo '</pre>';
 ?>
