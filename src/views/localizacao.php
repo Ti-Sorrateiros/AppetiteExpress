@@ -78,6 +78,8 @@ $rowTabela = $tabela->fetchAll();
             <br>
         </div>
 
+        <a href="cadastroLocalizacao.php"> <button> Cadastrar novo Endereço </button></a>
+        <br>
         <br>
         <table>
             <tbody>
@@ -102,7 +104,7 @@ $rowTabela = $tabela->fetchAll();
                 ?>
             </tbody>
         </table>
-        <a href="cadastroLocalizacao.php"> <button> Cadastrar novo Endereço </button></a>
+        
     </div>
 
     <script src="../js/menu.js" type="text/javascript"></script>
