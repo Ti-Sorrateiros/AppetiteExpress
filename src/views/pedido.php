@@ -25,6 +25,7 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+<noscript><div align="center" style="background: black; color: yellow;"><br><br><h2>Para melhor experiência no nosso site precisamos do javascript <br><br> habilite o JavaScript em seu navegador!</h2><br><br><br></div><hr></noscript>
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
