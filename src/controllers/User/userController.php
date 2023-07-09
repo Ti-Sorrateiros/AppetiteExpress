@@ -76,36 +76,35 @@ function createUser($user, $senha)
 function loginUser($user, $senha, $email)
 {
     global $conn;
-    if (isset($user['loginUser'])) {
-        //select para ver se o email tem no banco
-        $sql = "SELECT * FROM usuarios WHERE (email= :email);";
-        $result = $conn->prepare($sql);
-        $result->execute(array(':email' => $sql));
-        //autenticacao de senha com hash
-        $dataUser = $result->fetch(PDO::FETCH_ASSOC);
+         //select para ver se o email tem no banco
+         $result = $conn->prepare("SELECT * FROM usuarios WHERE (email= :email);");
+         $result->execute(array(':email' => $user['email']));
+         $row = $result->rowCount();
+ 
+         //autenticacao de senha com hash
+         $usuario = $result->fetch(PDO::FETCH_ASSOC);
+         $hash = $usuario['senha'];
+         $check = password_verify($senha, $hash);
+ 
+         //verifica se existe usuario no banco , e se senha está correta 
+         if ($row > 0 && $check) {
+             session_start();
+             $_SESSION['id'] = $usuario['id'];
+ 
+             echo "<script>
+         window.location.href='../../views/produtos.php';
+         </script>";
+         } else {
+             echo "<script>
+              alert('Login e/ou senha incorretos');
+              window.location.href='../../views/login.php';
+              </script>";
+         }
+ 
+     }
+ 
 
-        //senha digitada e a senha criptografada do banco
-        $hash = $dataUser['senha'];
-        $checkPass = password_verify($senha, $hash);
 
-        $checkEmail = $email == $dataUser['email'];
-
-        //verifica se existe usuario no banco , e se senha está correta 
-        if ($checkEmail && $checkPass) {
-            session_start();
-            $_SESSION['id'] = $dataUser['id'];
-
-            echo "<script>
-             window.location.href='../../views/produtos.php';
-             </script>";
-        }  else  {
-            echo "<script>
-            alert('Email ou/e senha incorretos');
-           window.location.href='../../views/login.php';
-            </script>";
-        }
-    }
-}
 
 
 function deleteUser($id)
