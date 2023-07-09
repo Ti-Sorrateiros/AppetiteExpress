@@ -1,9 +1,6 @@
 <?php
 include('../../database/conn.php');
 include('../controllers/user/protected.php');
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -73,84 +70,9 @@ include('../controllers/user/protected.php');
 
         <h1>Carrinho</h1>
         <?php
-
-        //se caso não tenha uma sessão (como login por exemplo)
-        if (empty($_SESSION)) {
-            session_start();
-        }
-
-        //sem sessão de array de produtos, criar um array a esta sessão
-       if(empty($_SESSION['carrinho'])){
-        $_SESSION['carrinho'] = array();
-       }
-
-        //recebimento dos dados
-        if (isset($_POST['id'])) {
-            $id = $_POST['id'] - 1;
-            $nomeProduto = $_POST['nome'];
-            $descricao = $_POST['desc'];
-            $img = $_POST['img'];
-            $price = $_POST['price'];
-            $qtd = 1;
-
-            //enviar os dados para a função 
-            addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd);
-        }
-
-
-        //adicionar dados recebidos ao carrinho
-        function addProductCart($id, $nomeProduto, $descricao, $img, $price, $qtd)
-        {
-
-            if (empty($_SESSION['carrinho'][$id])) {
-                //criar um array para cada produto
-                $produto = array();
-
-                //recebendo os dados e colocando em um array de produto
-                array_push($produto, $id, $nomeProduto, $descricao, $img, $price, $qtd);
-
-                //enviar para o array de sessão produtos os valores contido no array de carrinho
-                array_push($_SESSION['carrinho'], $produto);
-
-            } else {
-               array_push($_SESSION['carrinho'][$id] ,[5] + 1);
-            }
-
-            //array para sessão de dados
-            if (empty($_SESSION['dados'])) {
-                $_SESSION['dados'] = array();
-            }
-
-            //guardar os dados do carrinho
-            array_push($_SESSION['dados'], array(
-                'id_produto' => $id,
-                'nome_produto' => $nomeProduto,
-                'img' => $price,
-                'preco' => $img,
-                'quantidade' => $qtd
-            )
-            );
-        }
-
-        
-        
-        // echo '<pre>';
-        // print_r($_SESSION['carrinho'][3]);
-        // echo '</pre>';
-        
-        // //soma de quantidade
-        // echo '<pre>';
-        // print_r($_SESSION['carrinho'][1]);
-        // echo '</pre>';
-
-        // //preco * qtd
-        // echo '<pre>';
-        // print_r($_SESSION['carrinho'][0][3] * 2);
-        // echo '</pre>';
-
-
-
-
+        //mais parte do carrinho
+        include('../controllers/products/cartController.php');
+    
         //se o carrinho tiver vazio mostre uma mensagem que está vazio
         if (count($_SESSION['carrinho']) == 0) {
             echo '<br><h3 title="carrinho vazio" >Carrinho Vazio <a title="clique para adicionar os produtos ao carrinho" href="produtos">Clique aqui para adicionar produtos ao carrinho </a></h3>';
@@ -159,11 +81,12 @@ include('../controllers/user/protected.php');
             echo '<br><a href="../controllers/products/pedidoController.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
             foreach ($_SESSION['carrinho'] as $prod) {
                 ?>
+
                 <br>
                 <div class="Prod1">
                     <!-- Imagem -->
                     <div>
-                        <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[4]) ?>"
+                        <img class="imgProd product-image" src="../controllers/products/<?= strip_tags($prod[3]) ?>"
                             width="50px" />
                     </div>
                     <!-- title -->
@@ -180,7 +103,7 @@ include('../controllers/user/protected.php');
                     <!-- Preco -->
                     </p>
                     <p id="product-price"><b> R$: </b>
-                        <?= number_format(strip_tags($prod[3]), 2, ",", '.') ?>
+                        <?= number_format(strip_tags($prod[4]), 2, ",", '.') ?>
                     </p>
 
                     <!-- Quantidade  -->
@@ -192,12 +115,13 @@ include('../controllers/user/protected.php');
                     <div>
                         <h2>Total: </h2>
                         <p>R$
-
+                        <?= strip_tags($prod[6]) ?>
                         </p>
                     </div>
                 </div>
 
                 <hr>
+                
                 <?php
             }
 
