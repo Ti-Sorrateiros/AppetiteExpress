@@ -21,7 +21,7 @@ $rowTabela = $tabela->fetchAll();
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/localizacao.css">
+    <link rel="stylesheet" href="../styles/localizacao.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Localização</title>
 </head>
@@ -81,7 +81,8 @@ $rowTabela = $tabela->fetchAll();
         <a href="cadastroLocalizacao.php"> <button> Cadastrar novo Endereço </button></a>
         <br>
         <br>
-        <table>
+       <div class="container-wrap">
+         <table>
             <tbody>
                 <?php
 
@@ -104,6 +105,7 @@ $rowTabela = $tabela->fetchAll();
                 ?>
             </tbody>
         </table>
+       </div>
         
     </div>
 
