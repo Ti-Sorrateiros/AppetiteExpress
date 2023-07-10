@@ -54,7 +54,7 @@ function createUser($user, $senha)
         $hashedPass = password_hash($senha, PASSWORD_DEFAULT, $options);
         $queryUser =
             "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
-             VALUES (2, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
+             VALUES (1, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
 
         $signedUser = $conn->prepare($queryUser);
         $signed = $signedUser->execute();
@@ -75,19 +75,6 @@ function createUser($user, $senha)
 
 function loginUser($user, $senha, $email)
 {
-
-    if(strlen($email) == 0){
-        echo "<script>
-        alert('Digite seu email');
-        window.location.href='../../views/login.php';
-        </script>";
-    } else if (strlen($senha) == 0 ){
-        echo "<script>
-        alert('Digite sua senha');
-        window.location.href='../../views/login.php';
-        </script>";
-    } 
-
     global $conn;
     //select para ver se o email tem no banco
     $result = $conn->prepare("SELECT * FROM usuarios WHERE (email= :email);");
