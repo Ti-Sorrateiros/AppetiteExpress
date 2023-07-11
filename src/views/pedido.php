@@ -2,9 +2,10 @@
 include('../controllers/user/protected.php');
 include('../../database/conn.php');
 
-$sql = $conn->prepare("SELECT  *,  DATE_FORMAT(dia, '%d/%m/%Y') as dia FROM  pedidos");
+// $sql = $conn->prepare("SELECT  * as dia FROM  pedidos");
+$sql = $conn->prepare("SELECT  *,  DATE_FORMAT(dia, '%d/%m/%Y') FROM pedidos WHERE id_cliente = :id_user");
 
-$sql->execute();
+$sql->execute(array(':id_user'=> $_SESSION['id']));
 $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -71,6 +72,14 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
     <div class="content">
         <h1>Seus Pedidos</h1>
 
+
+
+        <?php
+
+
+        ?>
+
+
         <?php
         foreach ($rowTable as $pedidos) {
             echo '<div class="card" >';
@@ -78,9 +87,7 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
             //informações
             echo '<div class="card-body">';
-            echo "<p>Produto: " . $pedidos['id_produto'] . "</p>
-            <p> Preço: R$" . $pedidos['preco'] . "</p>
-            <p>Quantidade: " . $pedidos['quantidade'] . "</p>
+            echo "<p>Produto: " . $pedidos['valor_total'] . "</p>
             <p>".$pedidos['dia']."</p>
             <p>".$pedidos['hora']."</p>";
             echo '<br>';
@@ -91,8 +98,9 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo '</div>';
         }
         ?>
-
     </div>
+
+    
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/confirmlogout.js"></script>
 </body>
