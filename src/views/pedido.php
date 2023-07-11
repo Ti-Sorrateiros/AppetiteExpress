@@ -3,7 +3,7 @@ include('../controllers/user/protected.php');
 include('../../database/conn.php');
 
 // $sql = $conn->prepare("SELECT  * as dia FROM  pedidos");
-$sql = $conn->prepare("SELECT  *,  DATE_FORMAT(dia, '%d/%m/%Y') FROM pedidos WHERE id_cliente = :id_user");
+$sql = $conn->prepare("SELECT  *, DATE_FORMAT(dia, '%d/%m/%Y') FROM pedidos WHERE id_cliente = :id_user");
 
 $sql->execute(array(':id_user'=> $_SESSION['id']));
 $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -87,9 +87,11 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
             //informações
             echo '<div class="card-body">';
-            echo "<p>Produto: " . $pedidos['valor_total'] . "</p>
-            <p>".$pedidos['dia']."</p>
-            <p>".$pedidos['hora']."</p>";
+            echo "
+            <p>Dia do pedido: ".$pedidos['dia']."</p>
+            <p> Hora do pedido: ".$pedidos['hora']."</p>
+            <p> Valor da Compra: R$ ".$pedidos['valor_total'] ."
+            ";
             echo '<br>';
             echo '<hr>';
             echo '<br>';
