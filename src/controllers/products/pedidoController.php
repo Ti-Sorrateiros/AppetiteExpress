@@ -29,10 +29,10 @@ if (isset($_SESSION['id'])) {
 
     // Recuperar o ID do novo pedido
     $id_pedido = $conn->lastInsertId();
-
+    
     // Iterar sobre os produtos e inserir registros na tabela 'item_pedido'
     foreach ($_SESSION['dados'] as $produto) {
-        $id_produto = $produto['$id_produto'];
+        $id_produto = $produto['id_produto'];
         
         $query = "INSERT INTO item_pedido (id_pedido, id_produto) VALUES (:id_pedido, :id_produto)";
         $stmt = $conn->prepare($query);
