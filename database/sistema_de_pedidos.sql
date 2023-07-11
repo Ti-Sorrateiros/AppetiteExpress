@@ -7,10 +7,9 @@ CREATE TABLE perfil(
     tipo_de_usuario VARCHAR(25)
 ) DEFAULT charset utf8;
 
--- terá dois tipos de perfil com id: 2 para admin , 1 para o cliente 
+-- terá dois tipos de perfil com id: 2 para admin , 1 para cliente 
 INSERT INTO perfil (tipo_de_usuario) VALUES ('cliente');
 INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');
-
 
 -- tabela para guardar os cadastros dos usuarios
 CREATE TABLE usuarios(
@@ -18,10 +17,11 @@ CREATE TABLE usuarios(
     id_perfil INT, 
     nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     telefone VARCHAR(11) NOT NULL UNIQUE,
     endereco VARCHAR(50) NOT NULL
 ) DEFAULT charset utf8; 
+
 
 CREATE TABLE produtos(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -36,11 +36,19 @@ CREATE TABLE produtos(
 
 -- guardar os pedidos feito pelo cliente
 CREATE TABLE pedidos(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_produto INT,
-    preco FLOAT(15) NOT NULL,
-    quantidade VARCHAR(55) NOT NULL
+    id INT PRIMARY KEY AUTO_INCREMENT, -- este é o id de pedido
+    id_cliente INT,
+   -- Status varchar(255),
+    valor_total FLOAT(15) NOT NULL, -- valor total de todos os pedidos
+    hora time,
+    dia date
 ) DEFAULT charset utf8; 
+
+-- adicionar no mesmo pedido outro produto e sua quantidade
+CREATE TABLE item_pedido(
+	id_pedido INT, -- receber o mesmo id do produto
+    id_produto INT -- receber o id do produto
+);
 
 -- guarda o cadastro de uma nova localização feito pelo cliente
 CREATE TABLE localizacao(
