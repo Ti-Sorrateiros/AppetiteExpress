@@ -59,8 +59,6 @@ session_start();
         </ul>
     </nav>
 
-
-     
     
     <div class="form">
         <h1>Cadastre seu Endereço</h1>
