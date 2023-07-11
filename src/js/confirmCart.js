@@ -13,3 +13,16 @@ function clicar(prodId, nomeProd, prodDesc, imgProd, priceProd) {
             });
     }
 }
+
+
+
+// Remover Produto do carrinho
+function removerProd(remover) {
+    if (confirm("Deseja remover este produto do carrinho?") == true) {
+        
+        $.post('../controllers/products/cartController.php', { removerProduto: remover })
+            .done(function(data) {
+                location.reload();  
+            });
+    }
+}

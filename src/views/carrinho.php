@@ -118,6 +118,7 @@ include('../controllers/user/protected.php');
                         <?= strip_tags($prod[6]) ?>
                         </p>
                     </div>
+                    <button name="remover" onclick="removerProd(<?= strip_tags($prod[0]) ?>)">Remover Produto</button>
                 </div>
 
                 <hr>
@@ -133,8 +134,9 @@ include('../controllers/user/protected.php');
     </div>
     </div>
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="..js/JQuery.js" type="text/javascript"></script>
+    <script async src="../js/JQuery.js" type="text/javascript"></script>
     <script src="../js/confirmlogout.js"></script>
+    <script src="../js/confirmCart.js"></script>
 
 </body>
 
