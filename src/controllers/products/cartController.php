@@ -79,11 +79,13 @@ if (isset($_POST['id'])) {
 if (isset($_POST['removerProduto'])) {
     $removerCartId = $_POST['removerProduto'];
 
+    $arrayDados =  array_column($_SESSION['dados'], 'id_produto');
+    $searchCarrinho = array_column($_SESSION['carrinho'], 0);
 
-    $searchIdProduct = array_search($removerCartId, array_column($_SESSION['carrinho'], 0));
-    $searchDados = array_search(8, array_column($_SESSION['dados'], 'id_produto'));
+    $searchCarrinho = array_search($removerCartId, $searchCarrinho);
+    $searchDados = array_search($removerCartId, $arrayDados);
 
-    unset($_SESSION['carrinho'][$searchIdProduct]);
+    unset($_SESSION['carrinho'][$searchCarrinho]);
     unset($_SESSION['dados'][$searchDados]);
 
     // Reorganizar as chaves do array

@@ -10,3 +10,11 @@ function deleteUser(userId) {
         window.location.href="../../controllers/user/userController.php?id="+ userId + "";
     }
 }
+
+function removerItem(remove){
+    if (confirm("Deseja remover este Produto do carrinho?") == true) {
+        $.post('carrinho.php', {
+            remove: remove
+        });
+    }
+}

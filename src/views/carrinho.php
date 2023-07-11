@@ -129,6 +129,10 @@ include('../controllers/user/protected.php');
         }
 
         ?>
+
+        <div>
+            <h1>Valor Total: R<?php print_r(array_sum(array_column($_SESSION['carrinho'], 6))); ?></h1>
+        </div>
         <br>
 
     </div>
