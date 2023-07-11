@@ -15,9 +15,6 @@ function buscaCep(){
                 document.getElementById("textBairro").value = endereco.neighborhood; //bairro
                 document.getElementById("textEstado").value = endereco.state; //Estado
                 document.getElementById("textCidade").value = endereco.city; //Cidade
-                
-                
-                
 
             }
             else if (req.status === 404){
