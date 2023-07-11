@@ -29,8 +29,8 @@
 					<button class="btn_cardapio">Ver cardápio</button>
 					<dialog>
 						<h2 id="sub-dialog">Como deseja continuar?</h2>
-						<a href="src/views/login.php"><button class="ButtonE">Entrar ou Cadastrar</button></a>
-						<a href="src/views/semLogin.php"><button class="ButtonS">Continuar sem Login</button></a>
+						<a href="src/views/login.php"><button class="ButtonE">Entrar</button></a>
+						<a href="src/views/cadastro.php"><button class="ButtonS">Cadastrar</button></a>
 					</dialog>
 				</div>
 			</div>

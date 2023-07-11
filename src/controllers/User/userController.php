@@ -95,9 +95,9 @@ function loginUser($user, $senha, $email)
         $_SESSION["id_perfil"] = $usuario["id_perfil"];
 
         if($_SESSION['id_perfil'] == 2){
-            header("Location: ../../views/admin/");
+            header("Location: ../../views/admin");
         } else {
-            header("Location: ../../views/");
+            header("Location: ../../views/produtos.php");
         }
     } else {
         echo 'Login e/ou senha incorretos <a href="../../views/login.php"> </a>';
@@ -108,10 +108,6 @@ function loginUser($user, $senha, $email)
     }
 
 }
-
-
-
-
 
 function deleteUser($id)
 {
