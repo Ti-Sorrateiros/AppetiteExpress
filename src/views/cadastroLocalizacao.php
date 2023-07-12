@@ -101,7 +101,8 @@ session_start();
         </form>
         <button type="submit" >Cadastrar</button> 
     </div>
-    <button type="submit"><a href="localizacao.php">Voltar</a></button>
+    <a href="localizacao.php"><button type="submit">Voltar</button></a>
+
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
     <script src="../js/endereco.js" type="text/javascript"></script>
