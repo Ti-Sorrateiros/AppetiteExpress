@@ -33,7 +33,7 @@ $readUser->execute();
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul>
-            <li class="item-menu ativo">
+            <li title="Página de produtos" class="item-menu ativo">
                 <a href="produtos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link">Produtos</span>
@@ -41,26 +41,26 @@ $readUser->execute();
                 </div>
             </li>
 
-            <li class="item-menu">
+            <li title="Página de localização" class="item-menu">
                 <a href="localizacao">
                     <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
                     <span class="txt-link">Localização</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li title="Página de carrinho" class="item-menu">
                 <a href="carrinho">
                     <span class="icon"><i class="bi bi-cart4"></i></span>
                     <span class="txt-link">Carrinho</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li title="página de pedidos" class="item-menu">
                 <a href="pedido">
                     <span class="icon"><i class="bi bi-clipboard2-fill"></i></span>
                     <span class="txt-link">Seus Pedidos</span>
                 </a>
                 </div>
             </li>
-            <li class="item-menu">
+            <li title="sair do sistema" class="item-menu">
                 <a id="logout">
                     <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
                     <span class="txt-link">Sair</span>

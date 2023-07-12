@@ -21,7 +21,7 @@ $rowTable = $readUser->fetchAll();
     <link rel="stylesheet" href="../../styles/table.css">
     <link rel="stylesheet" href="../../styles/content.css">
     <link rel="shortcut icon" href="../../images/Hamburguer.png" type="image/x-icon">
-    <title>Usuarios </title>
+    <title> Ver produtos </title>
 </head>
 <style>
     .content img {
@@ -76,25 +76,25 @@ $rowTable = $readUser->fetchAll();
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul>
-            <li class="item-menu">
+            <li title="cadastrar produtos" class="item-menu">
                 <a href="cadastrarProdutos">
                     <span class="icon"><i class="bi bi-bag-fill"></i></span>
                     <span class="txt-link"> CadastrarProdutos</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li title="Relatórios dos pedidos feitos" class="item-menu">
                 <a href="pedidosFeitos">
                     <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
                     <span class="txt-link"> PedidosFeitos</span>
                 </a>
             </li>
-            <li class="item-menu">
+            <li title="ver usuarios" class="item-menu">
                 <a href="usuarios">
                     <span class="icon"><i class="bi bi-person-circle"></i></span>
                     <span class="txt-link"> Usuarios</span>
                 </a>
             </li>
-            <li class="item-menu ativo">
+            <li title="Lista dos Produtos cadastrados" class="item-menu ativo">
                 <a>
                     <span class="icon"><i class="bi bi-eye-fill"></i></span>
                     <span class="txt-link">VerProdutos</span>
