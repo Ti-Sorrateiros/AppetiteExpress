@@ -53,16 +53,22 @@ function createUser($user, $senha)
         ];
         $hashedPass = password_hash($senha, PASSWORD_DEFAULT, $options);
         $queryUser =
-            "INSERT INTO usuarios (id_perfil, nome, email, telefone, endereco, senha)
-             VALUES (1, '{$user['nome']}', '{$user['email']}', '{$user['telefone']}', '{$user['endereco']}', '{$hashedPass}');";
+            "INSERT INTO usuarios (id_perfil, nome, email, telefone, senha)
+             VALUES (:id, :nome, :email, :telefone, :senha)";
 
         $signedUser = $conn->prepare($queryUser);
-        $signed = $signedUser->execute();
+        $signed = $signedUser->execute(array(
+            ':id'=> 1,
+            ':nome' => $user['nome'],
+            ':email'=> $user['email'],
+            'telefone'=> $user['telefone'],
+            ':senha' => $hashedPass
+        ));
 
         if ($signed == true) {
             echo "<script>
              alert('Cadastro Realizado com SUCESSO , Faça seu Login para entrar! ');
-              window.location.href='../../views/login.php';
+            window.location.href='../../views/login.php';
             </script>";
         } else {
             echo "<script>
