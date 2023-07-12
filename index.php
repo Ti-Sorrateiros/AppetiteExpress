@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" href="src/images/Hamburguer.png" type="image/x-icon">
 	<link rel="stylesheet" href="src/styles/popup.css">
 	<link rel="stylesheet" href="src/styles/GoogleFonts/GoogleFonts">
-	<title>Pedidos</title>
+	<title>Pedidos </title>
 </head>
 
 <body>
