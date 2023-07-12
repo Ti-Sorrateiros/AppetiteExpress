@@ -3,10 +3,10 @@ include('../../../database/conn.php');
 include('../../controllers/user/protectedAdmin.php');
 
 // $sql = $conn->prepare("SELECT  * as dia FROM  pedidos");
-$sql = $conn->prepare("SELECT pedidos.id , pedidos.valor_total, usuarios.nome, pedidos.dia, pedidos.hora
+$sql = $conn->prepare("SELECT pedidos.id , pedidos.valor_total, usuarios.nome, usuarios.email , pedidos.dia, pedidos.hora
 FROM usuarios
 INNER JOIN pedidos 
-on pedidos.id = usuarios.id;");
+on pedidos.id_cliente = usuarios.id;");
 
 $sql->execute();
 $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +33,9 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="content">
-        <h1>Pedidos Feitos</h1>
+        <br>
+        <h1>Relatório dos pedidos Feitos</h1>
+        <br>
     </div>
 
 
@@ -75,15 +77,16 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rowTable as $pedidos) {
             echo '<div class="card" >';
             //titulo
-            echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
+            echo "<p class='card-title'> <b>Pedido N° " . $pedidos['id'] . "</b></p>";
             //informações
             echo '<div class="card-body">';
             echo "<p>".$pedidos['nome']."</p>
+            <p>".$pedidos['email']."</p>
             <p>Dia do pedido: " . $pedidos['dia'] . "</p>
             <p> Hora do pedido: " . $pedidos['hora'] . "</p>
             <p> Valor da Compra: R$ " . $pedidos['valor_total'] . "
             ";
-            echo '<br>';
+            echo '<br><br>';
             echo '<hr>';
             echo '<br>';
             //botões
