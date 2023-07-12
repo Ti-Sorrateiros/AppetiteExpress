@@ -66,6 +66,7 @@ CREATE TABLE localizacao(
 ALTER TABLE usuarios ADD FOREIGN KEY(id_perfil) REFERENCES perfil (id);
 
 -- chave estrangeira para obter dados do usuario que pediu
-ALTER TABLE pedidos ADD FOREIGN KEY(id_usuario) REFERENCES usuarios (id);
+ALTER TABLE pedidos ADD FOREIGN KEY(id_cliente) REFERENCES usuarios (id);
 
 
+ALTER TABLE localizacao ADD foreign key (id_cliente) references usuarios(id);
