@@ -139,14 +139,13 @@ function updateUser($user)
 {
     global $conn;
 
-    if (isset($user['id']) && $user['nome'] && $user['email'] && $user['endereco']) {
-        $deleteUser = $conn->prepare('UPDATE usuarios SET nome = :nome , email = :email , endereco = :endereco  WHERE id= :id');
+    if (isset($user['id']) && $user['nome'] && $user['email']) {
+        $deleteUser = $conn->prepare('UPDATE usuarios SET nome = :nome , email = :email  WHERE id= :id');
         $deleteUser->execute(
             array(
                 ':id' => $user['id'],
                 ':nome' => $user['nome'],
-                ':email' => $user['email'],
-                ':endereco' => $user['endereco']
+                ':email' => $user['email']
             )
         );
 

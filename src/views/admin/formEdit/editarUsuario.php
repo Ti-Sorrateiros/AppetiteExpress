@@ -30,7 +30,6 @@ $rowTable = $tabela->fetch();
             <input type="hidden" name="id" value='<?php echo $rowTable['id']; ?>' />
             <label>Nome  <input type="text" name="nome" value='<?php echo $rowTable['nome']; ?>' /></label>
             <label>Email <input type="text" name="email" value='<?php echo $rowTable['email']; ?>' /></label>
-            <label>endereco <input type="text" name="endereco" value='<?php echo $rowTable['endereco']; ?>' /></label>
 
             <button type="submit" name="updateUser">Editar Produto</button>
         </form>

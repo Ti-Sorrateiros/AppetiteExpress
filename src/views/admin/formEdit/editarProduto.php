@@ -28,17 +28,16 @@ $rowTable = $tabela->fetch();
     <div class="container">
         <form method="post" action="../../../controllers/products/productController.php" enctype="multipart/form-data">
             <input type="hidden" name="id" value='<?php echo $rowTable['id']; ?>' />
-            <label>Nome do Produto <input type="text" name="nome" value='<?php echo $rowTable['nome']; ?>' /></label>
-            <label>Descrição <input type="text" name="descricao"
-                    value='<?php echo $rowTable['descricao']; ?>' /></label>
-            <label>Preço <input type="text" name="preco" value='<?php echo $rowTable['preco']; ?>' /></label>
-            <label>Adicionais <input type="text" name="adicionais"
+            <label>Nome do Produto</label>
+            <input type="text" name="nome" value='<?php echo $rowTable['nome']; ?>' />
+            <label>Descrição </label>
+            <input type="text" name="descricao" value='<?php echo $rowTable['descricao']; ?>' />
+            <label>Preço</label>
+            <input type="text" name="preco" value='<?php echo $rowTable['preco']; ?>' />
+            <label>Adicionais</label>
+            <input type="text" name="adicionais"
                     value='<?php echo $rowTable['adicionais']; ?>' />
-            </label>
-            <input id="image" name="imagem" type="file"  accept="image/png, image/jpeg">
-            <div>
-                <img width="250px" height="150px" src="../../../controllers/products/<?php echo $rowTable['path_imagem']; ?>" id="preview-image">
-            </div>
+        
 
             <button type="submit" name="updateProduct">Editar Produto</button>
         </form>
