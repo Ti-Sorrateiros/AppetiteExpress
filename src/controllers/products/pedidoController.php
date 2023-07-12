@@ -33,12 +33,16 @@ if (isset($_SESSION['id'])) {
     // Iterar sobre os produtos e inserir registros na tabela 'item_pedido'
     foreach ($_SESSION['dados'] as $produto) {
         $id_produto = $produto['id_produto'];
+        $quantidade = $produto['quantidade'];
+        $valor_total_unidade = $produto['valor_total'];
         
-        $query = "INSERT INTO item_pedido (id_pedido, id_produto) VALUES (:id_pedido, :id_produto)";
-        $stmt = $conn->prepare($query);
-        $stmt->bindParam(':id_pedido', $id_pedido);
-        $stmt->bindParam(':id_produto', $id_produto);
-        $stmt->execute();
+        $query = "INSERT INTO item_pedido (id_pedido, id_produto, quantidade, valor_total_unidade) VALUES (:id_pedido, :id_produto, :quantidade, :valor_total_unidade)";
+        $item = $conn->prepare($query);
+        $item->bindParam(':id_pedido', $id_pedido);
+        $item->bindParam(':id_produto', $id_produto);
+        $item->bindParam(':quantidade', $quantidade);
+        $item->bindParam(':valor_total_unidade', $valor_total_unidade);
+        $item->execute();
     }
 }
 

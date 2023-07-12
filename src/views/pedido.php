@@ -72,14 +72,6 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
     <div class="content">
         <h1>Seus Pedidos</h1>
 
-
-
-        <?php
-
-
-        ?>
-
-
         <?php
         foreach ($rowTable as $pedidos) {
             echo '<div class="card" >';
@@ -90,7 +82,8 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo "
             <p>Dia do pedido: ".$pedidos['dia']."</p>
             <p> Hora do pedido: ".$pedidos['hora']."</p>
-            <p> Valor da Compra: R$ ".$pedidos['valor_total'] ."
+            <p> Valor da Compra: R$ ".$pedidos['valor_total'] ."<br>
+            <a href='verpedido.php?id_pedido=".$pedidos['id']."'> Ver produtos e quantidades </a>
             ";
             echo '<br>';
             echo '<hr>';

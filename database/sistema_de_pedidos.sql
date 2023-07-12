@@ -46,7 +46,9 @@ CREATE TABLE pedidos(
 -- adicionar no mesmo pedido outro produto e sua quantidade
 CREATE TABLE item_pedido(
 	id_pedido INT, -- receber o mesmo id do produto
-    id_produto INT -- receber o id do produto
+    id_produto INT, -- receber o id do produto
+    quantidade INT, -- quantidade de cada item 
+    valor_total_unidade FLOAT(15) NOT NULL -- valor
 );
 
 -- guarda o cadastro de uma nova localização feito pelo cliente
