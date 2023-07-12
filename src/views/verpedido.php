@@ -34,18 +34,18 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="content">
-        <h1>Seus Pedidos</h1>
+        <h1>Seu Pedido <?php print_r($id_pedido); ?></h1>
 
         <?php
         foreach ($rowTable as $pedidos) {
             echo '<div class="card" >';
             //titulo
-            echo "<p class='card-title'> " . $pedidos['nome_produto'] . "</p>";
+            echo "<h3 class='card-title'> " . $pedidos['nome_produto'] . "</h3>";
             //informações
             echo '<div class="card-body">';
             echo "
             <p>Quantidade : " . $pedidos['quantidade'] . "</p>
-            <p> Valor da Compra: R$ " . $pedidos['valor_total_unidade'] . "
+            <p> Valor da Compra: R$ " . number_format(($pedidos['valor_total_unidade']), 2, ",", '.') . "
             ";
             echo '<br>';
             echo '<hr>';
@@ -55,6 +55,15 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo '</div>';
         }
         ?>
+
+        <div>
+            <?php
+            $arrayValorPedido = array_column($rowTable, 'valor_total_unidade');
+            echo '<h1> Valor Total deste pedido: R$ ';
+            print_r(number_format((array_sum($arrayValorPedido)), 2, ",", '.')); 
+            echo '</h1>';
+            ?>
+        </div>
     </div>
 </body>
 
