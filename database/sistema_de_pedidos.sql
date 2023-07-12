@@ -19,7 +19,6 @@ CREATE TABLE usuarios(
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     telefone VARCHAR(11) NOT NULL UNIQUE,
-    endereco VARCHAR(50) NOT NULL
 ) DEFAULT charset utf8; 
 
 

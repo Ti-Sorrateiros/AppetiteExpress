@@ -34,7 +34,6 @@ $rowTable = $readUser->fetchAll();
                     <th>Id_perfil</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Endereco</th>
                     <th>Telefone</th>
                     <th>Editar</th>
                     <th>Excluir</th>
@@ -47,7 +46,6 @@ $rowTable = $readUser->fetchAll();
                         echo '<th scope="row">' . $linha['id_perfil'] . '</th>';
                         echo '<td>' . $linha['nome'] . '</td>';
                         echo '<td>' . $linha['email'] . '</td>';
-                        echo '<td>' . $linha['endereco'] . '</td>';
                         echo '<td>' . $linha['telefone'] . '</td>';
                         echo '<td><a href="formEdit/editarUsuario.php?id='.$linha['id'].'"><button class="editar">Editar</button></a></td>';
                         echo '<td><a onclick="deleteUser('.$linha['id'] .')"><button class="excluir">Excluir</button></a></td>';
