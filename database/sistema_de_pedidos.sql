@@ -58,7 +58,8 @@ CREATE TABLE localizacao(
     rua varchar(100),
     numero varchar(100),
     bairro varchar(100),
-    estado varchar(100)
+    estado varchar(100),
+    id_cliente int
 ) DEFAULT charset utf8;
 
 -- chave estrangeira id_perfil para usuario e para definir o tipo de usuario 
