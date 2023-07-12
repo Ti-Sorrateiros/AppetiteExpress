@@ -1,12 +1,9 @@
 <?php
 include('../../database/conn.php');
-$tabela = $conn->prepare("SELECT * FROM localizacao;");
-
 include('../controllers/user/protected.php');
 
-$tabela = $conn->prepare("SELECT * FROM localizacao");
-
-$tabela->execute();
+$tabela = $conn->prepare("SELECT * FROM localizacao WHERE id_cliente = :id");
+$tabela->execute(array(':id' => $_SESSION['id']));
 $rowTabela = $tabela->fetchAll();
 ?>
 
