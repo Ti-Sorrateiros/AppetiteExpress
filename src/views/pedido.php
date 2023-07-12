@@ -21,6 +21,7 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../styles/content.css">
     <link rel="stylesheet" href="../styles/GoogleFonts/GoogleFonts.css">
     <link rel="shortcut icon" href="../images/Hamburguer.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/verPedido.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Pedidos</title>
 </head>
@@ -70,19 +71,20 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
     </nav>
 
     <div class="content">
+        <br>
         <h1>Seus Pedidos</h1>
-
+        <br>
         <?php
         foreach ($rowTable as $pedidos) {
-            echo '<div class="card" >';
+            echo '<div class="Prod1">';
             //titulo
-            echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
+            echo "<p id='titleProd'> Pedido N° " . $pedidos['id'] . "</p>";
             //informações
             echo '<div class="card-body">';
             echo "
-            <p>Dia do pedido: ".$pedidos['dia']."</p>
-            <p> Hora do pedido: ".$pedidos['hora']."</p>
-            <p> Valor da Compra: R$ ".$pedidos['valor_total'] ."<br>
+            <p id='descProd'>Dia do pedido: ".$pedidos['dia']."</p>
+            <p id='descProd'> Hora do pedido: ".$pedidos['hora']."</p>
+            <p id='descProd'> Valor da Compra: R$ ".$pedidos['valor_total'] ."<br>
             <a href='verpedido.php?id_pedido=".$pedidos['id']."'> Ver produtos e quantidades </a>
             ";
             echo '<br>';
