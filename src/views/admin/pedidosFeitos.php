@@ -2,6 +2,16 @@
 include('../../../database/conn.php');
 include('../../controllers/user/protectedAdmin.php');
 
+// $sql = $conn->prepare("SELECT  * as dia FROM  pedidos");
+$sql = $conn->prepare("SELECT pedidos.id , pedidos.valor_total, usuarios.nome, pedidos.dia, pedidos.hora
+FROM usuarios
+INNER JOIN pedidos 
+on pedidos.id = usuarios.id;");
+
+$sql->execute();
+$rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,32 +43,56 @@ include('../../controllers/user/protectedAdmin.php');
             <i class="bi bi-list" id="btn-exp"></i>
         </div>
         <ul>
-                <li class="item-menu ">
-                    <a href="cadastrarProdutos">
-                        <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                        <span class="txt-link"> CadastrarProdutos</span>
-                    </a>
-                </li>
-                <li class="item-menu ativo">
-                    <a href="pedidosFeitos">
-                        <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
-                        <span class="txt-link"> PedidosFeitos</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="usuarios">
-                        <span class="icon"><i class="bi bi-person-circle"></i></span>
-                        <span class="txt-link"> Usuarios</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="verprodutos">
-                        <span class="icon"><i class="bi bi-eye-fill"></i></span>
-                        <span class="txt-link">VerProdutos</span>
-                    </a>
-                </li>
-            </ul>
+            <li class="item-menu ">
+                <a href="cadastrarProdutos">
+                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
+                    <span class="txt-link"> CadastrarProdutos</span>
+                </a>
+            </li>
+            <li class="item-menu ativo">
+                <a href="pedidosFeitos">
+                    <span class="icon"><i class="bi bi-bag-check-fill"></i></span>
+                    <span class="txt-link"> PedidosFeitos</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="usuarios">
+                    <span class="icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link"> Usuarios</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="verprodutos">
+                    <span class="icon"><i class="bi bi-eye-fill"></i></span>
+                    <span class="txt-link">VerProdutos</span>
+                </a>
+            </li>
+        </ul>
     </nav>
+
+    <div class="content">
+        <?php
+        foreach ($rowTable as $pedidos) {
+            echo '<div class="card" >';
+            //titulo
+            echo "<p class='card-title'> Pedido N° " . $pedidos['id'] . "</p>";
+            //informações
+            echo '<div class="card-body">';
+            echo "<p>".$pedidos['nome']."</p>
+            <p>Dia do pedido: " . $pedidos['dia'] . "</p>
+            <p> Hora do pedido: " . $pedidos['hora'] . "</p>
+            <p> Valor da Compra: R$ " . $pedidos['valor_total'] . "
+            ";
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            //botões
+            echo '</div>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+
 
     <script src="../../js/menu.js" type="text/javascript"></script>
 </body>

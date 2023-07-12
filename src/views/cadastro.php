@@ -48,12 +48,6 @@ include('../../database/conn.php')
                 <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
                 <small id="msg-error">Error Message</small> -->
 
-                <label for="Endereco" title="Adicione seu endereco">Endereço </label>
-                <input type="text" id="Endereco" name="endereco">
-                <i class="img-success"><img src="../images/success-icon.svg" alt=""></i>
-                <i class="img-error"><img src="../images/error-icon.svg" alt=""></i>
-                <small id="msg-error">Error Message</small>
-
                 <label for="password" title="Crie sua senha">Senha </label>
                 <input type="password" id="password" name="password"readonly onfocus="this.removeAttribute('readonly');this.select();"/>
 

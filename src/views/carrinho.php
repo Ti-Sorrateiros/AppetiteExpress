@@ -77,8 +77,16 @@ include('../controllers/user/protected.php');
         if (count($_SESSION['carrinho']) == 0) {
             echo '<br><h3 title="carrinho vazio" >Carrinho Vazio <a title="clique para adicionar os produtos ao carrinho" href="produtos">Clique aqui para adicionar produtos ao carrinho </a></h3>';
         } else {
+
+            ?>
+            <hr> <br>
+            <div>
+                <h1>Valor Total: R$ <?php print_r(array_sum(array_column($_SESSION["carrinho"], 6))); ?></h1>
+            </div>
+            <?php
             echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button>Escolher mais produtos</button></a><br>';
             echo '<br><a href="../controllers/products/pedidoController.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
+            
             foreach ($_SESSION['carrinho'] as $prod) {
                 ?>
 
@@ -125,14 +133,9 @@ include('../controllers/user/protected.php');
                 
                 <?php
             }
-
         }
 
         ?>
-
-        <div>
-            <h1>Valor Total: R<?php print_r(array_sum(array_column($_SESSION['carrinho'], 6))); ?></h1>
-        </div>
         <br>
 
     </div>
