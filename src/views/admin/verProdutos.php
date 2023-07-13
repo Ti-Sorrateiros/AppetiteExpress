@@ -21,6 +21,7 @@ $rowTable = $readUser->fetchAll();
     <link rel="stylesheet" href="../../styles/table.css">
     <link rel="stylesheet" href="../../styles/content.css">
     <link rel="shortcut icon" href="../../images/Hamburguer.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/verProdutos.css">
     <title> Ver produtos </title>
 </head>
 <style>
@@ -37,36 +38,42 @@ $rowTable = $readUser->fetchAll();
         <div>
 
         </div>
+        
         <?php
         foreach ($rowTable as $linha) {
             ?>
             <div>
+                <div class="Prod1">
                 <p><img src="../../controllers/products/<?= strip_tags($linha['path_imagem']) ?>" />
                 <p>
-                <p><b> ID: </b>
+                <!-- <p><b"> ID: </b> COMENTADO PARA ACERTOS 
                     <?= strip_tags($linha['id']) ?>
-                </p>
-                <p><b> Produto: </b>
+                </p> -->
+                <p id="titleProd">
                     <?= strip_tags($linha['nome']) ?>
                 </p>
-                <p><b> Descrição: </b>
+                <br>
+                <p id="descProd">
                     <?= strip_tags($linha['descricao']) ?>
-                    </h4>
-                <p><b> Adicionais: </b>
+                </p>
+                <br>
+                <p id="descProd">
                     <?= strip_tags($linha['adicionais']) ?>
-                    </h4>
-                <p><b> Preço: </b>
+                </p>
+                <br>
+                <p id="descProd">
                     <?= strip_tags($linha['preco']) ?>
                 </p>
-                <a href="./formEdit/editarProduto.php?id=<?= strip_tags($linha['id']) ?>"><button
-                        class="editar">Editar</button></a>
+                <a href="./formEdit/editarProduto.php?id=<?= strip_tags($linha['id']) ?>"><button class="editar">Editar</button></a>
                 <button onclick="deleteProd(<?= strip_tags($linha['id']) ?>)" class="excluir">Excluir</button>
             </div>
             <br>
             <hr>
+            </div>
             <?php
         }
         ?>
+    </div>
     </div>
  
 

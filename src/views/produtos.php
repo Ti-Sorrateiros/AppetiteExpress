@@ -100,15 +100,13 @@ $readUser->execute();
                         <?= strip_tags($linha['preco']) ?>
                     </div>
                     </p>
-                    <button title="adicionar produto ao carrinho" onclick="clicar(
+                    <img id="imgAdd" src="../images/adicionar-produto.png" alt="" title="adicionar produto ao carrinho" onclick="clicar(
                         '<?= strip_tags($linha['id']) ?>' , 
                         '<?= strip_tags($linha['nome']) ?>' , 
                         '<?= strip_tags($linha['descricao']) ?>' , 
                         '<?= strip_tags($linha['path_imagem']) ?>' ,
                         '<?= strip_tags($linha['preco']) ?>'
                        )">
-                        <img id="imgAdd" src="../images/adicionar-produto.png" alt="">
-                    </button>
                 </div>
                 <?php
             }
