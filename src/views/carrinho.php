@@ -85,7 +85,8 @@ include('../controllers/user/protected.php');
             </div>
             <?php
             echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button>Escolher mais produtos</button></a><br>';
-            echo '<br><a href="../controllers/products/pedidoController.php" title="Clique para Finalizar Compra"><button>Finalizar Compra</button></a><br>';
+            //botão de continuar comprar e será redirecionado para escolher o endereço
+            echo '<br><a href="escolherEndereco.php" title="Realizar compra"><button>Realizar Compra</button></a><br>';
             
             foreach ($_SESSION['carrinho'] as $prod) {
                 ?>

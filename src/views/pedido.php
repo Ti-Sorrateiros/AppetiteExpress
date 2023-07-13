@@ -84,7 +84,9 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo "
             <p id='descProd'>Dia do pedido: ".$pedidos['dia']."</p>
             <p id='descProd'> Hora do pedido: ".$pedidos['hora']."</p>
-            <p id='descProd'> Valor da Compra: R$ ".$pedidos['valor_total'] ."<br>
+            <p id='descProd'> Valor da Compra: R$ ".$pedidos['valor_total'] ."</p>
+            <p id='descProd'> Endereço: ".$pedidos['rua'] .", ".$pedidos['numero']." , ".$pedidos['bairro']."</p>
+            <p id='descProd'> Cep: ".$pedidos['cep'] ."</p><br>
             <a href='verpedido.php?id_pedido=".$pedidos['id']."'> Ver produtos e quantidades </a>
             ";
             echo '<br>';
