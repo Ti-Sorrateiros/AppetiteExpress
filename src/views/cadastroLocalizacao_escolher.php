@@ -1,7 +1,6 @@
 <?php
 include('../../database/conn.php');
 include('../controllers/user/protected.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ include('../controllers/user/protected.php');
 <body>    
     <div class="form">
         <h1>Cadastre seu Endereço</h1>
-        <form action="../controllers/localizacaocontroller/cadastroController.php" method="post"> 
+        <form action="../controllers/localizacaocontroller/cadastroControllerDeEscolher.php" method="post"> 
             
             <div>
                 <div>
