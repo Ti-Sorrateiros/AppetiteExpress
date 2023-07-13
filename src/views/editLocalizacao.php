@@ -1,14 +1,16 @@
 <?php
 include('../../database/conn.php');
+include('../controllers/user/protected.php');
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
-    header("Location:.php");
-}
+    echo '<script>history.back()</script>';
+} 
+
 $select = $conn->prepare("SELECT * FROM localizacao WHERE id=:id");
 $select->execute(array('id' => $id));
 $rowTable = $select->fetchAll();
-
 
 ?>
 

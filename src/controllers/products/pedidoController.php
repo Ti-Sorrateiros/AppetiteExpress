@@ -71,6 +71,6 @@ if (isset($_SESSION['id'])){
 unset($_SESSION['carrinho']);
 unset($_SESSION['dados']);
 
-header("location: ../../views/pedido.php")
+header("location: ../../views/pedido.php");
 
     ?>

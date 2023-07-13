@@ -53,7 +53,9 @@ $rowTabela = $tabela->fetchAll(PDO::FETCH_ASSOC);
             <h1>Escolher Endereço para Entrega</h1>
             <br>
             <br>
-            <a href=""></a>
+            <div>
+                <a href="cadastroLocalizacao_escolher.php"> <button> Cadastrar novo Endereço </button></a>
+            </div>
         </div>
         <br>
         <br>
@@ -70,14 +72,14 @@ $rowTabela = $tabela->fetchAll(PDO::FETCH_ASSOC);
                         echo "<p class='card-title'>Casa</p>";
                         //informações
                         echo '<div class="card-body">';
-                        echo "<p> " . $linha['rua'] . " , " . 
-                        $linha['cep'] . "," . $linha['numero'] . " ," 
-                        . $linha['bairro'] . " ," .
-                         $linha['estado'] . "</p>";
+                        echo "<p> " . $linha['rua'] . " , " .
+                            $linha['cep'] . "," . $linha['numero'] . " ,"
+                            . $linha['bairro'] . " ," .
+                            $linha['estado'] . "</p>";
                         echo '<br>';
                         echo '<br>';
                         //botões
-                        echo '<a href="../controllers/products/pedidoController.php?localizacao='.$linha['id'].'"><button title="selecionar endereço">  Selecionar este endereço </button></a>';
+                        echo '<a href="../controllers/products/pedidoController.php?localizacao=' . $linha['id'] . '"><button title="selecionar endereço">  Selecionar este endereço </button></a>';
                         echo '</div>';
                         echo '</div>';
                     }
@@ -85,14 +87,7 @@ $rowTabela = $tabela->fetchAll(PDO::FETCH_ASSOC);
                 </tbody>
             </table>
         </div>
-
     </div>
-    <script>
-        
-    </script>
-
-    <script src="../js/endereco.js" type="text/javascript"></script>
-    <script src="../js/confirmlogout.js"></script>
 </body>
 
 
