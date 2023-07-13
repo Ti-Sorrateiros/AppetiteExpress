@@ -23,41 +23,7 @@ session_start();
 </head>
 
 <body>
-    <nav class="menu-lateral">
-
-        <div class="btn-expandir">
-            <i class="bi bi-list" id="btn-exp"></i>
-        </div>
-        <ul>
-            <li class="item-menu">
-                <a href="produtos">
-                    <span class="icon"><i class="bi bi-bag-fill"></i></span>
-                    <span class="txt-link">Produtos</span>
-                </a>
-                </div>
-            </li>
-
-            <li class="item-menu ativo">
-                <a href="localizacao">
-                    <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
-                    <span class="txt-link">Localização</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="carrinho">
-                    <span class="icon"><i class="bi bi-cart4"></i></span>
-                    <span class="txt-link">Carrinho</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="pedido">
-                    <span class="icon"><i class="bi bi-clipboard2-fill"></i></span>
-                    <span class="txt-link">Seus Pedidos</span>
-                </a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+  
 
     
     <div class="form">
@@ -101,7 +67,7 @@ session_start();
         </form>
         <button type="submit" >Cadastrar</button> 
     </div>
-    <a href="localizacao.php"><button type="submit">Voltar</button></a>
+    <button onclick="history.back()">Voltar</button>
 
     <script src="../js/menu.js" type="text/javascript"></script>
     <script src="../js/noRefresh.js" type="text/javascript"></script>
