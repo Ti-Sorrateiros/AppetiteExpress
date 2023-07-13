@@ -19,6 +19,8 @@ dialog {
     bottom: 0px;
     align-items: center;
     justify-content: center;
+    transition: visibility 0.26s ease-in-out, transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
 }
 
 

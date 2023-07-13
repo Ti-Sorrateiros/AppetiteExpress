@@ -8,7 +8,7 @@ const toggleModal = () => {
 }
 
 btn_cardapio.onclick = function(){
-    openCard.show()
+    openCard.showModal()
 }
 
 closeCard.onclick = function(){
