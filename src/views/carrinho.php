@@ -68,7 +68,7 @@ include('../controllers/user/protected.php');
 
     <div class="content">
 
-        <h1>Carrinho</h1>
+        <h1 id="title_cart">Carrinho</h1>
         <?php
         //mais parte do carrinho
         include('../controllers/products/cartController.php');
@@ -81,12 +81,12 @@ include('../controllers/user/protected.php');
             ?>
             <hr> <br>
             <div>
-                <h1>Valor Total: R$ <?php print_r(array_sum(array_column($_SESSION["carrinho"], 6))); ?></h1>
+                <h1 id="valor_total">Valor Total: R$ <span style="color: #ea1d2c;"><?php print_r(array_sum(array_column($_SESSION["carrinho"], 6))); ?></span></h1>
             </div>
             <?php
-            echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button>Escolher mais produtos</button></a><br>';
+            echo '<br><a href="produtos" title="Clique para escolher mais produtos"><button id="finalizarcompra">Escolher mais produtos</button></a><br>';
             //botão de continuar comprar e será redirecionado para escolher o endereço
-            echo '<br><a href="escolherEndereco.php" title="Realizar compra"><button>Realizar Compra</button></a><br>';
+            echo '<br><a href="escolherEndereco.php" title="Realizar compra"><button  id="finalizarcompra">Realizar Compra</button></a><br>';
             
             foreach ($_SESSION['carrinho'] as $prod) {
                 ?>

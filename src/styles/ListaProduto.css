@@ -13,6 +13,7 @@
     margin-bottom: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 35px;
+    
 
 }
 
@@ -53,4 +54,22 @@
     font-size: 20px;
     color: #3E3E3E;
     font-family: 'Poppins', sans-serif;
+  }
+  #title_cart{
+    font-size: 2.5rem;
+      color: #000000;
+      font-weight: 600;
+      margin: 20px 0;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+  }
+  #valor_total{
+font-size: 2.5rem;
+  color: #000000;
+  font-weight: 600;
+  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   }
