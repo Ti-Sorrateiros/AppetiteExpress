@@ -18,7 +18,8 @@ CREATE TABLE usuarios(
     nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(11) NOT NULL UNIQUE
+    telefone VARCHAR(11) NOT NULL UNIQUE,
+    endereco VARCHAR(50) NOT NULL
 ) DEFAULT charset utf8; 
 
 
@@ -33,14 +34,19 @@ CREATE TABLE produtos(
     path_imagem VARCHAR(100) -- caminho da imagem 
 ) DEFAULT charset utf8; 
 
+
 -- guardar os pedidos feito pelo cliente
 CREATE TABLE pedidos(
     id INT PRIMARY KEY AUTO_INCREMENT, -- este é o id de pedido
     id_cliente INT,
-   -- Status varchar(255),
     valor_total FLOAT(15) NOT NULL, -- valor total de todos os pedidos
     hora time,
-    dia date
+    dia date,
+    cep varchar(100),
+    rua varchar(100),
+    numero varchar(100),
+    bairro varchar(100),
+    estado varchar(100)
 ) DEFAULT charset utf8; 
 
 -- adicionar no mesmo pedido outro produto e sua quantidade
@@ -54,12 +60,12 @@ CREATE TABLE item_pedido(
 -- guarda o cadastro de uma nova localização feito pelo cliente
 CREATE TABLE localizacao(
     id int auto_increment primary key,
+    id_cliente INT,
     cep varchar(100),
     rua varchar(100),
     numero varchar(100),
     bairro varchar(100),
-    estado varchar(100),
-    id_cliente int
+    estado varchar(100)
 ) DEFAULT charset utf8;
 
 -- chave estrangeira id_perfil para usuario e para definir o tipo de usuario 
@@ -68,5 +74,6 @@ ALTER TABLE usuarios ADD FOREIGN KEY(id_perfil) REFERENCES perfil (id);
 -- chave estrangeira para obter dados do usuario que pediu
 ALTER TABLE pedidos ADD FOREIGN KEY(id_cliente) REFERENCES usuarios (id);
 
-
 ALTER TABLE localizacao ADD foreign key (id_cliente) references usuarios(id);
+
+
