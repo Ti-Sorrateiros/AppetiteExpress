@@ -12,17 +12,16 @@ INSERT INTO perfil (tipo_de_usuario) VALUES ('cliente');
 INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');
 
 -- tabela para guardar os cadastros dos usuarios
-CREATE TABLE usuarios(
+ALTER TABLE usuarios(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_perfil INT, 
     nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(11) NOT NULL UNIQUE,
-    endereco VARCHAR(50) NOT NULL
+    telefone VARCHAR(11) NOT NULL UNIQUE
 ) DEFAULT charset utf8; 
 
-
+-- tabela para guardar produtos
 CREATE TABLE produtos(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
