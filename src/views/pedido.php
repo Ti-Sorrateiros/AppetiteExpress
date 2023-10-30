@@ -101,7 +101,7 @@ $rowTable = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../js/confirmlogout.js"></script>
+    <script src="../js/confirmLogout.js"></script>
 </body>
 
 </html>

@@ -143,7 +143,7 @@ include('../controllers/user/protected.php');
     </div>
     <script src="../js/menu.js" type="text/javascript"></script>
     <script async src="../js/JQuery.js" type="text/javascript"></script>
-    <script src="../js/confirmlogout.js"></script>
+    <script src="../js/confirmLogout.js"></script>
     <script src="../js/confirmCart.js"></script>
 
 </body>
