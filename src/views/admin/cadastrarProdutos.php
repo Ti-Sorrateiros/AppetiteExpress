@@ -70,11 +70,19 @@ include('../../controllers/user/protectedAdmin.php');
                         <span class="txt-link">VerProdutos</span>
                     </a>
                 </li>
+                <li  title="sair do sistema"class="item-menu">
+                <a id="logout">
+                    <span class="icon"><i class="bi bi-door-closed-fill"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+                </div>
+            </li>
             </ul>
         </nav>
         <script src="../../js/menu.js" type="text/javascript"></script>
         <script src="../../js/FileRead.js" type="text/javascript"></script>
         <script src="../../js/noRefresh.js" type="text/javascript"></script>
+        <script src="../../js/confirmLogout.js"></script>
 </body>
 
 </html>
