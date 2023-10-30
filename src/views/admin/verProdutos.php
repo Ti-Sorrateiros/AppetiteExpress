@@ -119,7 +119,7 @@ $rowTable = $readUser->fetchAll();
 
     <script src="../../js/menu.js" type="text/javascript"></script>
     <script src="../../js/confirmDelete.js" type="text/javascript"></script>
-    <script src="../../js/confirmLogout.js"></script>
+    <script src="../../js/confirmLogoutAdmin.js"></script>
  
 </body>
 

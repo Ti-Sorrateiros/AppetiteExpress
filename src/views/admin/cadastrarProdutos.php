@@ -82,7 +82,7 @@ include('../../controllers/user/protectedAdmin.php');
         <script src="../../js/menu.js" type="text/javascript"></script>
         <script src="../../js/FileRead.js" type="text/javascript"></script>
         <script src="../../js/noRefresh.js" type="text/javascript"></script>
-        <script src="../../js/confirmLogout.js"></script>
+        <script src="../../js/confirmLogoutAdmin.js"></script>
 </body>
 
 </html>
