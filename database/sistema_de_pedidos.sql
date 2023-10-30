@@ -9,7 +9,16 @@ CREATE TABLE perfil(
 
 -- terá dois tipos de perfil com id: 2 para admin , 1 para cliente 
 INSERT INTO perfil (tipo_de_usuario) VALUES ('cliente');
-INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');
+INSERT INTO perfil (tipo_de_usuario) VALUES ('admin');  
+/* 
+para a criacao de uma conta de administrador terá que ser criado por meio do cadastro normal , 
+e o DBA com acesso ao banco de dados fará uma mudança da coluna tipo_de_usuario de 1 para 2
+na conta criada no formulário
+
+o acesso de admin porenquanto é o acesso para cadastrar os produtos no banco dados,
+futuramente se precisa poderá criar mais um tipo de perfil como 'gerente' para publicar os produtos para 
+o banco de dados (lembrando que será necessário mudança no código tbm)
+*/
 
 -- tabela para guardar os cadastros dos usuarios
 ALTER TABLE usuarios(
