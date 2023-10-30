@@ -85,7 +85,7 @@ $rowTable = $readUser->fetchAll();
                     </a>
                 </li>
                 <li title="Lista dos Produtos cadastrados" class="item-menu">
-                    <a href="verprodutos">
+                    <a href="verProdutos">
                         <span class="icon"><i class="bi bi-eye-fill"></i></span>
                         <span class="txt-link">VerProdutos</span>
                     </a>
