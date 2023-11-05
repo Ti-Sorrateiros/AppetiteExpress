@@ -4,7 +4,7 @@ $host = 'localhost';
 $dbname = 'sistema_de_pedidos';
 $user = 'root';
 $pass = '';
-$port = 3306;
+$port = 3307;
 
 try{
 $conn = new PDO('mysql:host='.$host.';dbname='.$dbname.';port='.$port.';' , $user , $pass);
