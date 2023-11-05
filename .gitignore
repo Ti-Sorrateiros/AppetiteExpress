@@ -1,5 +1,2 @@
-# configuração do banco não será modificado pois depende do ambiente que será usado!
-database/conn.php
-
 #arquivos das imagens cadastradas terão commits ignorados
 src/images/*
