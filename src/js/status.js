@@ -19,8 +19,8 @@ $(document).ready(function() {
     var hrFecha = 22;
   
     if (Agora >= hrAbre && Agora < hrFecha) { 
-      $('.statusLoja1').html("Aberto").css("color", "green");
+      $('.statusLoja1').html("Estamos Aberto").css("color", "green");
     } else {
-      $('.statusLoja1').html("Fechado").css("color", "red");
+      $('.statusLoja1').html("Estamos Fechado").css("color", "red");
     }
   }
