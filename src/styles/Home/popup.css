@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+/* caixa do pop-up */
+
+.popup-wrapper{
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup{
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+/* botões de entrar ou cadastrar  */
+
+.popup a{
+    color: white;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+/* botão para fechar o pop-up */
+
+.popup-close{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    text-align: center;
+}
