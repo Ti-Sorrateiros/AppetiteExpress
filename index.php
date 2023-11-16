@@ -37,8 +37,8 @@
 							<div class="popup-close"> X Fechar popup </div>
 							<div class="popup-content">
 								<h2> Escolha como deseja continuar </h2>
-								<a class="popup-link" href="src/views/login.php"><button class="ButtonE">Entrar</button></a>
-								<a class="popup-link" href="src/views/cadastro.php"><button class="ButtonS">Cadastrar</button></a>
+								<a onclick="location.reload()" class="popup-link" href="src/views/login.php"><button class="ButtonE">Entrar</button></a>
+								<a onclick="location.reload()" class="popup-link" href="src/views/cadastro.php"><button class="ButtonS">Cadastrar</button></a>
 							</div>
 						</div>
 					</div>
@@ -66,6 +66,10 @@
 	<!-- <script src="src/js/dialog.js"></script> -->
 	<script src="src/js/status.js"></script>
 	<script src="src/js/Home/popup.js"></script>
+	<script>
+
+
+	</script>
 
 </body>
 
