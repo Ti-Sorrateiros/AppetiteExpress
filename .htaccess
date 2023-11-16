@@ -1,0 +1,14 @@
+# Proibir acesso aos diretórios
+Options -Indexes
+
+# Comando de Reescrita
+RewriteEngine on
+
+# ignorar extensão do arquivo html na URL
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+# ignorar extensão do arquivo php na URL
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
